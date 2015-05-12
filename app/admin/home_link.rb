@@ -40,7 +40,14 @@ ActiveAdmin.register HomeLink do
 
   end 
 
-
+  index do
+        column :name
+        column :path
+        column :tabs do |home_link|
+          link_to( "tabs" , admin_home_link_tabs_path( home_link )  )
+        end
+        actions
+  end
 
   action_item :only => [:show , :edit ] do
      link_to( "Tabs" , admin_home_link_tabs_path( home_link )  )

@@ -42,6 +42,12 @@ ActiveAdmin.register Tab do
 	end 
 
 
+  index do
+        column :name
+        actions
+  end
+
+
   show do
       panel "Tab Details" do
         attributes_table_for tab do
