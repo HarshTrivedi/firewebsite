@@ -16,6 +16,7 @@ $skinHeaderBck: #000000;
 $panelHeaderBck: #000000;
 
 @import "active_skin";
+@import "jquery-te.css";
 
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
