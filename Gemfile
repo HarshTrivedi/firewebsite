@@ -44,6 +44,7 @@ gem 'google-analytics-rails'
 gem 'simple_form'
 gem 'binding_of_caller'
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'active_skin'
 gem 'devise', github: 'plataformatec/devise'
 gem 'tzinfo-data'
 gem 'validates_formatting_of'
@@ -63,3 +64,5 @@ end
 group :development do
   # gem 'better_errors'
 end
+
+require 'awesome_print'
