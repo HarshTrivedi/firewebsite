@@ -66,3 +66,5 @@ group :development do
 end
 
 gem 'awesome_print'
+
+gem 'rails_12factor', group: :production
