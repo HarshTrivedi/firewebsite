@@ -40,7 +40,10 @@
 		    <br/>
 		    <h1><p align=center><font size=6>( FIRE )</font></p></h1>
 		    <br/>
-		    <font size=3><b>4<sup>th</sup> - 6<sup>th</sup> December 2015<br/>DAIICT, Gandhinagar</b></font>
+		    <% year = Year.find_by_value("2015") %>
+		    <font size=3><b>4<sup>th</sup> - 6<sup>th</sup> December 2015<br/> 
+		    	<%= year.venue  %> </b>
+		    </font>
 		    <br>
 		  </td>
 		</tr>
@@ -105,30 +108,14 @@
 	  <h2>Links</h2>
 
 	  <table width="100%" border="0" cellpadding="0" cellspacing="3">
-	    <tr>
-	      <td width="15%" align="center">&bull;</td>
-	      <td width="85%"><a href="/fire/index.html">Home</a></td>
-	    </tr>
-	    <tr>
-	      <td align="center">&bull;</td>
-	      <td><a href="committee.html">Committee</a></td>
-	    </tr>
-	     <tr>
-	      <td align="center">&bull;</td>
-	      <td><a href="resources.html">Resources</a></td>
-	    </tr>
-	    <tr>
-	      <td align="center">&bull;</td>
-	      <td><a href="data.html">Data</a></td>
-	    </tr>
-	    <tr>
-	      <td align="center"><img width="60%" src="/assets/fire-list.png"/></td>
-	      <td><a href="http://groups.google.com/group/fire-list">fire-list</a></td>
-	    </tr>
-	    <tr>
-	      <td align="center">&bull;</td>
-	      <td><a href="faq.html">FAQ</a></td>
-	    </tr>
+	  	<% year = Year.find_by_value("2015") %>
+	  	<% home_links = year.home_links %>
+	  	<%for home_link in home_links %>
+		    <tr>
+		      <td width="15%" align="center">&bull;</td>
+		      <td width="85%"><a href="/fire/<%= home_link.path %>"> <%= home_link.name %></a></td>
+		    </tr>
+		<%end%>
 	  </table>
 
 	  <h2>Archives</h2>

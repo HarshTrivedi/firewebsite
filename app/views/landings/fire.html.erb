@@ -1,0 +1,16 @@
+<div class="right">
+<% for tab in @tabs %>
+		<h2><%= tab.name %></h2>
+		<body>
+		<table>
+		  <tbody>
+		    <br>
+		    <tr>
+		    <td>
+ 				<%= raw(tab.content) %>
+ 				</td>
+		    </tr>
+		  </tbody>
+		</table>
+<%end%>
+</div>
