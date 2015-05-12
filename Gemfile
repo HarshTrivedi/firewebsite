@@ -65,4 +65,4 @@ group :development do
   # gem 'better_errors'
 end
 
-require 'awesome_print'
+gem 'awesome_print'
