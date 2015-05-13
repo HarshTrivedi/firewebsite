@@ -63,7 +63,9 @@ ActiveAdmin.register Tab do
 	      f.inputs  "Tab Details" do
 	          f.input :home_link_id, :as => :hidden ,  input_html: { :value => f.object.home_link_id }
 	          f.input :name 
-	          f.input :content 
+			  div :class => "editable_content" do
+		          f.input :content 
+		      end
 	      end
 	      f.actions
 	end
