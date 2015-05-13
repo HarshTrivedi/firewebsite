@@ -13,6 +13,5 @@
  *= require style.css
  *= require pages.scss
  *= require landings.css.scss
- *= require jquery-te.css
  *= require_self
  */
