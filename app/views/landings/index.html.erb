@@ -1,37 +1,10 @@
-<div class="right">
-	<h2>Objective</h2>
-	<body>
-	<table>
-	  <tbody>
-	    <br>
-	    <tr>
-	    <td>
-			<p>
-			  The importance of reusable, large-scale standard test
-			  collections in Information Access research has been widely
-			  recognized. The success of TREC, CLEF, and NTCIR has clearly
-			  established the importance of an evaluation workshop that
-			  facilitates research by providing the data and a common
-			  forum for comparing models and techniques. The Forum for
-			  Information Retrieval Evaluation (FIRE) follows in the
-			  footsteps of TREC, CLEF and NTCIR with the following aims:
-			</p>
-			
-			<ul>
-			  <li>Encourage research in South Asian language Information
-			    Access technologies by providing reusable large-scale test
-			    collections for ILIR experiments.</li>
-			  <li>Explore new Information Retrieval / Access tasks that
-			    arise as our information needs evolve, and new needs
-			    emerge.</li>
-			  <li>Provide a common evaluation infrastructure for comparing
-			    the performance of different IR systems.</li>
-			  <li>Investigate evaluation methods for Information Access
-			    techniques and methods for constructing a reusable
-			    large-scale data set for ILIR experiments.</li>
-			</ul>
-	    </td>
-	    </tr>
-	  </tbody>
-	</table>
+<div class="col-sm-9 contenido">
+	<% @tabs = current_year.home_links.first.tabs  %>
+	<% for tab in @tabs %>
+	        <h1 style="background-color: white ; color:#174E14; font-size: 25px;">
+	        	<b><%= tab.name.upcase %></b>
+	        </h1>
+        <hr>
+        <%= raw(tab.content) %>
+	<%end%>
 </div>

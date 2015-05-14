@@ -52,7 +52,7 @@
                   <ul class="nav nav-pills nav-stacked">
                         <% home_links = current_year.home_links %>
                         <%for home_link in home_links %>
-                            <%if current_page?("/fire/#{home_link.path}") %>
+                            <%if (current_page?("/fire/#{home_link.path}") ) or ( current_page?("/") and home_link == home_links.first ) %>
                               <li class="active">
                                   <a href="/fire/<%= home_link.path %>"> <%= home_link.name %></a>
                               </li>
