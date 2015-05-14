@@ -3,6 +3,4 @@
 #= require active_admin/base
 #= require activeadmin-sortable
 #= require jquery-te.js
-
-$ ->
-	$("textarea").jqte()
+#= require active_admin_javascripts.js
