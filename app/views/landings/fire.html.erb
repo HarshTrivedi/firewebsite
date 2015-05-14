@@ -1,16 +1,9 @@
-<div class="right">
-<% for tab in @tabs %>
-		<h2><%= tab.name %></h2>
-		<body>
-		<table>
-		  <tbody>
-		    <br>
-		    <tr>
-		    <td>
- 				<%= raw(tab.content) %>
- 				</td>
-		    </tr>
-		  </tbody>
-		</table>
-<%end%>
+<div class="col-sm-9 contenido">
+	<% for tab in @tabs %>
+        <h1>
+        	<%= tab.name %>
+        </h1>
+        <hr>
+        <%= raw(tab.content) %>
+	<%end%>
 </div>

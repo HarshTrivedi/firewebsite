@@ -1,185 +1,142 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<!DOCTYPE html>
+<html lang="es">
 <head>
-	<title>Forum for Information Retrieval Evaluation</title>
-	<meta http-equiv="Content-Language" content="English" />
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="title" content="Forum for Information Retrieval Evaluation" />
+      <meta name="charset" content="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="language" content="es" />
+      <title>Forum for Information Retrieval Evaluation</title>
+      <link rel="shortcut icon" href="favicon.ico" />
+      <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,700,100|Open+Sans:300,400,600,800" rel="stylesheet" type="text/css">
 
-	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-	<%= csrf_meta_tags %>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <%= csrf_meta_tags %>
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
 </head>
-
-
 <body>
-	<div id="wrap">
-
-	<div id="login" width=1000px>
-		<table CELLSPACING=0 CELLPADDING=0 border=0 width=100%>
-		<tr><td width=75%></td><td width=25%>
-		<font align=right size=2 color="#FD9A01"><b><a href="http://mail.irsi.res.in">Login IRSI E-mail Account</a></b></font>
-		</td></tr>
-		</table>
-	</div>
-
-	<div id="header">
-		<table CELLSPACING=0 CELLPADDING=0 border=0 width=100% height=100%>
-		<tr>
-		  <td width=175 height=40 rowspan=3>
-		    <a href="http://www.irsi.res.in/"><img src="/assets/logo/irsi-logo.png" border=0></a> 
-		  </td>
-		</tr>
-		<tr>
-		  <td>
-		    <h1>
-		      <p align=center><font size=10>F</font>orum for <font size=10>I</font>nformation
-			<font size=10>R</font>etrieval <font size=10>E</font>valuation</p>
-		    </h1>
-		    <br/>
-		    <h1><p align=center><font size=6>( FIRE )</font></p></h1>
-		    <br/>
-		    <font size=3>
-		    	<%= current_year.duration %><br/> 
-		    	<%= current_year.venue  %> </b>
-		    </font>
-		    <br>
-		  </td>
-		</tr>
-		</table>
-	</div>
-
-	<div class="menu">
-
-		<h2>News</h2>
-
-		<br/>
-
-		  <a href="http://sigir2015.org/">
-		    <img src="/assets/logo/sigir2015.png" width=100% border=0 alt="SIGIR-2015"/><br/>
-		    <i> 38th Annual International ACM SIGIR Conference 2015.
-		  </a>
-
-		<br/><br/>
-
-		  <a href="http://airs-conference.org/2015/">
-		    <img src="https://pbs.twimg.com/profile_images/578810543974187008/rw5p8gFI.png" width=100% border=0 alt="AIRS-2015"/><br/>
-			<i> Asia Information Retrieval Societies Conference (AIRS) 2015</i>
-		  </a>
-			
-		<br/><br/>
-
-		  <img src="/assets/logo/lncs_logo-300x111.gif" width=100% border=0 alt="LNCS"/><br/>
-		  <i><a href="http://link.springer.com/book/10.1007/978-3-642-40087-2/page/1">Springer</a> published the post-proceedings of FIRE 2010 &amp; 2011 as
-		  an <a href="http://link.springer.com/book/10.1007/978-3-642-40087-2/page/1">LNCS</a> volume (7536).</i>
+<header>
+  <section id="imagen">
+      <div class="alpha">
+        <div class="container-fluid text-right">
+          <div class="row">
+            <div class="col-sm-4">
+              <a href="index.html"><img src="/assets/sigir-logo-alpha-horizontal.png" class="img-responsive logo logo-1 pull-left" /></a>
+            </div>
+            <div class="col-sm-8">
+              <h2><%= current_year.venue %></h2>
+              <h3><%= current_year.duration %></h3>
+            </div>
+          </div>
+          <div id="social">
+            <a href="http://www.facebook.com/sigir15" target="_blank"><i class="fa fa-fw fa-facebook fa-2x"></i></a>
+            <a href="http://twitter.com/sigir15" target="_blank"><i class="fa fa-fw fa-twitter fa-2x"></i></a>
+          </div>
+        </div>
+      </div>
+  </section>
+</header>
 
 
-		<br/><br/>
+<section id="page-sponsors">
+      <div class="col-lg-10">
+            <section id="page">
+            <div class="container">
+              <div class="row">
 
-		<img src="/assets/logo/talip-logo.gif" width=100% border=0 alt="ACM TALIP"/>
+                <div class="col-sm-3">
+                  <ul class="nav nav-pills nav-stacked">
+                        <% home_links = current_year.home_links %>
+                        <%for home_link in home_links %>
+                            <%if current_page?("/fire/#{home_link.path}") %>
+                              <li class="active">
+                                  <a href="/fire/<%= home_link.path %>"> <%= home_link.name %></a>
+                              </li>
+                            <%else%>
+                              <li>
+                                  <a href="/fire/<%= home_link.path %>"> <%= home_link.name %></a>
+                              </li>
+                            <%end%>
+                        <%end%>
+                  </ul>
 
-		<br/>
+                <hr>
+                
+                <ul class="nav nav-pills nav-stacked social-nav">
+                    <li><h4>Social</h4></li>
+                    <li>
+                    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/sigir15"  data-widget-id="482599164841164800">Tweets por @sigir15</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    </li>
+                </ul>
+                
+                <br />
+                <br />     
+              
+              </div>
 
-		<i>ACM TALIP Vol 9, 
-			<a href="http://portal.acm.org/citation.cfm?id=1838745&picked=prox">Issue 3</a> & 
-			<a href="http://portal.acm.org/citation.cfm?id=1838751&picked=prox&CFID=7378897&CFTOKEN=88472882">Issue 4</a>. Special issue on ILIR.
-			<br/>
-		</i>
+              <%= yield %>
 
-		<br/>
+              </div>
+            </div>
+            </section>
+        </div>
 
-		<table border="0">
-		    <tr>
-		      <td class="note">
-					<a href="http://irsi.res.in/fire">mirrored</a> &bull; Dec  7 20:06:11 EST 2013
-		      </td>
-		    </tr>
-		</table>
-
-		<hr/><hr/>
-
-	</div>
-
-	<%= yield%>
-
-
-	<div class="left">
-	  <h2>Links</h2>
-
-	  <table width="100%" border="0" cellpadding="0" cellspacing="3">
-	  	
-	  	<% home_links = current_year.home_links %>
-	  	<%for home_link in home_links %>
-		    <tr>
-		      <td width="15%" align="center">&bull;</td>
-		      <td width="85%"><a href="/fire/<%= home_link.path %>"> <%= home_link.name %></a></td>
-		    </tr>
-		<%end%>
-	  </table>
-
-	  <h2>Archives</h2>
-	  <table width="100%" border="0" cellpadding="0" cellspacing="3">
-	    <tr>
-	      <td width="15%" align="center">&bull;</td>
-	      <td width="85%">
-		<a href="/fire/2014/index.html">FIRE 2014</a>
-	      </td>
-	    </tr>
-
-	    <tr>
-	      <td width="15%" align="center">&bull;</td>
-	      <td width="85%">
-		<a href="/fire/2013/index.html">FIRE 2013</a>
-	      </td>
-	    </tr>
-
-	    <tr>
-	      <td width="15%" align="center">&bull;</td>
-	      <td width="85%">
-		<a href="/fire/2012/index.html">FIRE 2012</a>
-	      </td>
-	    </tr>
-	    <tr>
-	      <td width="15%" align="center">&bull;</td>
-	      <td width="85%">
-		<a href="/fire/2011/index.html">FIRE 2011</a>
-	      </td>
-	    </tr>
-	    <tr>
-	      <td align="center">&bull;</td>
-	      <td><a href="/fire/2010/index.html">FIRE 2010</a></td>
-	    </tr>
-	    <tr>
-	      <td align="center">&bull;</td>
-	      <td><a href="/fire/2008/index.html">FIRE 2008</a></td>
-	    </tr>
-	  </table>
-
-	<h2>Updates</h2>
-	</br>
-	<a href="https://www.youtube.com/channel/UCPiJM_EjGeost57LjRFVa0Q"><img width="100%" src="/assets/youtube_channel.jpg"/></a>
-	</br>
-
-	<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/fire_forum"  data-widget-id="405803542385942528">Tweets by @fire_forum</a>
-	    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-	<div class="fb-like-box" data-href="https://www.facebook.com/fire.forum" data-height="200" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="falsh" data-show-border="falsh" data-width="180" data-scroll="true"></div>
+        <div class="col-lg-2 col-sm-3 sponsors text-center">
+            <h3><b>Platinum Supporter</b></h3>
+            <img src="/assets/sponsors/baidu.png" class="img-responsive"/>
+            <hr>
+        </div>
+        <div class="col-lg-2 col-sm-3 sponsors text-center">
+            <h3><b>Gold<br>Supporters</b></h3>
+            <img src="/assets/sponsors/microsoft.jpg" class="img-responsive"/>
+            <img src="/assets/sponsors/google.png" class="img-responsive"/>
+            <img src="/assets/sponsors/yahoo.png" class="img-responsive"/>
+            <hr>
+        </div>
+    </div>
+</section>
 
 
-	</div>
 
-	</div>
-	<div style="clear: both;"> </div>
-
-	</div>
-
-	<div id="bottom"> Copyright &copy; 2014 IRSI All rights reserved.
-	<br>
-	<br>
-	<font size=1px>
-	This site was last updated 2014-11-23 00:00:00.000000000 +0530
-	</font>
-	</div>
-
-</body>	
+<div class="clearfix"></div>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2 texto-footer">
+        <p><b>The 38th Annual<br />ACM SIGIR Conference  &copy; 2015</b><br>
+        Santiago, Chile</p>
+      </div>
+      <div class="col-md-9 logos">
+        <div class="row">
+          <div class="span-2">
+            <img src="/assets/utfsm.png" class="img-responsive">
+          </div>
+          <div class="span-2">
+            <img src="/assets/uchile.png" class="img-responsive">
+          </div>
+          <div class="span-2">
+            <img src="/assets/puc.png" class="img-responsive">
+          </div>
+          <div class="span-2 sp">
+            <img src="/assets/usach.png" class="img-responsive">
+          </div>
+          <div class="span-2 sp">
+            <img src="/assets/acm.png" class="img-responsive">
+          </div>
+          <div class="span-2 sp">
+            <img src="/assets/yahoolabs-white.png" class="img-responsive">
+          </div>
+        </div>  
+      </div>
+      <div class="col-md-1 logo-izarus">
+        <a href="http://www.izarus.cl/" target="_blank"><img src="/assets/izarus.png" class="img-responsive pull-right"></a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
