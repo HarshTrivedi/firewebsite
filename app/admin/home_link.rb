@@ -5,6 +5,11 @@ ActiveAdmin.register HomeLink do
 
   config.filters = false
 
+  config.sort_order = 'position_asc' # assumes you are using 'position' for your acts_as_list column
+  config.paginate   = false # optional; drag-and-drop across pages is not supported
+
+  sortable # creates the controller action which handles the sorting
+
   controller do
 
     def new
@@ -41,6 +46,7 @@ ActiveAdmin.register HomeLink do
   end 
 
   index do
+        sortable_handle_column # inserts a drag handle
         column :name
         column :path
         column :tabs do |home_link|

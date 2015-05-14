@@ -44,6 +44,8 @@ GEM
       activesupport (= 4.1.4)
       builder (~> 3.1)
       erubis (~> 2.7.0)
+    activeadmin-sortable (0.0.3)
+      activeadmin (>= 0.4)
     activemodel (4.1.4)
       activesupport (= 4.1.4)
       builder (~> 3.1)
@@ -57,6 +59,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    acts_as_list (0.7.2)
+      activerecord (>= 3.0)
     arbre (1.0.3)
       activesupport (>= 3.0.0)
     arel (5.0.1.20140414130214)
@@ -552,6 +556,8 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin!
+  activeadmin-sortable
+  acts_as_list
   awesome_print
   binding_of_caller
   bundler

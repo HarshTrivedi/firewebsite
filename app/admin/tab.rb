@@ -4,6 +4,11 @@ ActiveAdmin.register Tab do
 	belongs_to :home_link , :optional => true
 	permit_params :name , :content , :home_link_id
 
+	config.sort_order = 'position_asc' # assumes you are using 'position' for your acts_as_list column
+	config.paginate   = false # optional; drag-and-drop across pages is not supported
+
+	sortable # creates the controller action which handles the sorting
+	
 	config.filters = false
 
 	controller do
@@ -43,6 +48,7 @@ ActiveAdmin.register Tab do
 
 
   index do
+		sortable_handle_column # inserts a drag handle
         column :name
         actions
   end
