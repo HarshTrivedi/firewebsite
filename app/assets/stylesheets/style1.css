@@ -43,7 +43,7 @@ body{
 
 #imagen{
   height:400px;
-  background:url('../assets/santiago2.jpg') no-repeat center center;
+  background:url('https://mw2.google.com/mw-panoramio/photos/small/88887584.jpg') no-repeat center center;
   background-size:cover;
 }
 
@@ -62,7 +62,7 @@ body{
   color:white;
   font-family:'Open Sans';
   font-weight:800;
-  text-shadow:0.1em 0.1em 0.2em #222;
+  text-shadow:0.1em 0.1em 0.2em black;
 }
 
 #imagen .container,
@@ -140,7 +140,7 @@ ul.timeline{
 
 .nav-stacked li a{
   border-radius:0;
-  color:#222;
+  color:#4D805F;
 }
 
 .nav-stacked li a:hover{
@@ -158,7 +158,7 @@ ul.timeline{
 }
 
 footer{
-  background:#222;
+  background:#4D805F;
   padding-top:30px;
   padding-bottom:30px;
 }
