@@ -1,7 +1,7 @@
 ActiveAdmin.register HomeLink do
 	menu false
 	belongs_to :year , :optional => true
-	permit_params :name , :path , :year_id
+	permit_params :name , :path , :year_id , :visibility
 
   config.filters = false
 
@@ -49,6 +49,7 @@ ActiveAdmin.register HomeLink do
         sortable_handle_column # inserts a drag handle
         column :name
         column :path
+        column :visibility
         column :tabs do |home_link|
           link_to( "tabs" , admin_home_link_tabs_path( home_link )  )
         end
@@ -66,6 +67,7 @@ ActiveAdmin.register HomeLink do
           f.input :year_id, :as => :hidden ,  input_html: { :value => f.object.year_id }
           f.input :name 
           f.input :path 
+          f.input :visibility
       end
       f.actions
   end
