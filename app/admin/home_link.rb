@@ -67,7 +67,7 @@ ActiveAdmin.register HomeLink do
           f.input :year_id, :as => :hidden ,  input_html: { :value => f.object.year_id }
           f.input :name 
           f.input :path 
-          f.input :visibility
+          f.input :visibility , :as => :boolean
       end
       f.actions
   end

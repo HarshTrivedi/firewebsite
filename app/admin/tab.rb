@@ -73,7 +73,7 @@ ActiveAdmin.register Tab do
 			  div :class => "editable_content" do
 		          f.input :content 
 		      end
-	          f.input :visibility
+	          f.input :visibility , :as => :boolean
 	      end
 	      f.actions
 	end
