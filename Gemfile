@@ -68,3 +68,4 @@ gem 'awesome_print'
 gem 'acts_as_list'
 gem 'activeadmin-sortable'
 gem 'rails_12factor', group: :production
+gem "font-awesome-rails"
