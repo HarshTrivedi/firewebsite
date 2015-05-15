@@ -54,11 +54,11 @@
                         <%for home_link in home_links %>
                             <%if (current_page?("/fire/#{home_link.path}") ) or ( current_page?("/") and home_link == home_links.first ) %>
                               <li class="active">
-                                  <a href="/fire/<%= home_link.path %>"> <%= home_link.name %></a>
+                                  <a href="/fire/<%= home_link.path %>"> <%= raw home_link.name %></a>
                               </li>
                             <%else%>
                               <li>
-                                  <a href="/fire/<%= home_link.path %>"> <%= home_link.name %></a>
+                                  <a href="/fire/<%= home_link.path %>"> <%= raw home_link.name %></a>
                               </li>
                             <%end%>
                         <%end%>
