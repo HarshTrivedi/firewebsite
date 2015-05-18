@@ -1,5 +1,8 @@
 class LandingsController < ApplicationController
   def index
+    current_year = Year.where(:current => true).last || Year.last
+    home_link = current_year.home_links.first
+    redirect_to fire_page_path(home_link.path)
   end
 
 
