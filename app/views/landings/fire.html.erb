@@ -1,9 +1,30 @@
 <div class="col-sm-9 contenido">
-	<% for tab in @tabs.visible %>
-	        <h1 style="background-color: white ; color:#174E14; font-size: 25px;">
-	        	<b><%= tab.name.upcase %></b>
-	        </h1>
-        <hr>
-        <%= raw(tab.content) %>
+	<% tabs = @tabs.visible %>
+	<% for tab in tabs %>
+		<% is_first_tab = (tab == tabs.first) %>
+		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+		  <div class="panel panel-default">
+			    <div class="panel-heading" role="tab" id="tab_<%=tab.id%>">
+			      <h3 class="panel-title" style="color:#174E14; font-size: 25px;">		        
+			      	<%if is_first_tab %>
+				        <a data-toggle="collapse" data-parent="#accordion" href="#collapse_tab_<%=tab.id%>" aria-expanded="true" aria-controls="collapse_tab_<%=tab.id%>"><b><%= tab.name %></b></a>
+			        <%else%>
+						 <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse_tab_<%=tab.id%>" aria-expanded="false" aria-controls="collapse_tab_<%=tab.id%>"><b><%= tab.name %></b></a>
+					<%end%>
+			      </h3>
+			    </div>
+			    <div id="collapse_tab_<%=tab.id%>" class="panel-collapse collapse <%= is_first_tab ? 'in' : '' %>" role="tabpanel" aria-labelledby="tab_<%=tab.id%>">
+			      <div class="panel-body">
+			      		<%= raw(tab.content) %>
+			      </div>
+			    </div>
+		  </div>
+		</div>
+		 <hr/>
 	<%end%>
 </div>
+
+
+
+
+
