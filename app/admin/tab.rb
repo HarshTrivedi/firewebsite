@@ -2,7 +2,7 @@ ActiveAdmin.register Tab do
 	menu false
 
 	belongs_to :home_link , :optional => true
-	permit_params :name , :content , :home_link_id , :visibility
+	permit_params :name , :content , :home_link_id , :visibility , :collapsible , :default_open
 
 	config.sort_order = 'position_asc' # assumes you are using 'position' for your acts_as_list column
 	config.paginate   = false # optional; drag-and-drop across pages is not supported
@@ -51,6 +51,8 @@ ActiveAdmin.register Tab do
 		sortable_handle_column # inserts a drag handle
         column :name
         column :visibility
+        column :collapsible
+        column :default_open
         actions
   end
 
@@ -74,6 +76,8 @@ ActiveAdmin.register Tab do
 		          f.input :content 
 		      end
 	          f.input :visibility , :as => :boolean
+	          f.input :collapsible , :as => :boolean
+	          f.input :default_open , :as => :boolean
 	      end
 	      f.actions
 	end
