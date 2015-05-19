@@ -1,33 +1,78 @@
 <div class="col-sm-9 contenido">
-	<% tabs = @tabs.visible %>
-	<% for tab in tabs %>
-		<div class="panel-group" role="tablist" aria-multiselectable="true">
-		  <div class="panel panel-default">
-			    <div class="panel-heading" role="tab" id="tab_<%=tab.id%>">
-			      <h3 class="panel-title" style="color:#174E14; font-size: 25px;">		        
+	<% accordian_tabs = @tabs.visible.accordion %>
 
-			      	<%if tab.collapsible%>
-				      	<%if tab.collapsible  %>
-					        <a data-toggle="collapse" href="#collapse_tab_<%=tab.id%>" aria-expanded="false" aria-controls="collapse_tab_<%=tab.id%>"><b><%= tab.name %></b></a>
-				        <%else%>
-							 <a class="collapsed" data-toggle="collapse" href="#collapse_tab_<%=tab.id%>" aria-expanded="false" aria-controls="collapse_tab_<%=tab.id%>"><b><%= tab.name %></b></a>
+	<% tabs = @tabs.visible - accordian_tabs %>
+	<div class="panel-group" role="tablist" aria-multiselectable="true">
+		<% for tab in tabs %>
+			  <div class="panel panel-default">
+				    <div class="panel-heading" role="tab" id="tab_<%=tab.id%>">
+				      <h3 class="panel-title" style="color:#174E14; font-size: 25px;">		        
+
+				      	<%if tab.collapsible%>
+					      	<%if tab.collapsible  %>
+						        <a data-toggle="collapse" href="#collapse_tab_<%=tab.id%>" aria-expanded="false" aria-controls="collapse_tab_<%=tab.id%>"><b><%= tab.name %></b></a>
+					        <%else%>
+								 <a class="collapsed" data-toggle="collapse" href="#collapse_tab_<%=tab.id%>" aria-expanded="false" aria-controls="collapse_tab_<%=tab.id%>"><b><%= tab.name %></b></a>
+							<%end%>
+						<%else%>
+								<a ><b><%= tab.name %></b></a>
 						<%end%>
-					<%else%>
-							<a ><b><%= tab.name %></b></a>
-					<%end%>
 
 
-			      </h3>
-			    </div>
-			    <div id="collapse_tab_<%=tab.id%>" class="panel-collapse collapse <%= tab.default_open ? 'in' : '' %>" role="tabpanel" aria-labelledby="tab_<%=tab.id%>">
-			      <div class="panel-body">
-			      		<%= raw(tab.content) %>
-			      </div>
-			    </div>
-		  </div>
-		</div>
-		 <hr/>
-	<%end%>
+				      </h3>
+				    </div>
+				    <div id="collapse_tab_<%=tab.id%>" class="panel-collapse collapse <%= tab.default_open ? 'in' : '' %>" role="tabpanel" aria-labelledby="tab_<%=tab.id%>">
+				      <div class="panel-body">
+				      		<%= raw(tab.content) %>
+				      </div>
+				    </div>
+			  </div>
+		<hr/>
+		<%end%>	
+	</div>
+
+
+	<% tabs = accordian_tabs %>
+    <div class="panel-group" id="accordion">
+		<% for tab in tabs %>
+			<% first_tab = ( tabs.first == tab ) %>
+			    <% if tab.default_open %>
+			        <div class="panel panel-default">
+			            <div class="panel-heading">
+						    <h3 class="panel-title" style="color:#174E14; font-size: 25px;">		        
+			                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse_tab_<%=tab.id%>">
+			                    	<b><%= tab.name %></b>
+			                    </a>
+			                </h3>
+			            </div>
+			            <div id="collapse_tab_<%=tab.id%>" class="panel-collapse collapse in">
+			                <div class="panel-body">
+			                    <%= raw tab.content %>
+			                </div>
+			            </div>
+			        </div>
+			    <%else%>
+			        <div class="panel panel-default">
+			            <div class="panel-heading">
+			                <h3 class="panel-title" style="color:#174E14; font-size: 25px;">
+			                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse_tab_<%=tab.id%>">
+			                    	<b><%= tab.name %></b>
+			                    </a>
+			                </h3>
+			            </div>
+			            <div id="collapse_tab_<%=tab.id%>" class="panel-collapse collapse">
+			                <div class="panel-body">
+			                    <%= raw tab.content %>
+			                </div>
+			            </div>
+			        </div>
+			    <%end%>
+
+	    <%end%>
+	</div>
+
+
+
 </div>
 
 

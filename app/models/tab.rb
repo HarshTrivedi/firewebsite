@@ -6,4 +6,8 @@ class Tab < ActiveRecord::Base
 		where(:visibility => true)
 	end
 
+	def self.accordion
+		where(:accordion => true)
+	end
+
 end
