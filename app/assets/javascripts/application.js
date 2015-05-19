@@ -13,7 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap.min.js
-//= require turbolinks
+//= require jquery.pjax
 //= require nprogress
 //= require nprogress-turbolinks
 //= require_tree .
+
+$(function() {
+  $(document).pjax('a:not([data-remote]):not([data-behavior]):not([data-skip-pjax])', '[data-pjax-container]')
+});
