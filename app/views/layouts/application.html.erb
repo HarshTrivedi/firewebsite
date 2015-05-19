@@ -12,12 +12,14 @@
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
       <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
       <%= csrf_meta_tags %>
-      <link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
-
+      <link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>      
+      <link href='http://fonts.googleapis.com/css?family=Crete+Round:400,400italic' rel='stylesheet' type='text/css'>
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
       <![endif]-->
+      <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+      <script type="text/javascript">stLight.options({publisher: "675091de-c8f1-42e6-930a-033e764ecac2", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 </head>
 <body>
 <header>
@@ -27,10 +29,10 @@
           <div class="row">
             <div class='text-center'>
                 <br>
-                <h2  style="color:#421E05 ; font-family: 'Quicksand';" >
+                <h2  style="color:#421E05 ; font-family: 'Crete Round';" >
                 <font size="20px"><b>F</b></font>ORUM FOR <font size="20px"><b>I</b></font>NFORMATION <font size="20px"><b>R</b></font>ETRIEVAL <font size="20px"><b>E</b></font>VALUATION
                 </h2>
-                <h3 style="color:#421E05 ;  font-family: 'Quicksand';">( FIRE <%= current_year.value %> )<h3>
+                <h3 style="color:#421E05 ;  font-family: 'Quicksand';"><b>( FIRE <%= current_year.value %> )</b><h3>
                 <br>
                 <h4 style="color:#421E05"><%= current_year.venue %></h4>
                 <h4 style="color:#421E05"><%= current_year.duration %></h4>
@@ -82,28 +84,28 @@
                            </a>
                       </li>
                       <li>
-                           <a href="/fire/data"> <font style="color:#174E14"> <i class="fa fa-database"></i> &nbsp Data </font></a>
+                           <a href="/fire/data"> <font style="color:#174E14"> <i class="fa fa-database"></i> &nbsp <b>Data </b></font></a>
                       </li>
                       <li>
-                           <a href="/fire/resources"> <font style="color:#174E14"> <i class="fa fa-book"></i> &nbsp Resources </font></a>
+                           <a href="/fire/resources"> <font style="color:#174E14"> <i class="fa fa-book"></i> &nbsp <b>Resources </b></font></a>
                       </li>
                       <li>
-                           <a href="http://www.isical.ac.in/~fire/2014/index.html" target="_blank" > <font style="color:#174E14"> <i class="fa fa-arrow-circle-right"></i> &nbsp FIRE 2014 </font></a>
+                           <a href="http://www.isical.ac.in/~fire/2014/index.html" target="_blank" > <font style="color:#174E14"> <i class="fa fa-arrow-circle-right"></i> &nbsp <b>FIRE 2014 </b> </font></a>
                       </li>
                       <li>
-                           <a href="http://www.isical.ac.in/~fire/2013/index.html" target="_blank" >  <font style="color:#174E14"> <i class="fa fa-arrow-circle-right"></i> &nbsp FIRE 2013 </font> </a>
+                           <a href="http://www.isical.ac.in/~fire/2013/index.html" target="_blank" >  <font style="color:#174E14"> <i class="fa fa-arrow-circle-right"></i> &nbsp <b>FIRE 2013 </b> </font> </a>
                       </li>
                       <li>
-                           <a href="http://www.isical.ac.in/~fire/2012/index.html" target="_blank" >  <font style="color:#174E14"> <i class="fa fa-arrow-circle-right"></i> &nbsp FIRE 2012 </font> </a>
+                           <a href="http://www.isical.ac.in/~fire/2012/index.html" target="_blank" >  <font style="color:#174E14"> <i class="fa fa-arrow-circle-right"></i> &nbsp <b>FIRE 2012 </b> </font> </a>
                       </li>
                       <li>
-                           <a href="http://www.isical.ac.in/~fire/2011/index.html" target="_blank" >  <font style="color:#174E14"> <i class="fa fa-arrow-circle-right"></i> &nbsp FIRE 2011 </font> </a>
+                           <a href="http://www.isical.ac.in/~fire/2011/index.html" target="_blank" >  <font style="color:#174E14"> <i class="fa fa-arrow-circle-right"></i> &nbsp <b>FIRE 2011 </b> </font> </a>
                       </li>
                       <li>
-                           <a href="http://www.isical.ac.in/~fire/2010/index.html" target="_blank" >  <font style="color:#174E14"> <i class="fa fa-arrow-circle-right"></i> &nbsp FIRE 2010 </font> </a>
+                           <a href="http://www.isical.ac.in/~fire/2010/index.html" target="_blank" >  <font style="color:#174E14"> <i class="fa fa-arrow-circle-right"></i> &nbsp <b>FIRE 2010 </b> </font> </a>
                       </li>
                       <li>
-                           <a href="http://www.isical.ac.in/~fire/2008/index.html" target="_blank" >  <font style="color:#174E14"> <i class="fa fa-arrow-circle-right"></i> &nbsp FIRE 2008 </font> </a>
+                           <a href="http://www.isical.ac.in/~fire/2008/index.html" target="_blank" >  <font style="color:#174E14"> <i class="fa fa-arrow-circle-right"></i> &nbsp <b>FIRE 2008 </b> </font> </a>
                       </li>
                     </ul>
                 
@@ -112,7 +114,7 @@
               
               </div>
 
-              <%= yield %>
+                <%= yield %>
 
               </div>
             </div>
@@ -169,6 +171,11 @@
         <div class="row">
           <div class="span-2 sp">
 <!--             <img src="/assets/isi.png" class="img-responsive" height="95" width="95"> -->
+                <br>
+                <div style="font-size:15px;" class="text-center">
+                  <p>FIRE 2015,
+                  <p>DAIICT, INDIA
+                </div>
           </div>
           <div class="span-2 sp">
             <a href="http://www.daiict.ac.in/"><img src="/assets/da.png" class="img-responsive"  height="80" width="80"></a>
@@ -183,12 +190,48 @@
             <a href="http://india.acm.org/"><img src="/assets/acm.png" class="img-responsive"  height="250" width="250"></a>
           </div>
           <div class="span-2 sp">
-            <!-- <img src="/assets/isi.png" class="img-responsive" height="95" width="95"> -->
+
+
+                  <!-- Start of StatCounter Code for Default Guide -->
+                  <div class="text-center">
+
+                    <div style="font-size:15px;">                  
+                      <script type="text/javascript">
+                          var sc_project=10446760; 
+                          var sc_invisible=0; 
+                          var sc_security="e0c2cc68"; 
+                          var sc_text=2; 
+                          var scJsHost = (("https:" == document.location.protocol) ?
+                          "https://secure." : "http://www.");
+                          document.write("<script type='text/javascript' src='" +
+                          scJsHost+
+                          "statcounter.com/counter/counter.js'></"+"script>");
+                      </script>
+                      <noscript>
+                          <div class="statcounter">
+                              <img class="statcounter"  src="http://c.statcounter.com/10446760/0/e0c2cc68/0/" alt="website statistics">
+                          </div>
+                      </noscript>
+                      Visitors
+                    </div>
+                    <span class='st_facebook_hcount' displayText='Facebook'></span>
+                    <span class='st_twitter_hcount' displayText='Tweet'></span>
+                    <br>
+                    <span class='st_googleplus_hcount' displayText='Google +'></span>
+                  </div>
+
           </div>
         </div>  
       </div>
     </div>
   </div>
 </footer>
+
+
+
+
+
+
+
 </body>
 </html>
