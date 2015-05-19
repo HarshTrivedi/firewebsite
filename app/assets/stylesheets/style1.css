@@ -468,3 +468,7 @@ footer .logos img{
 .td-border{
   border-bottom: 2px solid black !important;
 }
+
+#page-container{
+  min-height: 1200px;
+}
