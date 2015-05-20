@@ -11,7 +11,6 @@
       <%= stylesheet_link_tag    'application' %>
       <%= javascript_include_tag 'application' %>
       <%= csrf_meta_tags %>
-      <link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>      
       <link href='http://fonts.googleapis.com/css?family=Crete+Round:400,400italic' rel='stylesheet' type='text/css'>
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -26,17 +25,21 @@
       <div class="alpha">
         <div class="container-fluid text-right">
           <div class="row">
-            <div class='text-center'>
-                <br>
-                <h2  style="color:#421E05 ; font-family: 'Crete Round';" >
-                <font size="20px"><b>F</b></font>ORUM FOR <font size="20px"><b>I</b></font>NFORMATION <font size="20px"><b>R</b></font>ETRIEVAL <font size="20px"><b>E</b></font>VALUATION
-                </h2>
-                <h3 style="color:#421E05 ;  font-family: 'Quicksand';"><b>( FIRE <%= current_year.value %> )</b><h3>
-                <br>
-                <h4 style="color:#421E05"><%= current_year.venue %></h4>
-                <h4 style="color:#421E05"><%= current_year.duration %></h4>
+            <div class="col-sm-3">
+               <div class="text-center" >
+               <img src="/assets/irsi1.gif" ></img>                
+               </div>
             </div>
-          </div>
+            <div class="col-sm-9">
+                <div class="text-center" style="position: relative ; left: -120px">
+                    <h2  style="color:#421E05 ; font-family: 'Crete Round';" >                    
+                        <font size="20px"><b>F</b></font>ORUM FOR <font size="20px"><b>I</b></font>NFORMATION <font size="20px"><b>R</b></font>ETRIEVAL <font size="20px"><b>E</b></font>VALUATION
+                    </h2>
+                    <h3 style="color:#421E05 ;   font-family: 'Crete Round';"><b>( FIRE <%= current_year.value %> )</b><h3>
+                    <h4 style="color:#421E05 ; font-family: 'Crete Round';"><%= current_year.venue %></h4>
+                    <h4 style="color:#421E05 ; font-family: 'Crete Round';"><%= current_year.duration %></h4>
+                </div>
+            </div>
           <div id="social">
             <a href="https://www.facebook.com/fire.forum" target="_blank"><i class="fa fa-fw fa-facebook fa-2x"></i></a>
             <a href="http://twitter.com/fire_forum" target="_blank"><i class="fa fa-fw fa-twitter fa-2x"></i></a>
@@ -213,7 +216,9 @@
                       </noscript>
                       Visitors
                     </div>
+                    <br>
                     <span class='st_facebook_hcount' displayText='Facebook'></span>
+                    <br>
                     <span class='st_twitter_hcount' displayText='Tweet'></span>
                     <br>
                     <span class='st_googleplus_hcount' displayText='Google +'></span>
