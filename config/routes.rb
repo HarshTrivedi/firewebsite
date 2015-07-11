@@ -8,9 +8,9 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
 
-  get   'fire/:permalink'  => 'landings#fire'         , as: :fire_page
+  get   'fire/:permalink'  => 'landings#fire'         , as: :fire_page , constraints: {subdomain: /fire/ }
 
-  root 'landings#index'
+  get   '/'  => 'landings#index'         , as: :fire_root , constraints: {subdomain: /fire/ }
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -9,6 +9,12 @@ class LandingsController < ApplicationController
   def fire
   	permalink = params[:permalink]
   	@homelink = HomeLink.find_by_path(permalink)  	
+
+    if @homelink.nil?
+      current_year = Year.where(:current => true).last || Year.last
+      @home_link = current_year.home_links.first
+    end
+
   	@tabs = @homelink.tabs
   	ap "permalink : #{permalink}"
   	ap "homelink  : #{@homelink}"
