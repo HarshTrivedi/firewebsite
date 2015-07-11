@@ -1,0 +1,134 @@
+<div class="left">
+<h2></h2>
+<ul>
+  <li><a href="http://www.irsi.res.in/index.shtml">Home</a></li>
+  <li><a href="http://www.irsi.res.in/members.shtml">Members</a></li>
+  <li><a href="http://www.isical.ac.in/~fire/resources.html">Resources</a></li>
+  <li><a href="http://www.irsi.res.in/events.shtml">Events</a></li>
+  <li><a href="http://www.irsi.res.in/fire/">FIRE</a></li>
+  <li><a href="http://www.irsi.res.in/contact.shtml">Contact us</a></li>
+  </ul>
+
+
+
+<!--h2>Latest News:</h2>
+<ul>
+  <li><a href="">Winter school coming soon</a></li>
+<li><a href="http://www.isical.ac.in/~fire/talip.html">ACM TALIP special issue on ILIR</a></li-->
+<!--li><a href="./register.html" style="text-decoration:none">Registration for FIRE 2010 data is open.</a><br></li>
+        <p>An updated version of the data used for FIRE 2008 is now
+available as training data to FIRE 2010 participants. Click here to
+download.</a><br></p>
+        <p><a href="./SEMINAR_NOTICE_by_Prabhakar_Raghavan.html">Seminar by
+Prabhakar Raghavan on 16/03/09</a></p>
+        <p><a href="./schedule.html">FIRE 2008 Workshop slides are
+available.</a></p-->
+
+<!--li><font color="#425969">The <a href="http://portal.acm.org/toc.cfm?id=1364742&type=proceeding&coll=portal&dl=ACM" style="text-decoration:none">IWRIDL proceedings</a> is dedicated to the memory of Late Prof. Karen Spärck Jones.</font></li>
+</ul-->
+
+
+<!--a href=http://rea.teimes.gr/~lazarinf/NonEnglishWebIR/
+style="text-decoration:none">CfP: Journal of Information Retrieval Special
+Issue on Non-English Web Retrieval</a>
+        <div class="hr-dots"> </div-->
+        <!--p class="more"><a
+href="http://www.isical.ac.in/~iwridl">more</a></p-->
+        <!--p>The user id and password of the training data is circulated via
+email. Participants who did not  receive the user id and password, please send
+an email to fire@isical.ac.in.</p>
+        <div class="hr-dots"> </div-->
+        <!--p><font size=1><b><a href="./fire.cls"
+style="text-decoration:none">Paper Submission is open.</a> <img
+src="./images/new.gif"><br></b></font></p-->
+        <!--p><font size=1><b><a href="./upload.php"
+style="text-decoration:none">Run Submission is open.</a> <img
+src="./images/new.gif"><br></b></font></p-->
+<p><font size=1><b><a style="text-decoration:none"> Discussion
+Forum</a><br></b></font> <a href="http://groups.google.com/group/fire-list">
+fire-list@googlegroups.com</a> </p>
+
+
+<h2>Archives</h2>
+  <table width="100%" border="0" cellpadding="0" cellspacing="3">
+    <tr>
+      <td width="15%" align="center">&bull;</td>
+      <td width="85%">
+        <a href="http://www.isical.ac.in/~fire/2012/index.html">FIRE 2012</a>
+      </td>
+    </tr>
+    <tr>
+      <td width="15%" align="center">&bull;</td>
+      <td width="85%">
+        <a href="http://www.isical.ac.in/~fire/2011/index.html">FIRE 2011</a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">&bull;</td>
+      <td><a href="http://www.isical.ac.in/~fire/2010/index.html">FIRE
+2010</a></td>
+    </tr>
+    <tr>
+      <td align="center">&bull;</td>
+      <td><a href="http://www.isical.ac.in/~fire/2008/index.html">FIRE
+2008</a></td>
+    </tr>
+  </table>
+
+<h2>Updates</h2>
+</br>
+<a href="https://www.youtube.com/channel/UCPiJM_EjGeost57LjRFVa0Q"><img
+width="100%" src="http://www.isical.ac.in/~fire/images/youtube_channel.jpg"/></a>
+</br>
+
+<a class="twitter-timeline" data-dnt="true"
+href="https://twitter.com/fire_forum"
+data-widget-id="405803542385942528">Tweets by @fire_forum</a>
+    <script>!function(d,s,id){var
+js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<div class="fb-like-box" data-href="https://www.facebook.com/fire.forum"
+data-height="200" data-colorscheme="light" data-show-faces="true"
+data-header="true" data-stream="falsh" data-show-border="falsh"
+data-width="180" data-scroll="true"></div>
+
+
+
+</div>
+
+<div style="clear: both;"> </div>
+
+</div>
+
+<div id="bottom"> Copyright &copy; 2014 IRSI All rights reserved.
+<br>
+<br>
+<font size=1px>
+<!--**********************************************************-->
+This site was last updated 2015-07-03 22:04:09.347021733 +0530
+<!--**********************************************************-->
+</font>
+</div>
+
+</div>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=6355619; 
+var sc_invisible=1; 
+var sc_security="023bb403"; 
+</script>
+
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter.js"></script><noscript><div
+class="statcounter"><a title="free web stats"
+href="http://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="http://c.statcounter.com/6355619/0/023bb403/1/"
+alt="free web stats" ></a></div></noscript>
+<!-- End of StatCounter Code -->
+
+
+</body>
+</html>
+
