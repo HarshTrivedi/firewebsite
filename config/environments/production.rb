@@ -1,6 +1,6 @@
 Rails.application.configure do
 
-  config.action_dispatch.tld_length = 2
+  # config.action_dispatch.tld_length = 2
 
   config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
   config.assets.precompile += %w( .svg .eot .woff .ttf)
