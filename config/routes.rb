@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get   'fire/:permalink'  => 'landings#fire'         , as: :fire_page #, constraints: {subdomain: /fire/ }
 
+  get   'fire/'  => 'landings#fire'  #, constraints: {subdomain: /fire/ }
+
   get   '/'  => 'landings#index' #        , as: :fire_root , constraints: {subdomain: /fire/ }
 
   # Example of regular route:

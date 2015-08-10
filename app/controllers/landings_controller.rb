@@ -12,7 +12,8 @@ class LandingsController < ApplicationController
 
     if @homelink.nil?
       current_year = Year.where(:current => true).last || Year.last
-      @home_link = current_year.home_links.first
+      @homelink = current_year.home_links.first
+      redirect_to fire_page_path(@homelink.path)
     end
 
   	@tabs = @homelink.tabs
