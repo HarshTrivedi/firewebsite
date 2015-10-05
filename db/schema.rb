@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150512052609) do
+ActiveRecord::Schema.define(version: 20151005171917) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,22 +55,48 @@ ActiveRecord::Schema.define(version: 20150512052609) do
     t.integer  "year_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position"
+    t.boolean  "visibility", default: true
   end
 
   add_index "home_links", ["year_id"], name: "index_home_links_on_year_id", using: :btree
 
-  create_table "tabs", force: true do |t|
-    t.text     "content"
-    t.string   "name"
+  create_table "registrations", force: true do |t|
+    t.string   "name",          default: "", null: false
+    t.string   "affiliation"
+    t.string   "nationality",   default: "", null: false
+    t.string   "email",         default: "", null: false
+    t.string   "phone",         default: "", null: false
+    t.boolean  "veg",                        null: false
+    t.integer  "participation",              null: false
+    t.integer  "occupation",                 null: false
+    t.boolean  "acm",                        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "tabs", force: true do |t|
+    t.text     "content"
+    t.string   "name"
+    t.integer  "home_link_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "position"
+    t.boolean  "visibility",   default: true
+    t.boolean  "collapsible",  default: false
+    t.boolean  "default_open", default: true
+    t.boolean  "accordion",    default: false
+  end
+
+  add_index "tabs", ["home_link_id"], name: "index_tabs_on_home_link_id", using: :btree
 
   create_table "years", force: true do |t|
     t.string   "value"
     t.string   "venue"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "duration"
+    t.boolean  "current"
   end
 
 end

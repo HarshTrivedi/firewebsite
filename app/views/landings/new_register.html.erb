@@ -1,0 +1,101 @@
+<div class="col-sm-9" style="padding-left:10%; padding-right:10%">
+	<% if not flash[:error].nil? %>
+		<div class="alert alert-danger" role="alert">
+		  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+		  <span class="sr-only">Error:</span>
+			<%= flash[:error] %>
+		</div>
+	<% elsif not flash[:success].nil?%>
+		<div class="alert alert-success" role="alert">
+		  <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+		  <span class="sr-only">Success:</span>
+			<%= flash[:success] %>
+		</div>
+	<% end %>
+	<form action="register/submit" method="post">
+	  <div class="form-group">
+	    <label for="name">Name</label>
+	    <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+	  </div>
+
+	  <div class="form-group">
+	    <label for="affiliation">Affiliation</label>
+	    <input type="text" class="form-control" id="affiliation" name="affiliation" placeholder="Affiliation">
+	  </div>
+
+	  <div class="form-group">
+	    <label for="nationality">Nationality</label>
+	    <input type="text" class="form-control" id="nationality" name="nationality" placeholder="e.g. Indian">
+	  </div>
+
+	  <div class="form-group">
+	    <label for="email">Email</label>
+	    <input type="email" class="form-control" id="email" name="email" placeholder="user@example.com">
+	  </div>
+
+
+	  <div class="form-group">
+	    <label for="phone">Phone</label>
+	    <input type="text" class="form-control" id="phone" name="phone" placeholder="Mobile/office">
+	  </div>
+
+	  <div class="form-group">
+	    <label for="food">Food preference</label>
+			<select class="form-control" name="food">
+			  <option>Vegetarian</option>
+			  <option>Non-Vegetarian</option>
+			</select>
+    </div>
+
+    <label for="food">Paticipation details</label>
+	  <div class="radio">
+		  <label>
+		    <input type="radio" name="participation" id="participation1" value=1 checked>
+		    Presenting a paper
+		  </label>
+		</div>
+		<div class="radio">
+		  <label>
+		    <input type="radio" name="participation" id="participation2" value=2>
+		    Participating in a track
+		  </label>
+		</div>
+		<div class="radio">
+		  <label>
+		    <input type="radio" name="participation" id="participation3" value=3>
+		    Attending
+		  </label>
+		</div>
+		<div class="radio">
+		  <label>
+		    <input type="radio" name="participation" id="participation4" value=4>
+		    I'm in organizing committee
+		  </label>
+		</div>
+
+	  <div class="form-group">
+	    <label for="oocupation">Occupation details</label>
+			<select class="form-control" name="occupation">
+			  <option>Student</option>
+			  <option>Industry</option>
+			  <option>Academia</option>
+			</select>
+    </div>
+
+    <label for="food">Are you an ACM Member?</label>
+	  <div class="radio">
+		  <label>
+		    <input type="radio" name="acm" id="acm1" value=true checked>
+		    Yes
+		  </label>
+		</div>
+		<div class="radio">
+		  <label>
+		    <input type="radio" name="acm" id="acm2" value=false>
+		    No
+		  </label>
+		</div>
+
+	  <button type="submit" class="btn btn-default">Submit</button>
+	</form>
+</div>
