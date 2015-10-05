@@ -62,4 +62,14 @@ class LandingsController < ApplicationController
     end
   end
 
+  def download    
+    filename = params[:filename]
+    file_extension = params[:format]
+    send_file(
+      "#{Rails.root}/public/#{filename}.#{file_extension}",
+      filename: "#{filename}.#{file_extension}",
+      type: "application/pdf"
+    )
+  end
+
 end
