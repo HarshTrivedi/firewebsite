@@ -66,6 +66,7 @@ class LandingsController < ApplicationController
                              acm: acm,
                              acmnum: acmnum,
                              transid: transid)
+      RegistrationMailer.send_confirmation_mail(params, 0, r.id).deliver
       redirect_to :back, :flash => {:success => "Successfully registered."}
     end
   end
