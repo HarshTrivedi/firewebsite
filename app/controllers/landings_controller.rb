@@ -27,6 +27,7 @@ class LandingsController < ApplicationController
   end
 
   def register_submit
+
     name = params[:name] || ""
     aff = params[:affiliation] || ""
     nation = params[:nationality] || ""
@@ -36,6 +37,8 @@ class LandingsController < ApplicationController
     participate = params[:participation]
     occ = params[:occupation]
     acm = params[:acm]
+    acmnum = params[:acmnum] || nil
+    transid = params[:transid] || ""
 
     if name.empty? ||
      aff.empty? ||
@@ -45,22 +48,28 @@ class LandingsController < ApplicationController
      food.empty? ||
      participate.empty? ||
      occ.empty? ||
-     acm.empty?
+     acm.empty? ||
+     transid.empty?
+
       error_msg = "Please fill all the information."
       redirect_to :back, :flash => {:error => error_msg}
+
     else
       r = Registration.create(name: name,
                              affiliation: aff,
                              nationality: nation,
                              email: email,
                              phone: phone,
-                             veg: (food.eql? "Vegetarian"),
+                             veg: (food.eql? "veg"),
                              participation: participate,
                              occupation: Registration.occupationid(occ),
-                             acm: acm )
+                             acm: acm,
+                             acmnum: acmnum,
+                             transid: transid)
       redirect_to :back, :flash => {:success => "Successfully registered."}
     end
   end
+
 
   def download    
     filename = params[:filename]
