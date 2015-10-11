@@ -1,4 +1,6 @@
 class Registration < ActiveRecord::Base
+
+	belongs_to :year
 	
 	def self.occupationid(occ)
 		case occ
