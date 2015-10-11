@@ -47,9 +47,9 @@ class LandingsController < ApplicationController
      phone.empty? ||
      food.empty? ||
      participate.empty? ||
-     occ.empty? ||
-     acm.empty? ||
-     transid.empty?
+     occ.empty? #||
+     # acm.empty? ||
+     # transid.empty?
 
       error_msg = "Please fill all the information."
       redirect_to :back, :flash => {:error => error_msg}
