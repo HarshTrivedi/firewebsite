@@ -12,4 +12,11 @@ class Registration < ActiveRecord::Base
 			return 0
 		end
 	end
+
+
+	def amount
+		## calculation
+		return 0
+	end
+
 end
