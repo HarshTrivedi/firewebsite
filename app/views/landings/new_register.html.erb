@@ -1,155 +1,169 @@
-<div class="col-lg-6" style="margin-left:10%;">
-    <div>
-        <h2>Registration Form</h2>
-    </div>
+<div class="col-sm-9 contenido">
+    <div class="panel-group" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" >
+                      <h3 class="panel-title" style="color:#174E14; font-size: 25px;"> 
+                      <a ><b>Registration Form</b></a>
+                      
+                      </h3>
+                    </div>
+                    <div class="panel-body">
 
-    <% if not flash[:error].nil? %>
-        <div class="alert alert-danger" role="alert">
-          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-          <span class="sr-only">Error:</span>
-            <%= flash[:error] %>
-        </div>
-    <% elsif not flash[:success].nil?%>
-        <div class="alert alert-success" role="alert">
-          <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
-          <span class="sr-only">Success:</span>
-            <%= flash[:success] %>
-        </div>
-    <% end %>
+                        <% if not flash[:error].nil? %>
+                            <div class="alert alert-danger" role="alert">
+                              <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                              <span class="sr-only">Error:</span>
+                                <%= flash[:error] %>
+                            </div>
+                        <% elsif not flash[:success].nil?%>
+                            <div class="alert alert-success" role="alert">
+                              <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+                              <span class="sr-only">Success:</span>
+                                <%= flash[:success] %>
+                            </div>
+                        <% end %>
 
-    <form id="registrationForm" class="form-horizontal" action="register/submit" method="post">
-    <div class="form-group">
-        <label class="col-md-3 control-label">Full name</label>
-        <div class="col-md-8">
-            <input type="text" class="form-control" name="name" placeholder="e.g. Parth Mehta"/>
-        </div>
-    </div>
+                        <b class="text-center" style="color:red; font-size: 13px;">*All fields are compulsory</b>
+                        <form id="registrationForm" class="form-horizontal" action="/fire/register/submit" method="post">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Full name</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="name" placeholder="e.g. Parth Mehta"/>
+                            </div>
+                        </div>
 
-    <div class="form-group">
-        <label class="col-md-3 control-label">Affiliation</label>
-        <div class="col-md-8">
-            <input type="text" class="form-control" name="affiliation" placeholder="e.g. DA-IICT">
-        </div>
-    </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Affiliation</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="affiliation" placeholder="e.g. DA-IICT">
+                            </div>
+                        </div>
 
-    <div class="form-group">
-        <label class="col-md-3 control-label">Nationality</label>
-        <div class="col-md-8">
-            <input type="text" class="form-control" id="nationality" name="nationality" placeholder="e.g. Indian">
-        </div>
-    </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Nationality</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="nationality" name="nationality" placeholder="e.g. Indian">
+                            </div>
+                        </div>
 
-    <div class="form-group">
-        <label class="col-md-3 control-label">Email address</label>
-        <div class="col-md-8">
-            <input type="text" class="form-control" name="email" />
-        </div>
-    </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Email address</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="email" />
+                            </div>
+                        </div>
 
-    <div class="form-group">
-        <label class="col-md-3 control-label">Phone</label>
-        <div class="col-md-8">
-            <input type="text" class="form-control" id="phone" name="phone" placeholder="Mobile/Home">
-        </div>
-    </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Phone</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Mobile/Home">
+                            </div>
+                        </div>
 
-    <div class="form-group">
-        <label class="col-md-3 control-label">Gender</label>
-        <div class="col-md-6">
-            <div class="radio">
-                <label><input type="radio" name="gender" value="male" /> Male</label>
-            </div>
-            <div class="radio">
-                <label><input type="radio" name="gender" value="female" /> Female</label>
-            </div>
-            <div class="radio">
-                <label><input type="radio" name="gender" value="other" /> Other</label>
-            </div>
-        </div>
-    </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Gender</label>
+                            <div class="col-md-6">
+                                <div class="radio">
+                                    <label><input type="radio" name="gender" value="male" /> Male</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input type="radio" name="gender" value="female" /> Female</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input type="radio" name="gender" value="other" /> Other</label>
+                                </div>
+                            </div>
+                        </div>
 
-    <div class="form-group">
-        <label class="col-md-3 control-label">Food Preference</label>
-        <div class="col-md-6">
-            <div class="radio">
-                <label><input type="radio" name="food" value="veg" /> Vegetarian</label>
-            </div>
-            <div class="radio">
-                <label><input type="radio" name="food" value="nonveg" /> Non-Vegetarian</label>
-            </div>
-        </div>
-    </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Food Preference</label>
+                            <div class="col-md-6">
+                                <div class="radio">
+                                    <label><input type="radio" name="food" value="veg" /> Vegetarian</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input type="radio" name="food" value="nonveg" /> Non-Vegetarian</label>
+                                </div>
+                            </div>
+                        </div>
 
-    <div class="form-group">
-        <label class="col-md-3 control-label">Participation</label>
-        <div class="col-md-6">
-            <div class="radio">
-                <label><input type="radio" name="participation" value=1 /> Presenting a paper</label>
-            </div>
-            <div class="radio">
-                <label><input type="radio" name="participation" value=2 />Participating in a track</label>
-            </div>
-            <div class="radio">
-                <label><input type="radio" name="participation" value=3 />
-                Attending</label>
-            </div>
-            <div class="radio">
-                <label><input type="radio" name="participation" value=4 />I'm in organizing committee</label>
-            </div>
-        </div>
-    </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Participation</label>
+                            <div class="col-md-6">
+                                <div class="radio">
+                                    <label><input type="radio" name="participation" value=1 /> Presenting a paper</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input type="radio" name="participation" value=2 />Participating in a track</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input type="radio" name="participation" value=3 />
+                                    Attending</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input type="radio" name="participation" value=4 />I'm in organizing committee</label>
+                                </div>
+                            </div>
+                        </div>
 
-    <div class="form-group">
-        <label class="col-md-3 control-label">Occupation</label>
-        <div class="col-md-6">
-            <div class="radio">
-                <label><input type="radio" name="occupation" value="Student" /> Student</label>
-            </div>
-            <div class="radio">
-                <label><input type="radio" name="occupation" value="Industry" />Industry</label>
-            </div>
-            <div class="radio">
-                <label><input type="radio" name="occupation" value="Academia" />Academia</label>
-            </div>
-        </div>
-    </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Occupation</label>
+                            <div class="col-md-6">
+                                <div class="radio">
+                                    <label><input type="radio" name="occupation" value="Student" /> Student</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input type="radio" name="occupation" value="Industry" />Industry</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input type="radio" name="occupation" value="Academia" />Academia</label>
+                                </div>
+                            </div>
+                        </div>
 
-    <div class="form-group">
-        <label class="col-md-3 control-label">Are you an ACM Member?</label>
-        <div class="col-md-6">
-            <div class="radio">
-                <label><input type="radio" name="acm" value=false checked/> No</label>
-            </div>
-            <div class="radio">
-                <label><input type="radio" name="acm" value=true/>Yes</label>
-            </div>
-        </div>
-    </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Are you an ACM Member?</label>
+                            <div class="col-md-6">
+                                <div class="radio">
+                                    <label><input type="radio" name="acm" value=false checked/> No</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input type="radio" name="acm" value=true>Yes</label>
+                                </div>
+                            </div>
+                        </div>
 
-    <div style="display: none;" data-topic="acm">
-        <fieldset>
-            <div class="form-group">
-                <label class="col-md-3 control-label">ACM Membership Number</label>
-                <div class="col-md-8">
-                    <input type="text" class="form-control" name="acmnum" placeholder="ACM Membership Number">
-                </div>
-            </div>
-        </fieldset>
-    </div>
+                        <div style="display: none;" data-topic="acm">
+                            <fieldset>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">ACM Membership Number</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" name="acmnum" placeholder="ACM Membership Number">
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
 
-    <div class="form-group">
-        <label class="col-md-3 control-label">Transaction ID</label>
-        <div class="col-md-8">
-            <input type="text" class="form-control" name="transid" placeholder="Transaction ID for your ticket payment">
-        </div>
-    </div>
+                        <div style="" data-topic="transaction_id">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Transaction ID</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="transid" placeholder="Transaction ID for your ticket payment">
+                            </div>
+                        </div>
+                        </div>
 
-    <div class="form-group">
-        <div class="col-md-offset-3 col-md-8">
-            <button type="submit" class="btn">Register</button>
-        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-3 col-md-8">
+                                <button type="submit" class="btn">Register</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    </div>
+              </div>
+        <hr/>
     </div>
-</form>
 </div>
 
 <script type="text/javascript">
@@ -225,6 +239,13 @@ $(document).ready(function() {
                     }
                 }
             },
+            acmnum: {
+                validators: {
+                    notEmpty: {
+                        message: 'The ACM number is required'
+                    }
+                }
+            },
             transid: {
                 validators: {
                     notEmpty: {
@@ -234,27 +255,31 @@ $(document).ready(function() {
             }
         }
     })
-    .find('input[type="radio"][name="acm"]')
-        .on('change', function() {
-            var topic      = 'acm',
-                $container = $('[data-topic="' + topic + '"]');
-            $container.toggle();
+    .on('change', '[name="acm"]' ,function(e) {
+        var topic      = 'acm';
+        $container = $('[data-topic="' + topic + '"]');
+        // $('#registrationForm').formValidation('enableFieldValidators', 'transid', false);
+        if($('input[name=acm]:checked', '#registrationForm').val() == "true"){
+            $('#registrationForm').bootstrapValidator('enableFieldValidators', 'acmnum', true);
+            $container.show();
+        }else{
+            $('#registrationForm').bootstrapValidator('enableFieldValidators', 'acmnum', false);
+            $container.hide();
+        }
+    })
+    .on('change', '[name="participation"]' ,function(e) {
+        var topic      = 'transaction_id';
+        $container = $('[data-topic="' + topic + '"]');
+        if($('input[name=participation]:checked', '#registrationForm').val() == "4"){
+            $('#registrationForm').bootstrapValidator('enableFieldValidators', 'transid', false);
+            $container.hide();
+        }else{
+            $('#registrationForm').bootstrapValidator('enableFieldValidators', 'transid', true);
+            $container.show();
+        }
+    });
 
-            // var display = $container.css('display');
-            // switch (true) {
-            //     case ('block' == display):
-            //         $('#registrationForm').bootstrapValidator('addField', 'acmnum', {
-            //             validators: {
-            //                 notEmpty: {
-            //                     message: 'Please enter ACM membership Number'
-            //                 }
-            //             }
-            //         });
-            //         break;
-            //     case ('none' == display):
-            //         $('#registrationForm').bootstrapValidator('removeField', 'acmnum');
-            //         break;
-            // }
-        });
 });
 </script>
+
+
