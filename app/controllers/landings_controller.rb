@@ -30,7 +30,7 @@ class LandingsController < ApplicationController
 
     name = params[:name] || ""
     aff = params[:affiliation] || ""
-    nation = params[:nationality] || ""
+    nation = params[:registration][:nationality] || ""
     email = params[:email] || ""
     phone = params[:phone] || ""
     food = params[:food]
@@ -71,7 +71,7 @@ class LandingsController < ApplicationController
                              )
       current_year = Year.where(:current => true).last || Year.last
       registration.year = current_year
-      registration.registration_number = "FIRE#{current_year.value}-#{registration.id.to_s.rjust(4, '0')}"
+      registration.registration_number = "FIRE#{current_year.value}G#{registration.id.to_s.rjust(4, '0')}"
       registration.save
       RegistrationMailer.new_registration_notification_mail( registration ).deliver
       redirect_to "/fire/home", :flash => {:success => "Successfully registered. We will mail you on #{registration.email} once the registration is verified."}
