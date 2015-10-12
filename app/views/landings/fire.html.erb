@@ -1,4 +1,17 @@
 <div class="col-sm-9 contenido">
+    <% if not flash[:error].nil? %>
+        <div class="alert alert-danger" role="alert">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+          <span class="sr-only">Error:</span>
+            <%= flash[:error] %>
+        </div>
+    <% elsif not flash[:success].nil?%>
+        <div class="alert alert-success" role="alert">
+          <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+          <span class="sr-only">Success:</span>
+            <%= flash[:success] %>
+        </div>
+    <% end %>
 	<% accordian_tabs = @tabs.visible.accordion %>
 
 	<% tabs = @tabs.visible - accordian_tabs %>
