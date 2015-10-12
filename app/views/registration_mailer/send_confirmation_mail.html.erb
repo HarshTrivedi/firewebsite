@@ -14,15 +14,13 @@
 		<td colspan="1">
 			<b>Registration Number:</b>
 		</td>
-		<td colspan="5">
+		<td colspan="1">
 			<%= @registration.registration_number %>
 		</td>
-	</tr>
-	<tr>
 		<td colspan="1">
 			<b>Date and Time:</b>
 		</td>
-		<td colspan="5">
+		<td colspan="1">
 			<%= @registration.created_at %>
 		</td>
 	</tr>
@@ -30,45 +28,71 @@
 		<td colspan="1">
 			<b>Name: </b>
 		</td>
-		<td colspan="5">
+		<td colspan="1">
 			<%= @registration.name %>
+		</td>	
+		<td colspan="1">
+			<b>Email Id: </b>
 		</td>
+		<td colspan="1">
+			<%= @registration.email %>
+		</td>	
 	</tr>
 	<tr>
 		<td colspan="1">
 			<b>Affiliation:</b>
 		</td>
-		<td colspan="5">
+		<td colspan="1">
 			<%= @registration.affiliation %>
+		</td>	
+		<td colspan="1">
+			<b>Contact Number:</b>
 		</td>
+		<td colspan="1">
+			<%= @registration.phone %>
+		</td>	
 	</tr>
 	<tr>
 		<td colspan="1">
 			<b>Occupation:</b>
 		</td>
-		<td colspan="5">
-			<%= @registration.occupation %>
+		<td colspan="1">
+			<%if @registration.occupation == 1%>
+				Student
+			<%elsif @registration.occupation == 2%>
+				Industry
+			<%elsif  @registration.occupation == 3%>
+				Academia
+			<%end %>
 		</td>
-	</tr>
-	<tr>
 		<td colspan="1">
 			<b>Payment Type:</b>
 		</td>
-		<td colspan="5">
+		<td colspan="1">
 			<%= @registration.registration_type %>
 		</td>
 	</tr>
 	<tr>
 		<td colspan="1">
+			<b>ACM Membership:</b>
+		</td>
+		<td colspan="1">
+			<%if @registration.acm? %>
+				<%= @registration.acmnum %>
+			<%else%>
+				-
+			<%end%>
+		</td>
+		<td colspan="1">
 			<b>Amount:</b>
 		</td>
-		<td colspan="5">
+		<td colspan="1">
 			<%= @registration.amount %>
 		</td>
 	</tr>
-
 </tbody>
 </table>
+
 
 </div>
 
