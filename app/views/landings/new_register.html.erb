@@ -9,20 +9,6 @@
                     </div>
                     <div class="panel-body">
 
-                        <% if not flash[:error].nil? %>
-                            <div class="alert alert-danger" role="alert">
-                              <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                              <span class="sr-only">Error:</span>
-                                <%= flash[:error] %>
-                            </div>
-                        <% elsif not flash[:success].nil?%>
-                            <div class="alert alert-success" role="alert">
-                              <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
-                              <span class="sr-only">Success:</span>
-                                <%= flash[:success] %>
-                            </div>
-                        <% end %>
-
                         <b class="text-center" style="color:red; font-size: 13px;">*All fields are compulsory</b>
                         <form id="registrationForm" class="form-horizontal" action="/fire/register/submit" method="post">
                         <div class="form-group">
@@ -42,9 +28,11 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label">Nationality</label>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" id="nationality" name="nationality" placeholder="e.g. Indian">
+                                <%= country_select("registration", "nationality", { selected: "IN" }, { class: 'form-control' }) %>                                
                             </div>
                         </div>
+
+
 
                         <div class="form-group">
                             <label class="col-md-3 control-label">Email address</label>

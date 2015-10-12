@@ -72,3 +72,5 @@ gem "font-awesome-rails"
 gem 'nprogress-rails'
 gem 'pjax_rails'
 gem 'prawn'
+gem 'simple_form'
+gem 'country_select'
