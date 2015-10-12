@@ -1,4 +1,4 @@
-<div style="border-style: solid; padding: 10px ; width: 60%">
+<div style="border-style: solid; padding: 10px ; width: 90%">
 
 <div style="padding: 10px;">
 	<img style="float: left" src="fire-logo.jpg" alt="FIRE Logo" height="40" width="140" border="0" class="CToWUd">
@@ -18,10 +18,10 @@
 			<%= @registration.registration_number %>
 		</td>
 		<td colspan="1">
-			<b>Date and Time:</b>
+			<b>Date :</b>
 		</td>
 		<td colspan="1">
-			<%= @registration.created_at %>
+			<%= @registration.created_at.strftime("%B %d, %Y") %>
 		</td>
 	</tr>
 	<tr>
