@@ -3,6 +3,20 @@ ActiveAdmin.register Registration do
 	belongs_to :year , :optional => true
   	permit_params :approved
 
+	controller do
+
+	      def update
+	        @registration = Registration.find_by_id(params[:id])
+	        @registration.update_attributes(permitted_params[:registration])
+
+		    if params[:registration][:approved] == "1"
+			  RegistrationMailer.send_confirmation_mail( @registration ).deliver
+	        end
+	        update!
+	      end
+
+	end
+
 	index do
 	  selectable_column
 	  column :registration_number
