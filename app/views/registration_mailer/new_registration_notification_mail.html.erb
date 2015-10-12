@@ -18,10 +18,10 @@ You have received a new registration request with following details:
 	</tr>
 	<tr>
 		<td colspan="1">
-			<b>Registration ID:</b>
+			<b>Registration Number:</b>
 		</td>
 		<td colspan="5">
-			@registration.registration_id
+			<%= @registration.registration_number %>
 		</td>
 	</tr>
 	<tr>
@@ -29,7 +29,7 @@ You have received a new registration request with following details:
 			<b>Date and Time:</b>
 		</td>
 		<td colspan="5">
-			@registration.date
+			<%= @registration.created_at %>
 		</td>
 	</tr>
 	<tr>
@@ -37,7 +37,7 @@ You have received a new registration request with following details:
 			<b>Name: </b>
 		</td>
 		<td colspan="5">
-			@registration.name
+			<%= @registration.name %>
 		</td>
 	</tr>
 	<tr>
@@ -45,7 +45,7 @@ You have received a new registration request with following details:
 			<b>Affiliation:</b>
 		</td>
 		<td colspan="5">
-			@registration.affiliation
+			<%= @registration.affiliation %>
 		</td>
 	</tr>
 	<tr>
@@ -53,7 +53,7 @@ You have received a new registration request with following details:
 			<b>Occupation:</b>
 		</td>
 		<td colspan="5">
-			@registration.occupation
+			<%= @registration.occupation %>
 		</td>
 	</tr>
 	<tr>
@@ -61,7 +61,7 @@ You have received a new registration request with following details:
 			<b>Payment Type:</b>
 		</td>
 		<td colspan="5">
-			@registration.payment_type
+			<%= @registration.registration_type %>
 		</td>
 	</tr>
 	<tr>
@@ -69,7 +69,7 @@ You have received a new registration request with following details:
 			<b>Amount:</b>
 		</td>
 		<td colspan="5">
-			@registration.amount
+			<%= @registration.amount %>
 		</td>
 	</tr>
 

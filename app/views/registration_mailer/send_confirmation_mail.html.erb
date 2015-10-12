@@ -12,10 +12,10 @@
 	</tr>
 	<tr>
 		<td colspan="1">
-			<b>Registration ID:</b>
+			<b>Registration Number:</b>
 		</td>
 		<td colspan="5">
-			@registration.registration_id
+			<%= @registration.registration_number %>
 		</td>
 	</tr>
 	<tr>
@@ -23,7 +23,7 @@
 			<b>Date and Time:</b>
 		</td>
 		<td colspan="5">
-			@registration.date
+			<%= @registration.created_at %>
 		</td>
 	</tr>
 	<tr>
@@ -31,7 +31,7 @@
 			<b>Name: </b>
 		</td>
 		<td colspan="5">
-			@registration.name
+			<%= @registration.name %>
 		</td>
 	</tr>
 	<tr>
@@ -39,7 +39,7 @@
 			<b>Affiliation:</b>
 		</td>
 		<td colspan="5">
-			@registration.affiliation
+			<%= @registration.affiliation %>
 		</td>
 	</tr>
 	<tr>
@@ -47,7 +47,7 @@
 			<b>Occupation:</b>
 		</td>
 		<td colspan="5">
-			@registration.occupation
+			<%= @registration.occupation %>
 		</td>
 	</tr>
 	<tr>
@@ -55,7 +55,7 @@
 			<b>Payment Type:</b>
 		</td>
 		<td colspan="5">
-			@registration.payment_type
+			<%= @registration.registration_type %>
 		</td>
 	</tr>
 	<tr>
@@ -63,13 +63,12 @@
 			<b>Amount:</b>
 		</td>
 		<td colspan="5">
-			@registration.amount
+			<%= @registration.amount %>
 		</td>
 	</tr>
 
 </tbody>
 </table>
-
 
 </div>
 
