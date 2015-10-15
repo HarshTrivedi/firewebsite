@@ -30,7 +30,7 @@ class LandingsController < ApplicationController
 
     name = params[:name] || ""
     aff = params[:affiliation] || ""
-    nation = params[:nationality] || ""
+    nation = params[:registration][:nationality] || ""
     email = params[:email] || ""
     phone = params[:phone] || ""
     food = params[:food]
@@ -47,15 +47,15 @@ class LandingsController < ApplicationController
      phone.empty? ||
      food.empty? ||
      participate.empty? ||
-     occ.empty? ||
-     acm.empty? ||
-     transid.empty?
+     occ.empty? #||
+     # acm.empty? ||
+     # transid.empty?
 
       error_msg = "Please fill all the information."
       redirect_to :back, :flash => {:error => error_msg}
 
     else
-      r = Registration.create(name: name,
+      registration = Registration.create(name: name,
                              affiliation: aff,
                              nationality: nation,
                              email: email,
@@ -65,9 +65,16 @@ class LandingsController < ApplicationController
                              occupation: Registration.occupationid(occ),
                              acm: acm,
                              acmnum: acmnum,
-                             transid: transid)
-      RegistrationMailer.send_confirmation_mail(params, 0, r.id).deliver
-      redirect_to :back, :flash => {:success => "Successfully registered."}
+                             transid: transid,
+                             approved: false,
+                             registration_type: "NEFT"
+                             )
+      current_year = Year.where(:current => true).last || Year.last
+      registration.year = current_year
+      registration.registration_number = "FIRE#{current_year.value}G#{registration.id.to_s.rjust(4, '0')}"
+      registration.save
+      RegistrationMailer.new_registration_notification_mail( registration ).deliver
+      redirect_to "/fire/home", :flash => {:success => "Successfully registered. We will mail you the receipt on #{registration.email} once the registration is verified."}
     end
   end
 

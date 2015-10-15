@@ -1,4 +1,6 @@
 class Registration < ActiveRecord::Base
+
+	belongs_to :year
 	
 	def self.occupationid(occ)
 		case occ
@@ -12,4 +14,11 @@ class Registration < ActiveRecord::Base
 			return 0
 		end
 	end
+
+
+	def amount
+		## calculation
+		return 0
+	end
+
 end

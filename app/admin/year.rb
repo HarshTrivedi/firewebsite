@@ -16,6 +16,9 @@ ActiveAdmin.register Year do
 	      column :home_links do |year|
 	          link_to( "home_links" , admin_year_home_links_path( year )  )
 	      end
+	      column :registrations do |year|
+	          link_to( "registrations" , admin_year_registrations_path( year )  )
+	      end
 	      actions
 	end
 
