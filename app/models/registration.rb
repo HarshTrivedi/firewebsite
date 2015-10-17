@@ -22,6 +22,9 @@ class Registration < ActiveRecord::Base
 		if self.nationality != "IN"
 			return "250 USD"
 		end
+		if self.participation == 4
+			return "Free"
+		end
 
 		if self.acm # IS ACM Member
 			if self.occupation == 1 # Student
