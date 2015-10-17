@@ -27,9 +27,30 @@ ActiveAdmin.register Registration do
 	  column :phone
 	  # column "ACM member ?", :acm
 	  column "ACM membership number", :acmnum
-	  column :phone
+	  column :participation do |registration|
+	  	if registration.participation == 1
+	  		"Presenting a paper"
+	  	elsif registration.participation == 2
+	  		"Participating in a track"
+	  	elsif registration.participation == 3
+	  		"Attending"
+	  	elsif registration.participation == 4
+	  		"I'm in organizing committee"
+	  	end	  			  			  		
+	  end
+	  column :occupation do |registration|
+	  	if registration.occupation == 1
+	  		"Student"
+	  	elsif registration.occupation == 2
+	  		"Industry"
+	  	elsif registration.occupation == 3
+	  		"Academia"
+	  	end	  			  			  		
+	  end
+
 	  column :approved
 	  column :registration_type
+	  column :tshirt_preference
       column :created_at
 	  actions
 	end
