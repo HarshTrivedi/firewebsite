@@ -26,9 +26,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="col-md-3 control-label">Nationality</label>
+                            <label class="col-md-3 control-label">Country</label>
                             <div class="col-md-8">
-                                <%= country_select("registration", "nationality", { selected: "IN" }, { class: 'form-control' }) %>                                
+                                <%= country_select("registration", "country", { selected: "IN" }, { class: 'form-control' }) %>                                
                             </div>
                         </div>
 
@@ -118,12 +118,51 @@
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Want T-Shirt?</label>
+                            <div class="col-md-6">
+                                <div class="radio">
+                                    <label><input type="radio" name="t-shirt" value=false checked/> No</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input type="radio" name="t-shirt" value=true>Yes</label>
+                                </div>
+                            </div>
+                        </div>
+
+
                         <div style="display: none;" data-topic="acm">
                             <fieldset>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">ACM Membership Number</label>
                                     <div class="col-md-8">
                                         <input type="text" class="form-control" name="acmnum" placeholder="ACM Membership Number">
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div style="display: none;" data-topic="t-shirt-preference">
+                            <fieldset>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label"> T-Shirt Preference</label>
+                                    <div class="col-md-8">
+
+                                        <div class="radio">
+                                            <label><input type="radio" name="t-shirt-preference" value="small">Small</label>
+                                        </div>
+                                        <div class="radio">
+                                        <label><input type="radio" name="t-shirt-preference" value="medium">Medium</label>
+                                        </div>
+                                        <div class="radio">
+                                        <label><input type="radio" name="t-shirt-preference" value="large">Large</label>
+                                        </div>
+                                        <div class="radio">
+                                        <label><input type="radio" name="t-shirt-preference" value="XL">XL</label>
+                                        </div>
+                                        <div class="radio">
+                                        <label><input type="radio" name="t-shirt-preference" value="XXL">XXL</label>
+                                        </div>
                                     </div>
                                 </div>
                             </fieldset>
@@ -169,10 +208,10 @@ $(document).ready(function() {
                     }
                 }
             },
-            nationality: {
+            country: {
                 validators: {
                     notEmpty: {
-                        message: 'Nationality is required and cannot be empty'
+                        message: 'Country is required and cannot be empty'
                     }
                 }
             },
@@ -249,6 +288,15 @@ $(document).ready(function() {
             $container.show();
         }else{
             $('#registrationForm').bootstrapValidator('enableFieldValidators', 'acmnum', false);
+            $container.hide();
+        }
+    })
+    .on('change', '[name="t-shirt"]' ,function(e) {
+        var topic      = 't-shirt-preference';
+        $container = $('[data-topic="' + topic + '"]');
+        if($('input[name=t-shirt]:checked', '#registrationForm').val() == "true"){            
+            $container.show();
+        }else{
             $container.hide();
         }
     })

@@ -30,7 +30,7 @@ class LandingsController < ApplicationController
 
     name = params[:name] || ""
     aff = params[:affiliation] || ""
-    nation = params[:registration][:nationality] || ""
+    country = params[:registration][:country] || ""
     email = params[:email] || ""
     phone = params[:phone] || ""
     food = params[:food]
@@ -39,10 +39,16 @@ class LandingsController < ApplicationController
     acm = params[:acm]
     acmnum = params[:acmnum] || nil
     transid = params[:transid] || ""
+    
+    if params["t-shirt"] == "true"
+      tshirt_preference = params["t-shirt-preference"]
+    else
+      tshirt_preference = nil    
+    end
 
     if name.empty? ||
      aff.empty? ||
-     nation.empty? ||
+     country.empty? ||
      email.empty? ||
      phone.empty? ||
      food.empty? ||
@@ -57,7 +63,7 @@ class LandingsController < ApplicationController
     else
       registration = Registration.create(name: name,
                              affiliation: aff,
-                             nationality: nation,
+                             nationality: country,
                              email: email,
                              phone: phone,
                              veg: (food.eql? "veg"),
@@ -67,7 +73,8 @@ class LandingsController < ApplicationController
                              acmnum: acmnum,
                              transid: transid,
                              approved: false,
-                             registration_type: "NEFT"
+                             registration_type: "NEFT",
+                             tshirt_preference: tshirt_preference
                              )
       current_year = Year.where(:current => true).last || Year.last
       registration.year = current_year
