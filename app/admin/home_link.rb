@@ -64,7 +64,7 @@ ActiveAdmin.register HomeLink do
   form do |f|
       f.semantic_errors *f.object.errors.keys
       f.inputs  "Home Link Details" do
-          f.input :year_id, :as => :hidden ,  input_html: { :value => f.object.year_id }
+          f.input :year_id,  input_html: { :value => f.object.year_id }
           f.input :name 
           f.input :path 
           f.input :visibility , :as => :boolean
