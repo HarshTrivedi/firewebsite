@@ -20,7 +20,7 @@ class Registration < ActiveRecord::Base
 
 		## calculation 
 		if self.nationality != "IN"
-			return "250 USD"
+			return "300 USD"
 		end
 		if self.participation == 4
 			return "Free"
@@ -30,17 +30,17 @@ class Registration < ActiveRecord::Base
 			if self.occupation == 1 # Student
 				return "3900 INR"
 			elsif self.occupation == 2 # Industry
-				return "5000 INR"
+				return "15500 INR"
 			elsif self.occupation == 3 # Academia
-				return "5500 INR"
+				return "6500 INR"
 			end				
 		else # IS Not ACM Member
 			if self.occupation == 1 # Student
 				return "4900 INR"
 			elsif self.occupation == 2 # Industry
-				return "6000 INR"
+				return "15500 INR"
 			elsif self.occupation == 3 # Academia
-				return "12000 INR"
+				return "8500 INR"
 			end				
 		end
 
