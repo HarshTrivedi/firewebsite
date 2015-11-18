@@ -1,5 +1,5 @@
 ActiveAdmin.register Registration do
-	menu false
+	menu label: "Registrations" , :priority => 4
 	belongs_to :year , :optional => true
   	permit_params :approved
 
