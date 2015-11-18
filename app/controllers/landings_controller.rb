@@ -81,7 +81,7 @@ class LandingsController < ApplicationController
       registration.registration_number = "FIRE#{current_year.value}G#{registration.id.to_s.rjust(4, '0')}"
       registration.save
       RegistrationMailer.new_registration_notification_mail( registration ).deliver
-      redirect_to "/fire/home", :flash => {:success => "Successfully registered. You will receive the receipt on #{registration.email} after the registration is approved by us. The approval process will take around a week."}
+      redirect_to "/fire/home", :flash => {:success => "Your registration has been confirmed. You will receive the receipt on #{registration.email} after your transaction is verified by us. The verification process will take around a week."}
     end
   end
 
