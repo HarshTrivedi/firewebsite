@@ -20,43 +20,42 @@ ActiveAdmin.register Registration do
 	index do
 	  selectable_column
 	  column :registration_number
+      column :created_at
 	  column :name
-	  column :affiliation
-	  column :nationality
-	  column :email
-	  column :phone
-	  # column "ACM member ?", :acm
-	  column "ACM membership number", :acmnum
-	  column :participation do |registration|
-	  	if registration.participation == 1
-	  		"Presenting a paper"
-	  	elsif registration.participation == 2
-	  		"Participating in a track"
-	  	elsif registration.participation == 3
-	  		"Attending"
-	  	elsif registration.participation == 4
-	  		"I'm in organizing committee"
-	  	end	  			  			  		
-	  end
-	  column :occupation do |registration|
-	  	if registration.occupation == 1
-	  		"Student"
-	  	elsif registration.occupation == 2
-	  		"Industry"
-	  	elsif registration.occupation == 3
-	  		"Academia"
-	  	end	  			  			  		
-	  end
+
+		column :occupation do |registration|
+			if registration.occupation == 1
+				"Student"
+			elsif registration.occupation == 2
+				"Industry"
+			elsif registration.occupation == 3
+				"Academia"
+			end
+		end
+
+		column "ACM member ?", :acm
+
+		column :participation do |registration|
+			if registration.participation == 1
+				"Presenting a paper"
+			elsif registration.participation == 2
+				"Participating in a track"
+			elsif registration.participation == 3
+				"Attending"
+			elsif registration.participation == 4
+				"I'm in organizing committee"
+			end
+		end
 
 	  column :approved
-	  column :registration_type
-	  column :tshirt_preference
-      column :created_at
+	  column :amount
+	  column :dbamount
 	  actions
 	end
 
 	form do |f|
 	  f.inputs "Approval Permission" do
+	    f.input :dbamount
 	    f.input :approved
 	  end
 	  f.actions

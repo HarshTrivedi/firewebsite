@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151008215644) do
+ActiveRecord::Schema.define(version: 20151128125820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,19 +62,25 @@ ActiveRecord::Schema.define(version: 20151008215644) do
   add_index "home_links", ["year_id"], name: "index_home_links_on_year_id", using: :btree
 
   create_table "registrations", force: true do |t|
-    t.string   "name",          default: "", null: false
+    t.string   "name",                default: "",    null: false
     t.string   "affiliation"
-    t.string   "nationality",   default: "", null: false
-    t.string   "email",         default: "", null: false
-    t.string   "phone",         default: "", null: false
-    t.boolean  "veg",                        null: false
-    t.integer  "participation",              null: false
-    t.integer  "occupation",                 null: false
-    t.boolean  "acm",                        null: false
+    t.string   "nationality",         default: "",    null: false
+    t.string   "email",               default: "",    null: false
+    t.string   "phone",               default: "",    null: false
+    t.boolean  "veg",                                 null: false
+    t.integer  "participation",                       null: false
+    t.integer  "occupation",                          null: false
+    t.boolean  "acm",                                 null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "acmnum"
     t.string   "transid"
+    t.integer  "year_id"
+    t.boolean  "approved",            default: false
+    t.string   "registration_number"
+    t.string   "registration_type"
+    t.string   "tshirt_preference"
+    t.integer  "dbamount",            default: 0
   end
 
   create_table "tabs", force: true do |t|
