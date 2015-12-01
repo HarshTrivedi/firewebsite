@@ -1,6 +1,6 @@
 class AddAmountInRegistrations < ActiveRecord::Migration
   def up
-  	add_column :registrations, :dbamount, :integer, default: 0
+  	add_column :registrations, :dbamount, :string, default: ""
   end
 
   def down

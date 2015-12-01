@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 20151128125820) do
     t.string   "registration_number"
     t.string   "registration_type"
     t.string   "tshirt_preference"
-    t.integer  "dbamount",            default: 0
+    t.string   "dbamount",            default: ""
   end
 
   create_table "tabs", force: true do |t|
