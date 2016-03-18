@@ -19,6 +19,12 @@ ActiveAdmin.register Year do
 	      column :registrations do |year|
 	          link_to( "registrations" , admin_year_registrations_path( year )  )
 	      end
+	      column :sponsors do |year|
+	          link_to( "sponsors" , admin_year_sponsors_path( year )  )
+	      end
+	      column :publishers do |year|
+	          link_to( "publishers" , admin_year_publishers_path( year )  )
+	      end
 	      actions
 	end
 
