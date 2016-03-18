@@ -3,24 +3,36 @@ class LandingsController < ApplicationController
 
   def index
     current_year = Year.where(:current => true).last || Year.last
+    year_value = current_year.value
     home_link = current_year.home_links.first
-    redirect_to fire_page_path(home_link.path)
+    redirect_to year_wise_fire_page_path(year_value, home_link.path)
   end
 
   def fire
   	permalink = params[:permalink]
-  	@homelink = HomeLink.find_by_path(permalink)  	
+    year_value = params[:year]
+    current_year = Year.where(:current => true).last || Year.last
+
+    if not year_value.nil?
+      @year = Year.where(:value => year_value.to_s).first
+      @year = current_year if @year.nil?
+    else
+      year_value = year.value
+      @year = current_year
+    end
+
+  	@homelink = @year.home_links.find_by_path(permalink)  	
 
     if @homelink.nil?
-      current_year = Year.where(:current => true).last || Year.last
       @homelink = current_year.home_links.first
-      redirect_to fire_page_path(@homelink.path)
+      redirect_to year_wise_fire_page_path(year_value, @homelink.path)
     end
 
   	@tabs = @homelink.tabs
   	ap "permalink : #{permalink}"
   	ap "homelink  : #{@homelink}"
   	ap "tabs      : #{@tabs}"
+    ap "year      : #{@year}"
   end
 
   def new_register
