@@ -68,14 +68,15 @@
                 <div class="col-sm-3">
                   <ul class="nav nav-pills nav-stacked">
                         <% home_links = current_year.home_links.visible %>
+                        <% year_value = current_year.value%>
                         <%for home_link in home_links %>
-                            <%if (current_page?("/fire/#{home_link.path}") ) or ( current_page?("/") and home_link == home_links.first ) %>
+                            <%if (current_page?("/fire/#{year_value}/#{home_link.path}") ) or ( current_page?("/") and home_link == home_links.first ) %>
                               <li class="active">
-                                  <a href="/fire/<%= home_link.path %>"> <%= raw home_link.name %></a>
+                                  <a href="/fire/<%=year_value%>/<%= home_link.path %>"> <%= raw home_link.name %></a>
                               </li>
                             <%else%>
                               <li>
-                                  <a href="/fire/<%= home_link.path %>">
+                                  <a href="/fire/<%=year_value%>/<%= home_link.path %>">
                                     <font style="color:#174E14">
                                     <%= raw home_link.name %>
                                     </font>
@@ -193,7 +194,7 @@
                 <% number_of_sponsors = current_year.sponsors.visible.size %> 
                 <% for sponsor in current_year.sponsors.visible %>
                   <% year = current_year.value %>
-                  <img src="/assets/sponsors/<%=year%>/<%= sponsor.image_name %>" height="<%=sponsor.image_height%>px" width="<%=sponsor.image_width%>px" ><br/>
+                  <img src="/assets/sponsors/<%=year%>/<%= sponsor.image_name %>" height="<%=sponsor.image_height%>" width="<%=sponsor.image_width%>" ><br/>
                   <a href="<%= sponsor.external_link %>">
                     <i> <%= sponsor.name %> </i><br/>
                   </a>
@@ -212,7 +213,7 @@
 
                 <% number_of_publishers = current_year.publishers.visible.size %>
                 <% for publisher in current_year.publishers.visible %>
-                  <img src="/assets/publishers/<%=year%>/<%= publisher.image_name %>" width="<%=publisher.image_width%>px" ><br/>
+                  <img src="/assets/publishers/<%=year%>/<%= publisher.image_name %>" width="<%=publisher.image_width%>" height="<%=publisher.image_height%>" ><br/>
                   <a href="<%= publisher.external_link %>">
                     <i> <%= publisher.name %> </i><br/>
                   </a>
