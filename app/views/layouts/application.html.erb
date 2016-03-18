@@ -27,7 +27,7 @@
           <div class="row">
             <div class="col-sm-2 hidden-xs">
                <div class="text-center" style="position: relative; left: 3vw;">
-               <img src="/assets/fire-transparent-logo.png" height="100px" width="180px"></img>             
+               <img src="/assets/title_logos/title_left-<%=current_year.value%>.png" height="100px" width="180px"></img>             
                </div>
             </div>
             <div class="col-sm-8 col-xs-12" >
@@ -45,7 +45,7 @@
             </div>
             <div class="col-sm-2 hidden-xs">
                <div class="text-center" style="position: relative; right: 3vw;">
-               <img src="/assets/irsi1.gif" height="100px" width="170px"></img>                
+               <img src="/assets/title_logos/title_right-<%=current_year.value%>.png" height="100px" width="170px"></img>                
                </div>
             </div>
           <div id="social">
@@ -127,6 +127,13 @@
                       </li>
                           <div id="collapse_fire" class="panel-collapse in collapse">
                           <ul class="nav nav-pills nav-stacked active">
+                          <% current_year_value = current_year.value.to_i %>
+                          <% for year_value in (2015..(current_year_value-1))%>
+                            <% year = Year.where(:value => year_value.to_s ).first %>
+                            <li>
+                                 <a href="http://fire.irsi.res.in/fire/<%=year_value%>/home" target="_blank" > <font style="color:#174E14">&nbsp &nbsp &nbsp &nbsp<i class="fa fa-arrow-right"></i> &nbsp <b> <%=year_value%> </b> </font></a>
+                            </li>
+                          <% end %>
                           <li>
                                <a href="http://www.isical.ac.in/~fire/2014/index.html" target="_blank" > <font style="color:#174E14">&nbsp &nbsp &nbsp &nbsp<i class="fa fa-arrow-right"></i> &nbsp <b> 2014 </b> </font></a>
                           </li>
@@ -183,64 +190,41 @@
                 <ul class="nav nav-pills nav-stacked social-nav">
                     <li><h4 style="color:#174E14;" > <b>Sponsors </b></h4></li>
                 </ul>
+                <% number_of_sponsors = current_year.sponsors.visible.size %> 
+                <% for sponsor in current_year.sponsors.visible %>
+                  <% year = current_year.value %>
+                  <img src="/assets/sponsors/<%=year%>/<%= sponsor.image_name %>" height="<%=sponsor.image_height%>px" width="<%=sponsor.image_width%>px" ><br/>
+                  <a href="<%= sponsor.external_link %>">
+                    <i> <%= sponsor.name %> </i><br/>
+                  </a>
+                  <hr/>
+                <% end %>
 
-                <img src="/assets/acm_sigir.png" height="130px" width="150px" ><br/>
-                <a href="http://sigir.org/">
-                  <i>ACM SIGIR</i><br/>
-                </a>
-                <hr/>
-
-                <img src="/assets/ashok.jpg" width="60px"  ><br/>
-                <a href="http://deity.gov.in/" >
-                  <i>DeitY, Government of India</i><br/>
-                </a>
-                <hr/>
-
-                <img src="/assets/acm_gandhinagar.png" width="60px"  ><br/>
-                <a href="#" >
-                  <i>ACM Chapter, Gandhinagar</i><br/>
-                </a>
-                <hr/>
-
-                <img src="/assets/flipkart_logo.png" height="60px"  ><br/>
-                <a href="https://www.flipkart.com" >
-                  <i>Flipkart.com</i><br/>
-                </a>
-                <hr/>
-
-                <img src="/assets/microsoft.jpg" height="35px" ><br/>
-                <a href="https://www.microsoft.com/" >
-                  <i>Microsoft Corporation</i><br/>
-                </a>
-
-                <hr/>
+                <%if number_of_sponsors < 1%>
+                  <br/>
+                  Coming Soon ...
+                  <hr/>
+                <%end%>
 
                 <ul class="nav nav-pills nav-stacked social-nav">
                     <li><h4 style="color:#174E14;" > <b>Publishers</b></h4></li>
                 </ul>
-                
-                <img src="/assets/ACM_DAIICT_updated.jpg" width="150px" height="75px"><br/>
-                <a  target="_blank" href="http://dl.acm.org/citation.cfm?id=2838706" >
-                  <i>Conference Proceedings</i><br/>
-                </a>
-                <hr/>
 
-<!--                 <img src="http://ceur-ws.org/CEUR-WS-logo.png" height="50" width="150px" ><br/>
-                <a  target="_blank" href="http://ceur-ws.org/">
-                  <i>Workshop Proceedings</i><br/>
-                </a>
-                <hr/>
- --><!-- 
-                <ul class="nav nav-pills nav-stacked social-nav">
-                    <li><h4 style="color:#174E14;" > <b> Social </b></h4></li>
-                    <li>
-                    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/fire_forum"  data-widget-id="405803542385942528">Tweets by @fire_forum</a>
-                    <script type="text/javascript">document.getElementsByTagName("html")[0].setAttribute("lang", "en");</script>
-                    <script src="//platform.twitter.com/widgets.js"></script>
-                    </li>
-                </ul> -->
+                <% number_of_publishers = current_year.publishers.visible.size %>
+                <% for publisher in current_year.publishers.visible %>
+                  <img src="/assets/publishers/<%=year%>/<%= publisher.image_name %>" width="<%=publisher.image_width%>px" ><br/>
+                  <a href="<%= publisher.external_link %>">
+                    <i> <%= publisher.name %> </i><br/>
+                  </a>
+                  <hr/>
+                <% end %>
 
-                <!-- <hr> -->
+                <%if number_of_publishers < 1%>
+                  <br/>
+                  Coming Soon ...
+                  <hr/>
+                <%end%>
+
 
                 </div>
             </div>
@@ -264,22 +248,22 @@
 <!--             <img src="/assets/isi.png" class="img-responsive" height="95" width="95"> -->
                 <div style="font-size:15px;" class="text-center">
                   <b>
-                  <p>FIRE 2015, DAIICT, GANDHINAGAR</p>
+                  <p>FIRE <%= current_year.value %>, DAIICT, GANDHINAGAR</p>
                   <font style="font-size:13px;" >
-                    <p style="line-height: 50%;">Copyright © 2015 IRSI</p>
+                    <p style="line-height: 50%;">Copyright © <%= current_year.value %> IRSI</p>
                     <p style="line-height: 50%;">All rights reserved</p>
                   </font>
                   </b>
                 </div>
           </div>
           <div class="span-2 sp">
-            <a href="http://www.daiict.ac.in/"><img src="/assets/da.png" class="img-responsive"  height="80" width="80"></a>
+            <a href="http://www.daiict.ac.in/"><img src="/assets/footer_logos/<%=current_year.value%>/footer-1.png" class="img-responsive"  height="80" width="80"></a>
           </div>
           <div class="span-2 sp">
-            <a href="http://irsi.res.in/"><img src="/assets/irsi.gif" class="img-responsive"  height="100" width="100"></a>
+            <a href="http://irsi.res.in/"><img src="/assets/footer_logos/<%=current_year.value%>/footer-2.png" class="img-responsive"  height="100" width="100"></a>
           </div>
           <div class="span-2 sp">
-            <a href="http://www.isical.ac.in/"><img src="/assets/isi.png" class="img-responsive" height="60" width="60"></a>
+            <a href="http://www.isical.ac.in/"><img src="/assets/footer_logos/<%=current_year.value%>/footer-3.png" class="img-responsive" height="60" width="60"></a>
           </div>
           <div class="span-2 sp">
 
