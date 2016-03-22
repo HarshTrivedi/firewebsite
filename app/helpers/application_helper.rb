@@ -14,4 +14,28 @@ module ApplicationHelper
 	    year
 	end
 
+	def theme_color
+		if current_year.value == "2015"
+			return "#174E14"
+		else
+			return "#2D1504"
+		end
+	end
+
+	def title_transparency
+		if current_year.value == "2015"
+			return "0.7"
+		else
+			return "0.0"
+		end
+	end
+
+	def title_color
+		if current_year.value == "2015"
+			return "#421E05"
+		else
+			return "#DFAB3B"
+		end
+	end
+
 end
