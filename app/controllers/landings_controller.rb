@@ -13,17 +13,20 @@ class LandingsController < ApplicationController
     year_value = params[:year]
     current_year = Year.where(:current => true).last || Year.last
 
-    if not year_value.nil?
+    if year_value == "static"
+        @year = current_year
+        @homelink = HomeLink.find_by_path(permalink)
+    elsif year_value.nil?
+        @year = current_year
+        year_value = current_year.value
+        home_link = current_year.home_links.first
+        redirect_to year_wise_fire_page_path(year_value, home_link.path) and return
+    else
       @year = Year.where(:value => year_value.to_s).first
       @year = current_year if @year.nil?
-    else
-      @year = current_year
-      year_value = current_year.value
-      home_link = current_year.home_links.first
-      redirect_to year_wise_fire_page_path(year_value, home_link.path) and return
+      @homelink = @year.home_links.find_by_path(permalink)
     end
 
-  	@homelink = @year.home_links.find_by_path(permalink)  	
 
     if @homelink.nil?
       @homelink = current_year.home_links.first
