@@ -43,7 +43,8 @@ body{
 
 #imagen{
   height:400px;
-  background:url('title_background/title-background-2016.png') no-repeat center center;
+  /*background:url('title_background/title-background-2016.png') no-repeat center center;*/
+  background: no-repeat center center;
   background-size:cover;
 }
 
@@ -62,7 +63,7 @@ body{
   color:white;
   font-family:'Open Sans';
   font-weight:800;
-  text-shadow:0.05em 0.05em 0.05em black;
+  text-shadow:0.06em 0.06em 0.06em black;
 }
 
 #imagen .container,

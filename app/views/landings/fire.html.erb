@@ -19,7 +19,7 @@
 		<% for tab in tabs %>
 			  <div class="panel panel-default">
 				    <div class="panel-heading" role="tab" id="tab_<%=tab.id%>">
-				      <h3 class="panel-title" style="color:#174E14; font-size: 25px;">		        
+				      <h3 class="panel-title" style="color:<%=theme_color%>; font-size: 25px;">		        
 
 				      	<%if tab.collapsible%>
 					      	<%if tab.collapsible  %>
@@ -52,7 +52,7 @@
 			    <% if tab.default_open %>
 			        <div class="panel panel-default">
 			            <div class="panel-heading">
-						    <h3 class="panel-title" style="color:#174E14; font-size: 25px;">		        
+						    <h3 class="panel-title" style="color:<%=theme_color%>; font-size: 25px;">		        
 			                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse_tab_<%=tab.id%>">
 			                    	<b><%= tab.name %></b>
 			                    </a>
@@ -67,7 +67,7 @@
 			    <%else%>
 			        <div class="panel panel-default">
 			            <div class="panel-heading">
-			                <h3 class="panel-title" style="color:#174E14; font-size: 25px;">
+			                <h3 class="panel-title" style="color:<%=theme_color%>; font-size: 25px;">
 			                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse_tab_<%=tab.id%>">
 			                    	<b><%= tab.name %></b>
 			                    </a>

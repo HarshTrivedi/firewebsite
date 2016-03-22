@@ -18,6 +18,12 @@
       <![endif]-->
       <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
       <script type="text/javascript">stLight.options({publisher: "675091de-c8f1-42e6-930a-033e764ecac2", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+      <script type="text/javascript">
+        $(function() {
+            document.getElementById("imagen").style.backgroundImage = "url(/assets/title_background/title-background-<%=current_year.value%>.png)"
+            $("#imagen .alpha")[0].style.backgroundColor="rgba(255,255,255,<%=title_transparency%>)"
+        });
+      </script>
 </head>
 <body>
 <header>
@@ -32,15 +38,15 @@
             </div>
             <div class="col-sm-8 col-xs-12" >
                 <div class="text-center" style="position: relative ; ">
-                    <h2  style="color:#421E05 ; font-family: 'Crete Round';" >                    
+                    <h2  style="color:<%=title_color%> ; font-family: 'Crete Round';" >                    
                         <font size="40vh;"><b style="letter-spacing: -5px;">F</b></font>   <font size="5.5vw">ORUM FOR </font> 
                         <font size="40vh;"><b style="letter-spacing: -5px;">I</b></font>   <font size="5.5vw">NFORMATION </font> 
                         <font size="40vh;"><b style="letter-spacing: -5px;">R</b></font>   <font size="5.5vw">ETRIEVAL </font>
                         <font size="40vh;"><b style="letter-spacing: -5px;">E</b></font>   <font size="5.5vw">VALUATION</font>
                     </h2>
-                    <h3 style="color:#421E05 ;   font-family: 'Crete Round';"><b>( FIRE <%= current_year.value %> )</b><h3>
-                    <h4 style="color:#421E05 ; font-family: 'Crete Round';"><%= current_year.venue %></h4>
-                    <h4 style="color:#421E05 ; font-family: 'Crete Round';"><%= current_year.duration %></h4>
+                    <h3 style="color:<%=title_color%> ; font-family: 'Crete Round';"><b>( FIRE <%= current_year.value %> )</b><h3>
+                    <h4 style="color:<%=title_color%> ; letter-spacing: 1px ; font-family: 'Crete Round';"><%= current_year.venue %></h4>
+                    <h4 style="color:<%=title_color%> ; letter-spacing: 1px ; font-family: 'Crete Round';"><%= current_year.duration %></h4>
                 </div>
             </div>
             <div class="col-sm-2 hidden-xs">
@@ -73,13 +79,13 @@
                         <% year_value = current_year.value%>
                         <%for home_link in home_links %>
                             <%if (current_page?("/fire/#{year_value}/#{home_link.path}") ) or ( current_page?("/") and home_link == home_links.first ) %>
-                              <li class="active">
-                                  <a href="/fire/<%=year_value%>/<%= home_link.path %>"> <%= raw home_link.name %></a>
+                              <li style="background-color:<%=theme_color%>">
+                                  <a href="/fire/<%=year_value%>/<%= home_link.path %>" style="color:#FFF" onMouseOver="this.style.color='<%=theme_color%>'" onMouseOut="this.style.color='#FFF'"> <%= raw home_link.name %></a>
                               </li>
                             <%else%>
                               <li>
                                   <a href="/fire/<%=year_value%>/<%= home_link.path %>">
-                                    <font style="color:#174E14">
+                                    <font style="color:<%=theme_color%>">
                                     <%= raw home_link.name %>
                                     </font>
                                   </a>
@@ -91,41 +97,41 @@
                   <hr>
                 
                   <ul class="nav nav-pills nav-stacked">
-                      <li class="active">
-                           <a href="#"> 
+                      <li style="background-color:<%=theme_color%>">
+                           <a href="#" style="color:#FFF" onMouseOver="this.style.color='<%=theme_color%>'" onMouseOut="this.style.color='#FFF'"> 
                               <i class="fa fa-archive"></i> &nbsp <b> Archives </b>
                            </a>
                       </li>
                       <li>
-                           <a href="/fire/data"> <font style="color:#174E14"> <i class="fa fa-database"></i> &nbsp <b>Data </b></font></a>
+                           <a href="/fire/data"> <font style="color:<%=theme_color%>"> <i class="fa fa-database"></i> &nbsp <b>Data </b></font></a>
                       </li>
                       <li>
-                           <a href="/fire/resources"> <font style="color:#174E14"> <i class="fa fa-book"></i> &nbsp <b>Resources </b></font></a>
+                           <a href="/fire/resources"> <font style="color:<%=theme_color%>"> <i class="fa fa-book"></i> &nbsp <b>Resources </b></font></a>
                       </li>
                       <li>
-                           <a href="#collapse_proceedings" data-toggle="collapse"> <font style="color:#174E14"> <i class="fa fa-file"></i> &nbsp <b>Past Proceedings</b></font></a>
+                           <a href="#collapse_proceedings" data-toggle="collapse"> <font style="color:<%=theme_color%>"> <i class="fa fa-file"></i> &nbsp <b>Past Proceedings</b></font></a>
                       </li>
                           <div id="collapse_proceedings" class="panel-collapse collapse">
                           <ul class="nav nav-pills nav-stacked">
                           <li>
-                               <a href="http://dl.acm.org/citation.cfm?id=2824864" target="_blank"> <font style="color:#174E14">&nbsp &nbsp &nbsp &nbsp<i class="fa fa-arrow-right"></i> &nbsp <b> 2014</b></font></a>
+                               <a href="http://dl.acm.org/citation.cfm?id=2824864" target="_blank"> <font style="color:<%=theme_color%>">&nbsp &nbsp &nbsp &nbsp<i class="fa fa-arrow-right"></i> &nbsp <b> 2014</b></font></a>
                           </li>
                           <li>
-                               <a href="http://dl.acm.org/citation.cfm?id=2701336" target="_blank"> <font style="color:#174E14">&nbsp &nbsp &nbsp &nbsp<i class="fa fa-arrow-right"></i> &nbsp <b> 2012/13</b></font></a>
+                               <a href="http://dl.acm.org/citation.cfm?id=2701336" target="_blank"> <font style="color:<%=theme_color%>">&nbsp &nbsp &nbsp &nbsp<i class="fa fa-arrow-right"></i> &nbsp <b> 2012/13</b></font></a>
                           </li>
                           <li>
-                               <a href="http://link.springer.com/book/10.1007/978-3-642-40087-2/page/1" target="_blank"> <font style="color:#174E14">&nbsp &nbsp &nbsp &nbsp<i class="fa fa-arrow-right"></i> &nbsp <b> 2010/11</b></font></a>
+                               <a href="http://link.springer.com/book/10.1007/978-3-642-40087-2/page/1" target="_blank"> <font style="color:<%=theme_color%>">&nbsp &nbsp &nbsp &nbsp<i class="fa fa-arrow-right"></i> &nbsp <b> 2010/11</b></font></a>
                           </li>
                           <li>
-                               <a href="http://dl.acm.org/citation.cfm?id=1838745&picked=prox" target="_blank"> <font style="color:#174E14">&nbsp &nbsp &nbsp &nbsp<i class="fa fa-arrow-right"></i> &nbsp <b>2008 Issue 1</b></font></a>
+                               <a href="http://dl.acm.org/citation.cfm?id=1838745&picked=prox" target="_blank"> <font style="color:<%=theme_color%>">&nbsp &nbsp &nbsp &nbsp<i class="fa fa-arrow-right"></i> &nbsp <b>2008 Issue 1</b></font></a>
                           </li>
                           <li>
-                               <a href="http://dl.acm.org/citation.cfm?id=1838751&picked=prox" target="_blank"> <font style="color:#174E14">&nbsp &nbsp &nbsp &nbsp<i class="fa fa-arrow-right"></i> &nbsp <b> 2008 Issue 2</b></font></a>
+                               <a href="http://dl.acm.org/citation.cfm?id=1838751&picked=prox" target="_blank"> <font style="color:<%=theme_color%>">&nbsp &nbsp &nbsp &nbsp<i class="fa fa-arrow-right"></i> &nbsp <b> 2008 Issue 2</b></font></a>
                           </li>
                           </ul>
                           </div>
                       <li>
-                           <a href="#collapse_fire" data-toggle="collapse"> <font style="color:#174E14"> <i class="fa fa-external-link-square"></i> 
+                           <a href="#collapse_fire" data-toggle="collapse"> <font style="color:<%=theme_color%>"> <i class="fa fa-external-link-square"></i> 
                            &nbsp <b>FIRE </b></font></a>
                       </li>
                           <div id="collapse_fire" class="panel-collapse in collapse">
@@ -134,26 +140,26 @@
                           <% for year_value in (2015..(current_year_value-1))%>
                             <% year = Year.where(:value => year_value.to_s ).first %>
                             <li>
-                                 <a href="http://fire.irsi.res.in/fire/<%=year_value%>/home" target="_blank" > <font style="color:#174E14">&nbsp &nbsp &nbsp &nbsp<i class="fa fa-arrow-right"></i> &nbsp <b> <%=year_value%> </b> </font></a>
+                                 <a href="http://fire.irsi.res.in/fire/<%=year_value%>/home" target="_blank" > <font style="color:<%=theme_color%>">&nbsp &nbsp &nbsp &nbsp<i class="fa fa-arrow-right"></i> &nbsp <b> <%=year_value%> </b> </font></a>
                             </li>
                           <% end %>
                           <li>
-                               <a href="http://www.isical.ac.in/~fire/2014/index.html" target="_blank" > <font style="color:#174E14">&nbsp &nbsp &nbsp &nbsp<i class="fa fa-arrow-right"></i> &nbsp <b> 2014 </b> </font></a>
+                               <a href="http://www.isical.ac.in/~fire/2014/index.html" target="_blank" > <font style="color:<%=theme_color%>">&nbsp &nbsp &nbsp &nbsp<i class="fa fa-arrow-right"></i> &nbsp <b> 2014 </b> </font></a>
                           </li>
                           <li>
-                               <a href="http://www.isical.ac.in/~fire/2013/index.html" target="_blank" >  <font style="color:#174E14">&nbsp &nbsp &nbsp &nbsp<i class="fa fa-arrow-right"></i> &nbsp <b> 2013 </b> </font> </a>
+                               <a href="http://www.isical.ac.in/~fire/2013/index.html" target="_blank" >  <font style="color:<%=theme_color%>">&nbsp &nbsp &nbsp &nbsp<i class="fa fa-arrow-right"></i> &nbsp <b> 2013 </b> </font> </a>
                           </li>
                           <li>
-                               <a href="http://www.isical.ac.in/~fire/2012/index.html" target="_blank" >  <font style="color:#174E14">&nbsp &nbsp &nbsp &nbsp<i class="fa fa-arrow-right"></i> &nbsp <b> 2012 </b> </font> </a>
+                               <a href="http://www.isical.ac.in/~fire/2012/index.html" target="_blank" >  <font style="color:<%=theme_color%>">&nbsp &nbsp &nbsp &nbsp<i class="fa fa-arrow-right"></i> &nbsp <b> 2012 </b> </font> </a>
                           </li>
                           <li>
-                               <a href="http://www.isical.ac.in/~fire/2011/index.html" target="_blank" >  <font style="color:#174E14">&nbsp &nbsp &nbsp &nbsp<i class="fa fa-arrow-right"></i> &nbsp <b> 2011 </b> </font> </a>
+                               <a href="http://www.isical.ac.in/~fire/2011/index.html" target="_blank" >  <font style="color:<%=theme_color%>">&nbsp &nbsp &nbsp &nbsp<i class="fa fa-arrow-right"></i> &nbsp <b> 2011 </b> </font> </a>
                           </li>
                           <li>
-                               <a href="http://www.isical.ac.in/~fire/2010/index.html" target="_blank" >  <font style="color:#174E14">&nbsp &nbsp &nbsp &nbsp<i class="fa fa-arrow-right"></i> &nbsp <b> 2010 </b> </font> </a>
+                               <a href="http://www.isical.ac.in/~fire/2010/index.html" target="_blank" >  <font style="color:<%=theme_color%>">&nbsp &nbsp &nbsp &nbsp<i class="fa fa-arrow-right"></i> &nbsp <b> 2010 </b> </font> </a>
                           </li>
                           <li>
-                               <a href="http://www.isical.ac.in/~fire/2008/index.html" target="_blank" >  <font style="color:#174E14">&nbsp &nbsp &nbsp &nbsp<i class="fa fa-arrow-right"></i> &nbsp <b> 2008 </b> </font> </a>
+                               <a href="http://www.isical.ac.in/~fire/2008/index.html" target="_blank" >  <font style="color:<%=theme_color%>">&nbsp &nbsp &nbsp &nbsp<i class="fa fa-arrow-right"></i> &nbsp <b> 2008 </b> </font> </a>
                           </li>
                           </ul>
                           </div>
@@ -164,7 +170,7 @@
                     <ul class="nav nav-pills nav-stacked social-nav">
                       <li>
                         <center>
-                          <h4 style="color:#174E14;">
+                          <h4 style="color:<%=theme_color%>;">
                             <b> Cluster Map </b>
                           </h4>
                         </center>
@@ -191,7 +197,7 @@
 
               <div class="row">
                 <ul class="nav nav-pills nav-stacked social-nav">
-                    <li><h4 style="color:#174E14;" > <b>Sponsors </b></h4></li>
+                    <li><h4 style="color:<%=theme_color%>;" > <b>Sponsors </b></h4></li>
                 </ul>
                 <% number_of_sponsors = current_year.sponsors.visible.size %> 
                 <% for sponsor in current_year.sponsors.visible %>
@@ -210,7 +216,7 @@
                 <%end%>
 
                 <ul class="nav nav-pills nav-stacked social-nav">
-                    <li><h4 style="color:#174E14;" > <b>Publishers</b></h4></li>
+                    <li><h4 style="color:<%=theme_color%>;" > <b>Publishers</b></h4></li>
                 </ul>
 
                 <% number_of_publishers = current_year.publishers.visible.size %>
@@ -242,7 +248,7 @@
 
 
 <div class="clearfix"></div>
-<footer>
+<footer style="background-color: <%= theme_color%>">
   <div class="container">
     <div class="row">
       <div class="col-md-12 logos">
