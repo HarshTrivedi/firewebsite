@@ -21,3 +21,17 @@
 $(function() {
   $(document).pjax('a:not([data-remote]):not([data-behavior]):not([data-skip-pjax])', '[data-pjax-container]')
 });
+
+
+$(document).on('ready', function() {
+	$("textarea").materialnote();
+	
+	clicked = 0 
+	$( "#submit_button" ).on( "click", function() { clicked = 1; });
+	$('#update_content_form').on('submit', function(e){
+	    if(clicked == 0){ e.preventDefault();}
+	});
+
+});
+
+
