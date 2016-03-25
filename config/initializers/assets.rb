@@ -7,4 +7,4 @@ Rails.application.config.assets.version = '1.0'
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
 
-Rails.application.config.assets.precompile += [/.*\.js/,/.*\.css/]
+Rails.application.config.assets.precompile += ['materialize.css', "materialNote.css", "codeMirror/codemirror.css", "codeMirror/monokai.css", "main.css", "web.css"]
