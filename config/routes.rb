@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  get   '/content_editor/:model_name/:id/:attribute'  => 'admin_contents#edit_content', as: :edit_content
+  get   '/update_content_and_redirect/:model_name/:id/:attribute'  => 'admin_contents#update_content_and_redirect', as: :update_content_and_redirect
+
   get 'landings/index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -19,6 +23,8 @@ Rails.application.routes.draw do
   get   'fire/'  => 'landings#fire'  #, constraints: {subdomain: /fire/ }
 
   get   '/'  => 'landings#index' #        , as: :fire_root , constraints: {subdomain: /fire/ }
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
