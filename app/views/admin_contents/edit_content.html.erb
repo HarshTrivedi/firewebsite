@@ -1,0 +1,16 @@
+
+
+<form action="<%=update_content_and_redirect_path(@model_name, @id, @attribute)%>" method="get" id="update_content_form">
+  
+  <input name="redirection_link" type="hidden" value="<%=@redirection_link%>" />
+  <br/>
+  
+  <textarea rows="20" name="updated_content" class="text-center">
+	<%= @content_to_edit %>
+  </textarea>
+  <br/>
+  
+  <div class="text-center">
+  	<input name="commit" type="submit" value="Update" class="btn btn-success" id="submit_button"/>
+  </div>
+</form>
