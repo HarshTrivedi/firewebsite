@@ -1,5 +1,5 @@
 
 $(document).on('ready', function() {
-	$("textarea").jqte();
+//	$("textarea").jqte();
 });
 
