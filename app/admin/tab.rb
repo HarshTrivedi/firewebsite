@@ -73,13 +73,16 @@ ActiveAdmin.register Tab do
 	      f.inputs  "Tab Details" do
 	          f.input :home_link_id, :as => :hidden ,  input_html: { :value => f.object.home_link_id }
 	          f.input :name 
-			  div :class => "editable_content" do
-		          f.input :content 
-		      end
 	          f.input :visibility , :as => :boolean
 	          f.input :collapsible , :as => :boolean
 	          f.input :default_open , :as => :boolean
 	          f.input :accordion , :as => :boolean
+
+	          if f.object.id.nil?
+	          	  text_node("Create Tab and visit its Edit page for updating html content")
+			  else
+				  text_node( link_to "Open Content Editor", edit_content_path("tab", f.object.id, "content"), :onclick => "javascript:window.open( this.href,'popup','width=900,height=500');;return false;")
+			  end
 	      end
 	      f.actions
 	end
