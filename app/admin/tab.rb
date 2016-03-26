@@ -81,7 +81,7 @@ ActiveAdmin.register Tab do
 	          if f.object.id.nil?
 	          	  text_node("Create Tab and visit its Edit page for updating html content")
 			  else
-				  text_node( link_to "Open Content Editor", edit_content_path("tab", f.object.id, "content"), :onclick => "javascript:window.open( this.href,'popup','width=900,height=500');;return false;")
+				  text_node( link_to "Open Content Editor", edit_content_path( :model_name => "tab", :id => f.object.id, :attribute => "content", :redirection_link => request.original_url ) )
 			  end
 	      end
 	      f.actions
