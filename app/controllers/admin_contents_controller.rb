@@ -19,11 +19,11 @@ class AdminContentsController < ApplicationController
 
 
 	def update_content_and_redirect
-		
+
 		if current_admin_user.nil?
 			redirect_to "/admin" and return
 		end
-		
+
 		model_name = params[:model_name].classify rescue nil
 		id = params[:id]
 		attribute = params[:attribute]
@@ -36,14 +36,13 @@ class AdminContentsController < ApplicationController
 		result = (eval(command) rescue nil)
 		
 		message = "Updated Successfully !"
-		redirect_to redirection_link, :flash => {:success => message}
-		
+
 		if not result.nil?
 			message = "Tab Content Updated Successfully !"
-			redirect_to redirection_link, :flash => {:success => message} and return
+			redirect_to( redirection_link, :flash => {:success => message}) and return
 		else
 			message = "Some error has occured. Try again following 'content editor' link below."
-			redirect_to redirection_link, :flash => {:error => message} and return
+			redirect_to( redirection_link, :flash => {:error => message}) and return
 		end
 
 
