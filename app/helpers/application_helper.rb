@@ -33,7 +33,7 @@ module ApplicationHelper
 		if current_year().value == "2015"
 			return "#421E05"
 		else
-			return "#DFAB3B"
+			return "#483300"
 		end
 	end
 
