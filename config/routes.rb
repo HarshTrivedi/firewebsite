@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get   '/content_editor/:model_name/:id/:attribute'  => 'admin_contents#edit_content', as: :edit_content
-  get   '/update_content_and_redirect/:model_name/:id/:attribute'  => 'admin_contents#update_content_and_redirect', as: :update_content_and_redirect
+  post   '/update_content_and_redirect/:model_name/:id/:attribute'  => 'admin_contents#update_content_and_redirect', as: :update_content_and_redirect
 
   get 'landings/index'
 
