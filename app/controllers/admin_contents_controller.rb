@@ -1,6 +1,6 @@
 class AdminContentsController < ApplicationController
 	layout 'admin_content_editor_layout'
-
+	skip_before_filter :verify_authenticity_token, only: [:edit_content, :update_content_and_redirect]
 
 	def edit_content
 
