@@ -13,6 +13,10 @@ module ApplicationHelper
 		year
 	end
 
+	def current_venue
+		current_year.venue		
+	end
+
 	def theme_color
 		if current_year.value == "2015"
 			return "#174E14"
