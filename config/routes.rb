@@ -14,11 +14,12 @@ Rails.application.routes.draw do
 
   get   'fire/register'  => 'landings#new_register', as: :new_register #, constraints: {subdomain: /fire/ }
   post   'fire/register/submit'  => 'landings#register_submit', as: :register_submit #, constraints: {subdomain: /fire/ }
+  get   'fire/download/:filename'  => 'landings#download'         , as: :fire_download #, constraints: {subdomain: /fire/ }
 
   get   'fire/:permalink'  => 'landings#fire'         , as: :default_fire_page #, constraints: {subdomain: /fire/ }
   get   'fire/:year/:permalink'  => 'landings#fire'         , as: :year_wise_fire_page #, constraints: {subdomain: /fire/ }
 
-  get   'fire/download/:filename'  => 'landings#download'         , as: :fire_download #, constraints: {subdomain: /fire/ }
+
 
   get   'fire/'  => 'landings#fire'  #, constraints: {subdomain: /fire/ }
 
