@@ -1,6 +1,6 @@
 ActiveAdmin.register Year do
     menu label: "Year" , :priority => 3
-	permit_params :value, :venue , :duration , :current
+	permit_params :value, :venue , :duration , :current, :statscounter_snippet
 
 	config.filters = false
 
