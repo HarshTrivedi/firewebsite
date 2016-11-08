@@ -3,7 +3,7 @@ module ApplicationHelper
 
 	def current_year
 		year_value = request.original_url.split(/\/+/)[3] rescue nil
-
+		year_value = nil if year_value.strip == "register"
 		if year_value.nil? or year_value.strip == "static"
 		    year = Year.where(:current => true).last || Year.last
 		else
