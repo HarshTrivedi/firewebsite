@@ -2,7 +2,7 @@
     <div class="panel-group" role="tablist" aria-multiselectable="true">
               <div class="panel panel-default">
                     <div class="panel-heading" role="tab" >
-                      <h3 class="panel-title" style="color:<%=theme_color%>; font-size: 25px;"> 
+                      <h3 class="panel-title" style="color:#2D1504; font-size: 25px;"> 
                       <a ><b>Registration Form</b></a>
                       
                       </h3>
@@ -25,12 +25,6 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">Country</label>
-                            <div class="col-md-8">
-                                <%= country_select("registration", "country", { selected: "IN" }, { class: 'form-control' }) %>                                
-                            </div>
-                        </div>
 
 
 
@@ -56,6 +50,51 @@
                                 </div>
                                 <div class="radio">
                                     <label><input type="radio" name="gender" value="female" /> Female</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Planning to attend:</label>
+                            <div class="col-md-6">
+                                <div class="radio">
+                                    <label><input type="radio" name="attendance-choice" value="main-conference" /> Main Conference</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input type="radio" name="attendance-choice" value="tutorial" /> Tutorial</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input type="radio" name="attendance-choice" value="both" /> Both</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="display: none;" data-topic="tutorials-choice">
+                            <label class="col-md-3 control-label">I plan to attend the following tutorials:</label>
+                            <div class="col-md-6">
+                                <div class="radio">
+                                    <label><input type="radio" name="tutorials-choice" value="author-profiling" /> Author Profiling: age, gender, personality, native language identification </label>
+                                </div>
+                                <div class="radio">
+                                    <label><input type="radio" name="tutorials-choice" value="deep-learning" /> Deep Learning</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input type="radio" name="tutorials-choice" value="both" /> Both</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="display: none;" data-topic="conference-date-choice">
+                            <label class="col-md-3 control-label">I plan to attend the main conference on following dates:</label>
+                            <div class="col-md-6">
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="conference-date-choice" value="8th" /> 8th December </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="conference-date-choice" value="9th" /> 9th December</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="conference-date-choice" value="10th" /> 10th December</label>
                                 </div>
                             </div>
                         </div>
@@ -118,7 +157,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group" style="display: none;">
+<!--                         <div class="form-group" style="display: none;">
                             <label class="col-md-3 control-label">Want T-Shirt?</label>
                             <div class="col-md-6">
                                 <div class="radio">
@@ -128,8 +167,20 @@
                                     <label><input type="radio" name="t-shirt" value=true checked="">Yes</label>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
+                        <div class="form-group" >
+                            <label class="col-md-3 control-label">Require Accomodation?</label>
+
+                            <div class="col-md-6">
+                                <div class="radio">
+                                    <label><input type="radio" name="accomodation" value=true /> Yes</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input type="radio" name="accomodation" value=false checked="">No</label>
+                                </div>
+                            </div>
+                        </div>                            
 
                         <div style="display: none;" data-topic="acm">
                             <fieldset>
@@ -142,7 +193,7 @@
                             </fieldset>
                         </div>
 
-                        <div data-topic="t-shirt-preference">
+<!--                         <div data-topic="t-shirt-preference">
                             <fieldset>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label"> T-Shirt Preference</label>
@@ -166,7 +217,7 @@
                                     </div>
                                 </div>
                             </fieldset>
-                        </div>
+                        </div> -->
 
                         <div style="" data-topic="transaction_id">
                         <div class="form-group">
@@ -184,7 +235,6 @@
                         </div>
                     </form>
 
-                    </div>
               </div>
         <hr/>
     </div>
@@ -242,6 +292,34 @@ $(document).ready(function() {
                     }
                 }
             },
+            'attendance-choice': {
+                validators: {
+                    notEmpty: {
+                        message: 'Attendance choice is required.'
+                    }
+                }
+            },
+            'attendance-choice': {
+                validators: {
+                    notEmpty: {
+                        message: 'Attendance choice is required.'
+                    }
+                }
+            },
+            'tutorials-choice': {
+                validators: {
+                    notEmpty: {
+                        message: 'Tutorials choice is required.'
+                    }
+                }
+            },
+            'conference-date-choice': {
+                validators: {
+                    notEmpty: {
+                        message: 'Conference dates of attendance are required.'
+                    }
+                }
+            },
             food: {
                 validators: {
                     notEmpty: {
@@ -291,15 +369,45 @@ $(document).ready(function() {
             $container.hide();
         }
     })
-    .on('change', '[name="t-shirt"]' ,function(e) {
-        var topic      = 't-shirt-preference';
-        $container = $('[data-topic="' + topic + '"]');
-        if($('input[name=t-shirt]:checked', '#registrationForm').val() == "true"){            
-            $container.show();
-        }else{
-            $container.hide();
+    .on('change', '[name="accomodation"]' ,function(e) {
+        if($('input[name=acm]:checked', '#registrationForm').val() == "true"){
+            alert("Please note that checking 'yes' for accommodation does not guarantee that you will be provided with it.We will be notifying you in case we are able to arrange something.")
         }
     })
+    .on('change', '[name="attendance-choice"]' ,function(e) {
+
+        if($('input[name=attendance-choice]:checked', '#registrationForm').val() == "tutorial" ){
+            var topic      = 'conference-date-choice'; $container = $('[data-topic="' + topic + '"]') ; $container.hide();
+            var topic      = 'tutorials-choice'      ; $container = $('[data-topic="' + topic + '"]') ; $container.show();            
+            $('#registrationForm').bootstrapValidator('enableFieldValidators', 'tutorials-choice', true);
+            $('#registrationForm').bootstrapValidator('enableFieldValidators', 'conference-date-choice', false);
+            $container.show();
+        }
+        else if($('input[name=attendance-choice]:checked', '#registrationForm').val() == "main-conference" ){            
+            var topic      = 'conference-date-choice'; $container = $('[data-topic="' + topic + '"]') ; $container.show();
+            var topic      = 'tutorials-choice'      ; $container = $('[data-topic="' + topic + '"]') ; $container.hide();
+
+            $('#registrationForm').bootstrapValidator('enableFieldValidators', 'tutorials-choice', false);
+            $('#registrationForm').bootstrapValidator('enableFieldValidators', 'conference-date-choice', true);
+
+        }
+        else if($('input[name=attendance-choice]:checked', '#registrationForm').val() == "both" ){
+            var topic      = 'conference-date-choice'; $container = $('[data-topic="' + topic + '"]') ; $container.show();
+            var topic      = 'tutorials-choice'      ; $container = $('[data-topic="' + topic + '"]') ; $container.show();
+
+            $('#registrationForm').bootstrapValidator('enableFieldValidators', 'tutorials-choice', true);
+            $('#registrationForm').bootstrapValidator('enableFieldValidators', 'conference-date-choice', true);
+        }
+    })
+    // .on('change', '[name="t-shirt"]' ,function(e) {
+    //     var topic      = 't-shirt-preference';
+    //     $container = $('[data-topic="' + topic + '"]');
+    //     if($('input[name=t-shirt]:checked', '#registrationForm').val() == "true"){            
+    //         $container.show();
+    //     }else{
+    //         $container.hide();
+    //     }
+    // })
     .on('change', '[name="participation"]' ,function(e) {
         var topic      = 'transaction_id';
         $container = $('[data-topic="' + topic + '"]');
@@ -314,5 +422,3 @@ $(document).ready(function() {
 
 });
 </script>
-
-
