@@ -33,6 +33,42 @@ ActiveAdmin.register Registration do
 			end
 		end
 
+		column 'attendance-choice' do |registration|
+			if registration.attendance_choice == 1
+				"Main Conference"
+			elsif registration.attendance_choice == 2
+				"Tutorials"
+			elsif registration.attendance_choice == 3
+				"Both"
+			end
+		end
+
+		column 'tutorials-choice' do |registration|
+			if registration.tutorials_choice == 1
+				"Author Profiling"
+			elsif registration.tutorials_choice == 2
+				"Deep Learning"
+			elsif registration.tutorials_choice == 3
+				"Both"
+			else
+				"Nil"
+			end
+		end
+
+		column 'conference-date-choice' do |registration|
+			registration.conference_date_choice
+		end
+
+		column :occupation do |registration|
+			if registration.occupation == 1
+				"Student"
+			elsif registration.occupation == 2
+				"Industry"
+			elsif registration.occupation == 3
+				"Academia"
+			end
+		end
+
 		column "ACM member ?", :acm
 
 		column :participation do |registration|
@@ -43,13 +79,16 @@ ActiveAdmin.register Registration do
 			elsif registration.participation == 3
 				"Attending"
 			elsif registration.participation == 4
-				"I'm in organizing committee"
+				"I am a speaker / I am from organizing committee"
 			end
 		end
 
+		
+	  column :registration_type
 	  column :approved
 	  column :amount
 	  column :dbamount
+	  column :accomodation
 	  actions
 	end
 

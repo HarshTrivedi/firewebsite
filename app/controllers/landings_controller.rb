@@ -56,7 +56,12 @@ class LandingsController < ApplicationController
     acm = params[:acm]
     acmnum = params[:acmnum] || nil
     transid = params[:transid] || ""
-    
+    attendance_choice = params['attendance-choice']
+    tutorials_choice = params['tutorials-choice']    
+    conference_date_choice = params['conference-date-choice'].keys.join(",") rescue nil
+    accomodation = params[:accomodation]
+    registration_type = params[:registration_type]
+
     if params["t-shirt"] == "true"
       tshirt_preference = params["t-shirt-preference"]
     else
@@ -69,10 +74,10 @@ class LandingsController < ApplicationController
      email.empty? ||
      phone.empty? ||
      food.empty? ||
-     participate.empty? ||
-     occ.empty? #||
-     # acm.empty? ||
-     # transid.empty?
+     attendance_choice.empty? ||
+     accomodation.empty? #||
+     # tutorials_choice.empty? ||
+     # conference_date_choice.empty?
 
       error_msg = "Please fill all the information."
       redirect_to :back, :flash => {:error => error_msg}
@@ -90,8 +95,12 @@ class LandingsController < ApplicationController
                              acmnum: acmnum,
                              transid: transid,
                              approved: false,
-                             registration_type: "NEFT",
-                             tshirt_preference: tshirt_preference
+                             registration_type: registration_type,
+                             tshirt_preference: tshirt_preference,
+                             attendance_choice: attendance_choice,
+                             tutorials_choice: tutorials_choice,
+                             conference_date_choice: conference_date_choice,
+                             accomodation: accomodation
                              )
       current_year = Year.where(:current => true).last || Year.last
       registration.year = current_year

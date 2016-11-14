@@ -15,69 +15,112 @@ class Registration < ActiveRecord::Base
 		end
 	end
 
-
 	def amount
 
 		if self.participation == 4
 			return "Free"
 		end
 
-		return earlybird_amount if earlybird?
+		tutorial_bucks, tutorial_currency = amount_tutorials.split(" ")
+		conference_bucks, conference_currency = amount_conference.split(" ")
+		if tutorial_currency == conference_currency
+			final = tutorial_bucks + conference_bucks 
+			return "#{final} #{conference_currency}"
+		else
+			"#{conference_bucks} #{conference_currency}"
+		end
+	end
 
-		## calculation 
+	def amount_tutorials
+
+		if self.tutorials_choice == nil  # attending none of tutorials
+			tutorials_amount = "0 INR"
+		elsif self.tutorials_choice == 3 # attending both tutorials
+			if self.occupation == 1 # student
+				tutorials_amount = "750 INR"
+			else
+				tutorials_amount = "1000 INR"
+			end
+		else  # attending only one of two tutorials
+			if self.occupation == 1 # student
+				tutorials_amount = "500 INR"
+			else
+				tutorials_amount = "750 INR"
+			end
+		end			
+
+	end
+
+	def amount_conference
+
+		return onspot_amount if self.registration_type == "ONSPOT"
+
+		## calculation
 		if self.nationality != "IN"
-			return "300 USD"
+			if self.acm # IS ACM Member
+				return "300 USD"
+			else
+				return "325 USD"
+			end
 		end
 
 		if self.acm # IS ACM Member
 			if self.occupation == 1 # Student
-				return "3900 INR"
+				return "4500 INR"
 			elsif self.occupation == 2 # Industry
-				return "15500 INR"
+				return "15000 INR"
 			elsif self.occupation == 3 # Academia
-				return "6500 INR"
-			end				
+				return "7000 INR"
+			end
 		else # IS Not ACM Member
 			if self.occupation == 1 # Student
-				return "4900 INR"
+				return "5500 INR"
 			elsif self.occupation == 2 # Industry
-				return "15500 INR"
+				return "17000 INR"
 			elsif self.occupation == 3 # Academia
-				return "8500 INR"
-			end				
+				return "9000 INR"
+			end
 		end
+
 
 		return "Undefined"
 	end
 
-	def earlybird?
-		return created_at.to_date <= DateTime.new(2015,11,15)
-	end
+	# def earlybird?
+	# 	return created_at.to_date <= DateTime.new(2016,11,15)
+	# end
 
-	def earlybird_amount
+	def onspot_amount
 
-		## calculation
+		## calculation 
 		if self.nationality != "IN"
-			return "250 USD"
+			if self.acm # IS ACM Member
+				return "325 USD"
+			else
+				return "350 USD"
+			end
 		end
 
 		if self.acm # IS ACM Member
 			if self.occupation == 1 # Student
-				return "3900 INR"
-			elsif self.occupation == 2 # Industry
-				return "12500 INR"
-			elsif self.occupation == 3 # Academia
 				return "5000 INR"
-			end
+			elsif self.occupation == 2 # Industry
+				return "16000 INR"
+			elsif self.occupation == 3 # Academia
+				return "8000 INR"
+
+			end				
 		else # IS Not ACM Member
 			if self.occupation == 1 # Student
-				return "4900 INR"
-			elsif self.occupation == 2 # Industry
-				return "12500 INR"
-			elsif self.occupation == 3 # Academia
 				return "6000 INR"
-			end
+			elsif self.occupation == 2 # Industry
+				return "18000 INR"
+			elsif self.occupation == 3 # Academia
+				return "10000 INR"
+			end				
 		end
+
+
 
 		return "Undefined"
 	end
