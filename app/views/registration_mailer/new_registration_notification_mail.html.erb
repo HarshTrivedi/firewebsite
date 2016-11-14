@@ -61,6 +61,28 @@ You have received a new registration request with following details:
 	</tr>
 	<tr>
 		<td colspan="1">
+			<b>Attending Main Conference:</b>
+		</td>
+		<td colspan="1">
+			<%= @registration.conference_date_choice || "No" %>
+		</td>	
+		<td colspan="1">
+			<b>Attending Tutorials:</b>
+		</td>
+		<td colspan="1">
+			<%if @registration.tutorials_choice == 1%>
+				Author Profiling
+			<%elsif @registration.occupation == 2%>
+				Deep Learning
+			<%elsif  @registration.occupation == 3%>
+				Author Profiling and Deep Learning for IR
+			<%else%>
+				None
+			<%end %>
+		</td>	
+	</tr>
+	<tr>
+		<td colspan="1">
 			<b>Occupation:</b>
 		</td>
 		<td colspan="1">
