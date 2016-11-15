@@ -59,16 +59,6 @@ ActiveAdmin.register Registration do
 			registration.conference_date_choice
 		end
 
-		column :occupation do |registration|
-			if registration.occupation == 1
-				"Student"
-			elsif registration.occupation == 2
-				"Industry"
-			elsif registration.occupation == 3
-				"Academia"
-			end
-		end
-
 		column "ACM member ?", :acm
 
 		column :participation do |registration|

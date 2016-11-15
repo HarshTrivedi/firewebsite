@@ -23,12 +23,20 @@ class Registration < ActiveRecord::Base
 
 		tutorial_bucks, tutorial_currency = amount_tutorials.split(" ")
 		conference_bucks, conference_currency = amount_conference.split(" ")
-		if tutorial_currency == conference_currency
-			final = tutorial_bucks + conference_bucks 
-			return "#{final} #{conference_currency}"
+
+		if self.attendance_choice == 1 
+			return "#{conference_bucks} #{conference_currency}"
+		elsif self.attendance_choice == 2
+			return "#{tutorial_bucks} #{tutorial_currency}"
 		else
-			"#{conference_bucks} #{conference_currency}"
+			if tutorial_currency == conference_currency
+				final = tutorial_bucks.to_i + conference_bucks.to_i 
+				return "#{final} #{conference_currency}"
+			else
+				return "#{conference_bucks} #{conference_currency}"
+			end			
 		end
+
 	end
 
 	def amount_tutorials
