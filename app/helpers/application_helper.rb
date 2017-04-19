@@ -14,16 +14,14 @@ module ApplicationHelper
 	end
 
 	def current_venue
-		current_year.venue
+		current_year.venue		
 	end
 
 	def theme_color
 		if current_year.value == "2015"
 			return "#174E14"
-		else if current_year.value == "2016"
-			return "#2D1504"
 		else
-			return "#078186"
+			return "#2D1504"
 		end
 	end
 
@@ -38,10 +36,8 @@ module ApplicationHelper
 	def title_color
 		if current_year().value == "2015"
 			return "#421E05"
-		else if current_year().value == "2016"
-			return "#483300"
 		else
-			return "#012A2F"
+			return "#483300"
 		end
 	end
 
