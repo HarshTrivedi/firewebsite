@@ -63,7 +63,7 @@ body{
   color:white;
   font-family:'Open Sans';
   font-weight:800;
-  text-shadow:0.06em 0.06em 0.06em black;
+  text-shadow:0.02em 0.02em 0em black;
 }
 
 #imagen .container,
