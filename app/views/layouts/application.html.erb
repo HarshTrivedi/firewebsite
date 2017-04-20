@@ -147,8 +147,8 @@
                       </li>
                           <div id="collapse_fire" class="panel-collapse in collapse">
                           <ul class="nav nav-pills nav-stacked active">
-                          <% current_year_value = current_year.value.to_i %>
-                          <% for year_value in (2015..(current_year_value-1))%>
+                          <% current_year_value = current_year.value.to_i %>			
+                          <% for year_value in ((2015..(current_year_value-1)).reverse_each)%>
                             <% year = Year.where(:value => year_value.to_s ).first %>
                             <li>
                                  <a href="http://fire.irsi.res.in/fire/<%=year_value%>/home" target="_blank" > <font style="color:<%=theme_color%>">&nbsp &nbsp &nbsp &nbsp<i class="fa fa-arrow-right"></i> &nbsp <b> <%=year_value%> </b> </font></a>
