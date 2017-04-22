@@ -59,7 +59,7 @@
             </div>
             <div class="col-sm-2 hidden-xs">
                <div class="text-center" style="position: relative; right: 3vw;">
-               <%if current_year.value != "2016"%>
+               <%if current_year.value == "2015"%>
                 <img src="/assets/title_logos/title_right-<%=current_year.value%>.png" height="100px" width="170px"></img>                
                <%end%>
                </div>
@@ -150,8 +150,8 @@
                       </li>
                           <div id="collapse_fire" class="panel-collapse in collapse">
                           <ul class="nav nav-pills nav-stacked active">
-                          <% current_year_value = current_year.value.to_i %>
-                          <% for year_value in (2015..(current_year_value-1))%>
+                          <% current_year_value = current_year.value.to_i %>			
+                          <% for year_value in ((2015..(current_year_value-1)).reverse_each)%>
                             <% year = Year.where(:value => year_value.to_s ).first %>
                             <li>
                                  <a href="http://fire.irsi.res.in/fire/<%=year_value%>/home" target="_blank" > <font style="color:<%=theme_color%>">&nbsp &nbsp &nbsp &nbsp<i class="fa fa-arrow-right"></i> &nbsp <b> <%=year_value%> </b> </font></a>
@@ -267,13 +267,13 @@
                 </div>
           </div>
           <div class="span-2 sp">
-            <a href="http://www.daiict.ac.in/"><img src="/assets/footer_logos/<%=current_year.value%>/footer-1.png" class="img-responsive"  height="80" width="80"></a>
+            <a href="http://www.daiict.ac.in/"><img src="/assets/footer_logos/<%=current_year.value%>/footer-1.png" class="img-responsive"  height="110" width="110"></a>
           </div>
           <div class="span-2 sp">
-            <a href="http://irsi.res.in/"><img src="/assets/footer_logos/<%=current_year.value%>/footer-2.png" class="img-responsive"  height="100" width="100"></a>
+            <a href="http://irsi.res.in/"><img src="/assets/footer_logos/<%=current_year.value%>/footer-2.png" class="img-responsive"  height="165" width="165"></a>
           </div>
           <div class="span-2 sp">
-            <a href="http://www.isical.ac.in/"><img src="/assets/footer_logos/<%=current_year.value%>/footer-3.png" class="img-responsive" height="60" width="60"></a>
+            <a href="http://www.isical.ac.in/"><img src="/assets/footer_logos/<%=current_year.value%>/footer-3.png" class="img-responsive" height="90" width="90"></a>
           </div>
           <div class="span-2 sp">
 
