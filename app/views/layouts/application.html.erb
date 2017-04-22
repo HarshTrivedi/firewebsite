@@ -36,11 +36,14 @@
       <div class="alpha">
         <div class="container-fluid text-right">
           <div class="row">
-            <div class="col-sm-2 hidden-xs">
-               <div class="text-center" style="position: relative; left: 3vw;">
-               <img src="/assets/title_logos/title_left-<%=current_year.value%>.png" height="100px" width="180px"></img>             
-               </div>
-            </div>
+            <%if current_year.value != "2017"%>
+              <div class="col-sm-2 hidden-xs">
+                 <div class="text-center" style="position: relative; left: 3vw;">
+
+                 <img src="/assets/title_logos/title_left-<%=current_year.value%>.png" height="100px" width="180px"></img>
+                 </div>
+              </div>
+            <%end%>
             <div class="col-sm-8 col-xs-12" >
                 <div class="text-center" style="position: relative ; ">
                     <h2  style="color:<%=title_color%> ; font-family: 'Crete Round';" >                    
@@ -255,14 +258,12 @@
         <div class="row">
           <div class="span-2 sp">
 <!--             <img src="/assets/isi.png" class="img-responsive" height="95" width="95"> -->
-                <div style="font-size:15px;" class="text-center">
-                  <b>
+                <div style="font-size:15px;padding:20px 15px;" class="text-center">
                   <p>FIRE <%= current_year.value %>, <%= current_year.venue %></p>
                   <font style="font-size:13px;" >
                     <p style="line-height: 50%;">Copyright © <%= current_year.value %> IRSI</p>
                     <p style="line-height: 50%;">All rights reserved</p>
                   </font>
-                  </b>
                 </div>
           </div>
           <div class="span-2 sp">
