@@ -111,6 +111,12 @@ a:link, a:visited, a:hover, a:active {
         text-align: center;
         color: $default_title_color !important;
       }
+      .title-first{
+        margin:35px 0px 0px;
+      }
+      .title-second{
+        margin-top: 5px !important;
+      }
     }
   }
 }
