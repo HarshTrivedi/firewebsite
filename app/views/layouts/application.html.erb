@@ -30,7 +30,7 @@
       </style>
 
 </head>
-<body>
+<body class="main-<%=current_year.value%>">
 <header>
   <section id="imagen">
       <div class="alpha">
@@ -46,15 +46,16 @@
             <%end%>
             <div class="col-sm-8 col-xs-12" >
                 <div class="text-center" style="position: relative ; ">
-                    <h2  style="color:<%=title_color%> ; font-family: 'Crete Round';" >                    
-                        <font size="40vh;"><b style="letter-spacing: -5px;">F</b></font>   <font size="5.5vw">ORUM FOR </font> 
-                        <font size="40vh;"><b style="letter-spacing: -5px;">I</b></font>   <font size="5.5vw">NFORMATION </font> 
+                    <div class="title-first" style="color:<%=title_color%>;font-size:42px" ><b>FIRE <%= current_year.value %></b><div>
+                    <div class="title-second" style="color:<%=title_color%>;font size=5.5vw" >
+                        Forum for Information Retrieval Evaluation
+                        <!--<font size="40vh;"><b style="letter-spacing: -5px;">F</b></font>   <font size="5.5vw">ORUM FOR </font>
+                        <font size="40vh;"><b style="letter-spacing: -5px;">I</b></font>   <font size="5.5vw">NFORMATION </font>
                         <font size="40vh;"><b style="letter-spacing: -5px;">R</b></font>   <font size="5.5vw">ETRIEVAL </font>
-                        <font size="40vh;"><b style="letter-spacing: -5px;">E</b></font>   <font size="5.5vw">VALUATION</font>
-                    </h2>
-                    <h3 style="color:<%=title_color%> ; font-family: 'Crete Round';"><b>( FIRE <%= current_year.value %> )</b><h3>
-                    <h4 style="color:<%=title_color%> ; letter-spacing: 1px ; font-family: 'Crete Round';"><%= current_year.venue %></h4>
-                    <h4 style="color:<%=title_color%> ; letter-spacing: 1px ; font-family: 'Crete Round';"><%= current_year.duration %></h4>
+                        <font size="40vh;"><b style="letter-spacing: -5px;">E</b></font>   <font size="5.5vw">VALUATION</font> -->
+                    </div>
+                    <h4 class="title-third" style="color:<%=title_color%> ; letter-spacing: 1px ;"><%= current_year.venue %></h4>
+                    <h4 class="title-fourth" style="color:<%=title_color%> ; letter-spacing: 1px ; "><%= current_year.duration %></h4>
                 </div>
             </div>
             <div class="col-sm-2 hidden-xs">
