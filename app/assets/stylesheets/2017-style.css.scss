@@ -1,9 +1,6 @@
 $title_color: #012A2F;
 $theme_color: #078186;
 
-
-
-
 .main-2017{
 
   .theme_color{
@@ -23,6 +20,7 @@ $theme_color: #078186;
       .title-div{
         .title-first, .title-second, .title-third, .title-fourth{
           text-align: left !important;
+          color: $title_color;
         }
         .title-first{
           margin:35px 0px 0px;

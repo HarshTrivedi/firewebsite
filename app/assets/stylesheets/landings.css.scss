@@ -1,32 +1,54 @@
 // Place all the styles related to the Landings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-
+$title_color_2016: #483300;
+$theme_color_2016: #2D1504;
+$title_color_2015: #421E05;
+$theme_color_2015: #174E14;
 
 .main-2016{
   .theme_color{
-    color:#2D1504;
+    color:$theme_color_2016;
   }
   .background_theme_color{
-    background-color: #2D1504;
+    background-color: $theme_color_2016;
   }
   a:link, a:visited, a:hover, a:active {
     text-decoration: none;
-    color:#2D1504 ;
+    color:$theme_color_2016 ;
+  }
+  .container-fluid{
+    .row{
+      .title-div{
+        .title-first, .title-second, .title-third, .title-fourth{
+          text-align: center;
+          color: $title_color_2016;
+        }
+      }
+    }
   }
 }
 
 .main-2015{
   .theme_color{
-    color:#174E14;
+    color: $theme_color_2015;
   }
   .background_theme_color{
-    background-color: #174E14;
+    background-color: $theme_color_2015;
   }
   a:link, a:visited, a:hover, a:active {
     text-decoration: none;
-    color:#2D1504 ;
+    color: $theme_color_2015 ;
+  }
+  .container-fluid{
+    .row{
+      .title-div{
+        .title-first, .title-second, .title-third, .title-fourth{
+          text-align: center;
+          color: $title_color_2015;
+        }
+      }
+    }
   }
 }
 
