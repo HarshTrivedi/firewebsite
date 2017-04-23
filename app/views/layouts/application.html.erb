@@ -36,14 +36,16 @@
       <div class="alpha">
         <div class="container-fluid text-right">
           <div class="row">
-            <%if current_year.value != "2017"%>
-              <div class="col-sm-2 hidden-xs">
-                 <div class="text-center" style="position: relative; left: 3vw;">
 
-                 <img src="/assets/title_logos/title_left-<%=current_year.value%>.png" height="100px" width="180px"></img>
-                 </div>
+              <div class="col-sm-2 hidden-xs">
+                <%if current_year.value != "2017"%>
+                   <div class="text-center" style="position: relative; left: 3vw;">
+
+                   <img src="/assets/title_logos/title_left-<%=current_year.value%>.png" height="100px" width="180px"></img>
+                   </div>
+                 <%end%>
               </div>
-            <%end%>
+
             <div class="col-sm-8 col-xs-12" >
                 <div class="text-center title-div" style="position: relative ; ">
                     <h1 class="title-first" style="color:<%=title_color%>;font-size:42px" ><b>FIRE <%= current_year.value %></b></h1>
@@ -61,7 +63,7 @@
             <div class="col-sm-2 hidden-xs">
                <div class="text-center" style="position: relative; right: 3vw;">
                <%if current_year.value == "2015"%>
-                <img src="/assets/title_logos/title_right-<%=current_year.value%>.png" height="100px" width="170px"></img>                
+                <img src="/assets/title_logos/title_right-<%=current_year.value%>.png" height="100px" width="170px"></img>
                <%end%>
                </div>
             </div>
@@ -104,10 +106,10 @@
                   </ul>
 
                   <hr>
-                
+
                   <ul class="nav nav-pills nav-stacked">
                       <li style="background-color:<%=theme_color%>">
-                           <a href="#" style="color:#FFF" onMouseOver="this.style.color='<%=theme_color%>'" onMouseOut="this.style.color='#FFF'"> 
+                           <a href="#" style="color:#FFF" onMouseOver="this.style.color='<%=theme_color%>'" onMouseOut="this.style.color='#FFF'">
                               <i class="fa fa-archive"></i> &nbsp <b> Archives </b>
                            </a>
                       </li>
@@ -146,12 +148,12 @@
                           </ul>
                           </div>
                       <li>
-                           <a href="#collapse_fire" data-toggle="collapse"> <font style="color:<%=theme_color%>"> <i class="fa fa-external-link-square"></i> 
+                           <a href="#collapse_fire" data-toggle="collapse"> <font style="color:<%=theme_color%>"> <i class="fa fa-external-link-square"></i>
                            &nbsp <b>FIRE </b></font></a>
                       </li>
                           <div id="collapse_fire" class="panel-collapse in collapse">
                           <ul class="nav nav-pills nav-stacked active">
-                          <% current_year_value = current_year.value.to_i %>			
+                          <% current_year_value = current_year.value.to_i %>
                           <% for year_value in ((2015..(current_year_value-1)).reverse_each)%>
                             <% year = Year.where(:value => year_value.to_s ).first %>
                             <li>
@@ -181,9 +183,9 @@
                     </ul>
 
                     <hr />
-                
-                <br />     
-              
+
+                <br />
+
               </div>
 
                 <%= yield %>
@@ -201,7 +203,7 @@
                 <ul class="nav nav-pills nav-stacked social-nav">
                     <li><h4 style="color:<%=theme_color%>;" > <b>Sponsors </b></h4></li>
                 </ul>
-                <% number_of_sponsors = current_year.sponsors.visible.size %> 
+                <% number_of_sponsors = current_year.sponsors.visible.size %>
                 <% for sponsor in current_year.sponsors.visible %>
                   <% year = current_year.value %>
                   <img src="/assets/sponsors/<%=year%>/<%= sponsor.image_name %>" height="<%=sponsor.image_height%>" width="<%=sponsor.image_width%>" ><br/>
@@ -282,12 +284,12 @@
                   <!-- Start of StatCounter Code for Default Guide -->
                   <div class="text-center">
                     <b>
-                    <div style="font-size:15px;">                  
+                    <div style="font-size:15px;">
 <!--                       <script type="text/javascript">
-                          var sc_project=10446760; 
-                          var sc_invisible=0; 
-                          var sc_security="e0c2cc68"; 
-                          var sc_text=2; 
+                          var sc_project=10446760;
+                          var sc_invisible=0;
+                          var sc_security="e0c2cc68";
+                          var sc_text=2;
                           var scJsHost = (("https:" == document.location.protocol) ?
                           "https://secure." : "http://www.");
                           document.write("<script type='text/javascript' src='" +
@@ -312,9 +314,9 @@
                   </div>
 
           </div>
-          <div class="span-2 sp">          
+          <div class="span-2 sp">
           </div>
-        </div>  
+        </div>
       </div>
     </div>
   </div>
