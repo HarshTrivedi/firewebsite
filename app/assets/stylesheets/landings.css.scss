@@ -78,10 +78,6 @@ footer{
   li{
     a{
       padding-left: 40px;
-
-      .fa-arrow-right{
-        margin-right: 10px;
-      }
     }
   }
 }
@@ -92,9 +88,9 @@ footer{
   color: #FFF;
   padding: 10px 15px;
   font-size: 14px;
-  .fa-archive{
-    padding-right: 10px;
-  }
+}
+.fa{
+  padding-right: 10px;
 }
 
 //Default theme
