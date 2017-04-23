@@ -15,6 +15,7 @@
  *= require style1.css
  *= require pages.scss
  *= require landings.css.scss
+ *= require 2017-style.css.scss
  *= require nprogress
  *= require nprogress-bootstrap
  *= require_self
