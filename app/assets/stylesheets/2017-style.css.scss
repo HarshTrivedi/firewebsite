@@ -1,6 +1,10 @@
+//Color of Title in Header
 $title_color: #012A2F;
+
+//Color of theme
 $theme_color: #078186;
 
+//.main-{{current_year}}
 .main-2017{
 
   .theme_color{
@@ -11,7 +15,6 @@ $theme_color: #078186;
   }
 
   a:link, a:visited, a:hover, a:active {
-    text-decoration: none !important;
     color:$theme_color ;
   }
 
@@ -19,23 +22,19 @@ $theme_color: #078186;
     .row{
       .title-div{
         .title-first, .title-second, .title-third, .title-fourth{
-          text-align: left !important;
+          text-align: left !important; //Only needed if alignment to be changed.
           color: $title_color !important;
-        }
-        .title-first{
-          margin:35px 0px 0px;
-        }
-        .title-second{
-          margin-top: 5px !important;
         }
       }
 
-      .header-logo-1, header-logo-2{
+      //If header logos to be hidden
+      .header-logo-1, .header-logo-2{
         visibility: hidden;
       }
     }
   }
 
+  //Footer CSS
   footer{
     .container{
       .logos{
@@ -56,6 +55,7 @@ $theme_color: #078186;
           font-weight: 600;
           font-size: 18px;
         }
+        //If need border around the logos
         img{
           border: 2px solid black;
         }
