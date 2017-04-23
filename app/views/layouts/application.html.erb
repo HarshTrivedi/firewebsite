@@ -33,16 +33,14 @@
         <div class="container-fluid text-right">
           <div class="row">
 
-              <div class="col-sm-2 hidden-xs">
-                <%if current_year.value != "2017"%>
+              <div class="col-sm-2 hidden-xs header-logo-1">
                    <div class="text-center" style="position: relative; left: 3vw;">
 
                    <img src="/assets/title_logos/title_left-<%=current_year.value%>.png" height="100px" width="180px"></img>
                    </div>
-                 <%end%>
               </div>
 
-            <div class="col-sm-8 col-xs-12" >
+            <div class="col-sm-8 col-xs-12 header-text" >
                 <div class="title-div" style="position: relative ; ">
                     <h1 class="title-first" style="font-size:42px" ><b>FIRE <%= current_year.value %></b></h1>
                     <h3 class="title-second" style="font size=5.5vw" >
@@ -56,7 +54,7 @@
                     <h4 class="title-fourth" style="letter-spacing: 1px ; "><%= current_year.duration %></h4>
                 </div>
             </div>
-            <div class="col-sm-2 hidden-xs">
+            <div class="col-sm-2 hidden-xs header-logo-2">
                <div class="text-center" style="position: relative; right: 3vw;">
                <%if current_year.value == "2015"%>
                 <img src="/assets/title_logos/title_right-<%=current_year.value%>.png" height="100px" width="170px"></img>

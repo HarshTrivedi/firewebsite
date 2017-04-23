@@ -22,7 +22,7 @@ $theme_color_2015: #174E14;
       .title-div{
         .title-first, .title-second, .title-third, .title-fourth{
           text-align: center;
-          color: $title_color_2016;
+          color: $title_color_2016 !important;
         }
       }
     }
@@ -45,7 +45,7 @@ $theme_color_2015: #174E14;
       .title-div{
         .title-first, .title-second, .title-third, .title-fourth{
           text-align: center;
-          color: $title_color_2015;
+          color: $title_color_2015 !important;
         }
       }
     }
