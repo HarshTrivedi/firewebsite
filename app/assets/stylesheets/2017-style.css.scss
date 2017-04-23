@@ -1,7 +1,22 @@
 $title_color: #012A2F;
 $theme_color: #078186;
 
+
+
+
 .main-2017{
+
+  .theme_color{
+    color:$theme_color;
+  }
+  .background_theme_color{
+    background-color: $theme_color;
+  }
+
+  a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color:$theme_color ;
+  }
 
   .container-fluid{
     .row{
@@ -38,24 +53,6 @@ $theme_color: #078186;
           color: black;
           font-weight: 600;
           font-size: 18px;
-        }
-      }
-    }
-  }
-}
-
-footer{
-  .container{
-    .logos{
-      .footer-logo-1{
-        .footer-1-div{
-          padding: 20px 15px;
-        }
-      }
-      .footer-logo-5{
-        text-align: center;
-        div{
-          margin: 5px 0px 5px;
         }
       }
     }

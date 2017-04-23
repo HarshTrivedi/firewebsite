@@ -1,3 +1,53 @@
 // Place all the styles related to the Landings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.main-2016{
+  .theme_color{
+    color:#2D1504;
+  }
+  .background_theme_color{
+    background-color: #2D1504;
+  }
+  a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color:#2D1504 ;
+  }
+}
+
+.main-2015{
+  .theme_color{
+    color:#174E14;
+  }
+  .background_theme_color{
+    background-color: #174E14;
+  }
+  a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color:#2D1504 ;
+  }
+}
+
+
+footer{
+  .container{
+    .logos{
+      .footer-logo-1{
+        .footer-1-div{
+          padding: 20px 15px;
+        }
+      }
+      .footer-logo-5{
+        text-align: center;
+        div{
+          margin: 5px 0px 5px;
+        }
+      }
+    }
+  }
+}
+
+
+a:hover, a:focus {text-decoration: underline; !important}
