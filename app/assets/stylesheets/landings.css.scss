@@ -71,7 +71,13 @@ footer{
   }
 }
 
-
-a:hover, a:focus {
-  text-decoration: underline !important;
+.fire-list{
+  li{
+    margin-left: 25px;
+    a{
+      .fa-arrow-right{
+        margin-right: 10px;
+      }
+    }
+  }
 }
