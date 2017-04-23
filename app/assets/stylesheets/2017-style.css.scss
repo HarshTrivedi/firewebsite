@@ -36,6 +36,17 @@ $theme_color: #078186;
     }
   }
 
+  .archive-heading{
+    position: relative;
+    display: block;
+    color: #FFF;
+    padding: 10px 15px;
+    font-size: 14px;
+    .fa-archive{
+      padding-right: 10px;
+    }
+  }
+
   footer{
     .container{
       .logos{

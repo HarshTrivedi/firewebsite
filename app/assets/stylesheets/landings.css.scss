@@ -6,6 +6,9 @@ $theme_color_2016: #2D1504;
 $title_color_2015: #421E05;
 $theme_color_2015: #174E14;
 
+$default_title_color: #012A2F;
+$default_theme_color: #078186;
+
 .main-2016{
   .theme_color{
     color:$theme_color_2016;
@@ -75,9 +78,42 @@ footer{
   li{
     a{
       padding-left: 40px;
-      
+
       .fa-arrow-right{
         margin-right: 10px;
+      }
+    }
+  }
+}
+
+.archive-heading{
+  position: relative;
+  display: block;
+  color: #FFF;
+  padding: 10px 15px;
+  font-size: 14px;
+  .fa-archive{
+    padding-right: 10px;
+  }
+}
+
+//Default theme
+.theme_color{
+  color: $default_theme_color;
+}
+.background_theme_color{
+  background-color: $default_theme_color;
+}
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+  color: $default_theme_color ;
+}
+.container-fluid{
+  .row{
+    .title-div{
+      .title-first, .title-second, .title-third, .title-fourth{
+        text-align: center;
+        color: $default_title_color !important;
       }
     }
   }
