@@ -14,7 +14,7 @@ $theme_color_2015: #174E14;
     background-color: $theme_color_2016;
   }
   a:link, a:visited, a:hover, a:active {
-    text-decoration: none;
+    text-decoration: none !important;
     color:$theme_color_2016 ;
   }
   .container-fluid{
@@ -37,7 +37,7 @@ $theme_color_2015: #174E14;
     background-color: $theme_color_2015;
   }
   a:link, a:visited, a:hover, a:active {
-    text-decoration: none;
+    text-decoration: none !important;
     color: $theme_color_2015 ;
   }
   .container-fluid{
