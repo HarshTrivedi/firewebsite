@@ -6,8 +6,14 @@ $theme_color: #078186;
   .container-fluid{
     .row{
       .title-div{
-        .title-first{
+        .title-first .title-second .title-third .title-fourth{
           text-align: left !important;
+        }
+        .title-first{
+          margin:35px 0px 0px;
+        }
+        .title-second{
+          margin-top: 0px;
         }
       }
     }
