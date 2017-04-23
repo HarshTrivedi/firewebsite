@@ -17,6 +17,7 @@ module ApplicationHelper
 		current_year.venue
 	end
 
+	# These theme color variables are no longer in use.
 	def theme_color
 		if current_year.value == "2015"
 			return "#174E14"
@@ -35,6 +36,7 @@ module ApplicationHelper
 		end
 	end
 
+# These title color variables are no longer in use.
 	def title_color
 		if current_year().value == "2015"
 			return "#421E05"

@@ -1,3 +1,7 @@
+// To Add styles for new years, copy this file, rename it with the year number and add it in the application.css.
+// Set the required values of theme_color & title_color.
+// If needed modify or add the css.
+
 //Color of Title in Header
 $title_color: #012A2F;
 
@@ -27,14 +31,14 @@ $theme_color: #078186;
         }
       }
 
-      //If header logos to be hidden
+      //Logos to be hidden for 2017
       .header-logo-1, .header-logo-2{
         visibility: hidden;
       }
     }
   }
 
-  //Footer CSS
+  //Footer CSS changes for 2017
   footer{
     .container{
       .logos{
