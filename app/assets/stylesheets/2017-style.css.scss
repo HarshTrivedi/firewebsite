@@ -6,7 +6,7 @@ $theme_color: #078186;
   .container-fluid{
     .row{
       .title-div{
-        .title-first .title-second .title-third .title-fourth{
+        .title-first, .title-second, .title-third, .title-fourth{
           text-align: left !important;
         }
         .title-first{
