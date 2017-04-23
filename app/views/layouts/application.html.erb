@@ -277,42 +277,11 @@
             <a href="http://www.isical.ac.in/"><img src="/assets/footer_logos/<%=current_year.value%>/footer-3.png" class="img-responsive" height="90" width="90"></a>
           </div>
           <div class="span-2 sp footer-logo-5">
-
-
                   <!-- Start of StatCounter Code for Default Guide -->
-                  <div class="text-center">
-                    <b>
-                    <div style="font-size:15px;">
-<!--                       <script type="text/javascript">
-                          var sc_project=10446760;
-                          var sc_invisible=0;
-                          var sc_security="e0c2cc68";
-                          var sc_text=2;
-                          var scJsHost = (("https:" == document.location.protocol) ?
-                          "https://secure." : "http://www.");
-                          document.write("<script type='text/javascript' src='" +
-                          scJsHost+
-                          "statcounter.com/counter/counter.js'></"+"script>");
-                      </script>
-                      <noscript>
-                          <div class="statcounter">
-                              <img class="statcounter"  src="http://c.statcounter.com/10446760/0/e0c2cc68/0/" alt="website statistics">
-                          </div>
-                      </noscript>
- -->                      <%= raw current_year.statscounter_snippet %>
-                      Visitors
-                    </div>
-                    </b>
-                    <br>
-                    <span class='st_facebook_hcount' displayText='Facebook'></span>
-                    <br>
-                    <span class='st_twitter_hcount' displayText='Tweet'></span>
-                    <br>
-                    <span class='st_googleplus_hcount' displayText='Google +'></span>
-                  </div>
-
-          </div>
-          <div class="span-2 sp">
+                    <div class="visitor-count"><%= raw current_year.statscounter_snippet %> Visitors</div>
+                    <div class='st_facebook_hcount' displayText='Facebook'></div>
+                    <div class='st_twitter_hcount' displayText='Tweet'></div>
+                    <div class='st_googleplus_hcount' displayText='Google +'></div>
           </div>
         </div>
       </div>

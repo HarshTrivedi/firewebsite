@@ -34,6 +34,11 @@ $theme_color: #078186;
             }
           }
         }
+        .footer-logo-5{
+          color: black;
+          font-weight: 600;
+          font-size: 18px;
+        }
       }
     }
   }
@@ -45,6 +50,12 @@ footer{
       .footer-logo-1{
         .footer-1-div{
           padding: 20px 15px;
+        }
+      }
+      .footer-logo-5{
+        text-align: center;
+        div{
+          margin: 5px 0px 5px;
         }
       }
     }
