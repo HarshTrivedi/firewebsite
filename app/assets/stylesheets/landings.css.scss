@@ -71,10 +71,10 @@ footer{
   }
 }
 
-.fire-list{
+.fire-list, .proceedings-list{
   li{
-    margin-left: 25px;
     a{
+      padding-left: 40px
       .fa-arrow-right{
         margin-right: 10px;
       }
