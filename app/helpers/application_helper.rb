@@ -29,7 +29,9 @@ module ApplicationHelper
 	end
 
 	def title_transparency
-		if current_year().value == "2015"
+		if current_year().value == "2017"
+			return "0.6"
+		elsif current_year().value == "2015"
 			return "0.7"
 		else
 			return "0.0"
