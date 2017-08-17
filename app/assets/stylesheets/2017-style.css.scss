@@ -3,7 +3,7 @@
 // If needed modify or add the css.
 
 //Color of Title in Header
-$title_color: #012A2F;
+$title_color: #421e05;
 
 //Color of theme
 $theme_color: #078186;
@@ -26,14 +26,14 @@ $theme_color: #078186;
     .row{
       .title-div{
         .title-first, .title-second, .title-third, .title-fourth{
-          text-align: left !important; //Only needed if alignment to be changed.
+          text-align: center !important; //Only needed if alignment to be changed.
           color: $title_color !important;
         }
       }
 
       //Logos to be hidden for 2017
       .header-logo-1, .header-logo-2{
-        visibility: hidden;
+        visibility: visible;
       }
     }
   }
