@@ -68,9 +68,9 @@
                                 <div class="radio">
                                     <label><input type="radio" name="attendance-choice" value="2" /> Tutorial</label>
                                 </div>
-                                <div class="radio">
+                                <!--<div class="radio">
                                     <label><input type="radio" name="attendance-choice" value="3" /> Both</label>
-                                </div>
+                                </div>-->
                             </div>
                         </div>
 
@@ -417,8 +417,8 @@ $(document).ready(function() {
 
         if($('input[name=attendance-choice]:checked', '#registrationForm').val() == "2" ){
             var topic      = 'conference-date-choice'; $container = $('[data-topic="' + topic + '"]') ; $container.hide();
-            var topic      = 'tutorials-choice'      ; $container = $('[data-topic="' + topic + '"]') ; $container.show();            
-            $('#registrationForm').bootstrapValidator('enableFieldValidators', 'tutorials-choice', true);
+            //var topic      = 'tutorials-choice'      ; $container = $('[data-topic="' + topic + '"]') ; $container.show();            
+            //$('#registrationForm').bootstrapValidator('enableFieldValidators', 'tutorials-choice', true);
             $('#registrationForm').bootstrapValidator('enableFieldValidators', 'conference-date-choice', false);
             $container.show();
         }
@@ -432,9 +432,9 @@ $(document).ready(function() {
         }
         else if($('input[name=attendance-choice]:checked', '#registrationForm').val() == "3" ){
             var topic      = 'conference-date-choice'; $container = $('[data-topic="' + topic + '"]') ; $container.show();
-            var topic      = 'tutorials-choice'      ; $container = $('[data-topic="' + topic + '"]') ; $container.show();
+            //var topic      = 'tutorials-choice'      ; $container = $('[data-topic="' + topic + '"]') ; $container.show();
 
-            $('#registrationForm').bootstrapValidator('enableFieldValidators', 'tutorials-choice', true);
+            //$('#registrationForm').bootstrapValidator('enableFieldValidators', 'tutorials-choice', true);
             $('#registrationForm').bootstrapValidator('enableFieldValidators', 'conference-date-choice', true);
         }
     })
