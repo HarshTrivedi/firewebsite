@@ -53,7 +53,7 @@ class Registration < ActiveRecord::Base
 			if self.occupation == 1 # student
 				tutorials_amount = "500 INR"
 			else
-				tutorials_amount = "750 INR"
+				tutorials_amount = "100 INR"
 			end
 		end			
 
@@ -74,15 +74,15 @@ class Registration < ActiveRecord::Base
 
 		if self.acm # IS ACM Member
 			if self.occupation == 1 # Student
-				return "4500 INR"
+				return "5000 INR"
 			elsif self.occupation == 2 # Industry
 				return "15000 INR"
 			elsif self.occupation == 3 # Academia
-				return "7000 INR"
+				return "7500 INR"
 			end
 		else # IS Not ACM Member
 			if self.occupation == 1 # Student
-				return "5500 INR"
+				return "6000 INR"
 			elsif self.occupation == 2 # Industry
 				return "17000 INR"
 			elsif self.occupation == 3 # Academia
@@ -111,16 +111,16 @@ class Registration < ActiveRecord::Base
 
 		if self.acm # IS ACM Member
 			if self.occupation == 1 # Student
-				return "5000 INR"
+				return "6000 INR"
 			elsif self.occupation == 2 # Industry
 				return "16000 INR"
 			elsif self.occupation == 3 # Academia
-				return "8000 INR"
+				return "8500 INR"
 
 			end				
 		else # IS Not ACM Member
 			if self.occupation == 1 # Student
-				return "6000 INR"
+				return "7000 INR"
 			elsif self.occupation == 2 # Industry
 				return "18000 INR"
 			elsif self.occupation == 3 # Academia
