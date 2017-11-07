@@ -29,14 +29,14 @@ class Registration < ActiveRecord::Base
 		elsif self.attendance_choice == 2
 			return "#{tutorial_bucks} #{tutorial_currency}"
 		else
-			if tutorial_currency == conference_currency
+			return "#{conference_bucks} #{conference_currency}"
+			/*if tutorial_currency == conference_currency
 				final = tutorial_bucks.to_i + conference_bucks.to_i 
-				return "#{final} #{conference_currency}"
+				return "#{conference_bucks} #{conference_currency}"
 			else
 				return "#{conference_bucks} #{conference_currency}"
-			end			
+			end*/
 		end
-
 	end
 
 	def amount_tutorials
