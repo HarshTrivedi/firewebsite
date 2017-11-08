@@ -40,8 +40,12 @@ class Registration < ActiveRecord::Base
 	end
 
 	def amount_tutorials
-
-		if self.tutorials_choice == nil  # attending none of tutorials
+		if self.occupation == 1 # student
+			tutorials_amount = "500 INR"
+		else
+			tutorials_amount = "1000 INR"
+		end
+		/* if self.tutorials_choice == nil  # attending none of tutorials
 			tutorials_amount = "0 INR"
 		elsif self.tutorials_choice == 3 # attending both tutorials
 			if self.occupation == 1 # student
@@ -53,9 +57,9 @@ class Registration < ActiveRecord::Base
 			if self.occupation == 1 # student
 				tutorials_amount = "500 INR"
 			else
-				tutorials_amount = "100 INR"
+				tutorials_amount = "750 INR"
 			end
-		end			
+		end */			
 
 	end
 
