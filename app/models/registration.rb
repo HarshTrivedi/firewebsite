@@ -45,21 +45,21 @@ class Registration < ActiveRecord::Base
 		else
 			tutorials_amount = "1000 INR"
 		end
-		/* if self.tutorials_choice == nil  # attending none of tutorials
-			tutorials_amount = "0 INR"
-		elsif self.tutorials_choice == 3 # attending both tutorials
-			if self.occupation == 1 # student
-				tutorials_amount = "750 INR"
-			else
-				tutorials_amount = "1000 INR"
-			end
-		else  # attending only one of two tutorials
-			if self.occupation == 1 # student
-				tutorials_amount = "500 INR"
-			else
-				tutorials_amount = "750 INR"
-			end
-		end */			
+		#if self.tutorials_choice == nil  # attending none of tutorials
+		#	tutorials_amount = "0 INR"
+		#elsif self.tutorials_choice == 3 # attending both tutorials
+		#	if self.occupation == 1 # student
+		#		tutorials_amount = "750 INR"
+		#	else
+		#		tutorials_amount = "1000 INR"
+		#	end
+		#else  # attending only one of two tutorials
+		#	if self.occupation == 1 # student
+		#		tutorials_amount = "500 INR"
+		#	else
+		#		tutorials_amount = "750 INR"
+		#	end
+		#end 			
 
 	end
 
