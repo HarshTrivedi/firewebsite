@@ -1,0 +1,69 @@
+// To Add styles for new years, copy this file, rename it with the year number and add it in the application.css.
+// Set the required values of theme_color & title_color.
+// If needed modify or add the css.
+
+//Color of Title in Header
+$title_color: #421e05;
+
+//Color of theme
+$theme_color: #078186;
+
+//.main-{{current_year}}
+.main-2017{
+
+  .theme_color{
+    color:$theme_color;
+  }
+  .background_theme_color{
+    background-color: $theme_color;
+  }
+
+  a:link, a:visited, a:hover, a:active {
+    color:$theme_color ;
+  }
+
+  .container-fluid{
+    .row{
+      .title-div{
+        .title-first, .title-second, .title-third, .title-fourth{
+          text-align: center !important; //Only needed if alignment to be changed.
+          color: $title_color !important;
+        }
+      }
+
+      //Logos to be hidden for 2017
+      .header-logo-1, .header-logo-2{
+        visibility: visible;
+      }
+    }
+  }
+
+  //Footer CSS changes for 2017
+  footer{
+    .container{
+      .logos{
+        .footer-logo-1{
+          .footer-1-div{
+            color: black;
+            .footer-1-line-1{
+              font-size: 18px;
+              font-weight: 600;
+            }
+            .footer-1-line-2 , .footer-1-line-3{
+              font-size: 16px;
+            }
+          }
+        }
+        .footer-logo-5{
+          color: black;
+          font-weight: 600;
+          font-size: 18px;
+        }
+        //If need border around the logos
+        //img{
+        //  border: 2px solid black;
+        //}
+      }
+    }
+  }
+}
