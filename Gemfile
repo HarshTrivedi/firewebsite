@@ -2,11 +2,13 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.4'
+gem 'rails'
 # Use postgresql as the database for Active Record
-gem 'pg'
+gem 'pg', '~> 0.21'
+
+
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -43,8 +45,8 @@ gem 'bundler'
 gem 'google-analytics-rails'
 gem 'simple_form'
 gem 'binding_of_caller'
-gem 'activeadmin', github: 'gregbell/active_admin'
-gem 'devise', github: 'plataformatec/devise'
+gem 'activeadmin'
+gem 'devise'
 gem 'tzinfo-data'
 gem 'validates_formatting_of'
 
@@ -74,3 +76,5 @@ gem 'pjax_rails'
 gem 'prawn'
 gem 'simple_form'
 gem 'country_select'
+gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
+
