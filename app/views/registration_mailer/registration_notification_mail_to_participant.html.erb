@@ -1,0 +1,97 @@
+<div style="border-style: solid; padding: 10px ; width: 90%">
+
+<div style="padding: 10px;">
+<!-- 	<img style="float: left; display:block" src="http://fire.irsi.res.in/assets/fire-logo.jpg" alt="FIRE Logo" title="FIRE Logo" height="40" width="140" border="0" class="CToWUd">
+	<img style="float: right; display:block"  src="http://fire.irsi.res.in/assets/irsi-logo.png" alt="IRSI Logo" title="IRSI Logo" height="40" width="140" border="0" class="CToWUd"> -->
+</div>
+Dear <%= @registration.name %>,
+<br/>
+	Your registration has been confirmed. You will receive a conference meeting link and schedule on <%= @registration.email %> before 48 hours of the conference.
+<br/>
+For any queries, write to us at clia@isical.ac.in. 
+<br/>
+<br/>
+
+
+<table style="margin:0 auto;margin:10px 0 0 11px" width="97%" border="1" cellpadding="5" cellspacing="0">
+
+
+<tbody style="font-family:Verdana;font-size:12px;color:#000000">
+
+
+
+	<tr>
+		<td colspan="6" style="background:#bfdcff;font-family:Arial,Helvetica,sans-serif;font-size:16px;color:#022462;font-weight:bold">Registration Details</td>
+	</tr>
+	<tr>
+		<td colspan="1">
+			<b>Registration Number:</b>
+		</td>
+		<td colspan="1">
+			<%= @registration.registration_number %>
+		</td>
+		<td colspan="1">
+			<b>Date :</b>
+		</td>
+		<td colspan="1">
+			<%= @registration.created_at.strftime("%B %d, %Y") %>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="1">
+			<b>Name: </b>
+		</td>
+		<td colspan="1">
+			<%= @registration.name %>
+		</td>	
+		<td colspan="1">
+			<b>Email Id: </b>
+		</td>
+		<td colspan="1">
+			<%= @registration.email %>
+		</td>	
+	</tr>
+	<tr>
+		<td colspan="1">
+			<b>Affiliation:</b>
+		</td>
+		<td colspan="1">
+			<%= @registration.affiliation %>
+		</td>	
+		<td colspan="1">
+			<b>Contact Number:</b>
+		</td>
+		<td colspan="1">
+			<%= @registration.phone %>
+		</td>	
+	</tr>
+	<tr>
+		<td colspan="1">
+			<b>Occupation:</b>
+		</td>
+		<td colspan="1">
+			<%if @registration.occupation == 1%>
+				Student
+			<%elsif @registration.occupation == 2%>
+				Industry
+			<%elsif  @registration.occupation == 3%>
+				Academia
+			<%end %>
+		</td>
+		<td colspan="1">
+			<b>ACM Membership:</b>
+		</td>
+		<td colspan="1">
+			<%if @registration.acm? %>
+				<%= @registration.acmnum %>
+			<%else%>
+				-
+			<%end%>
+		</td>
+	</tr>
+	
+</tbody>
+</table>
+
+
+</div>

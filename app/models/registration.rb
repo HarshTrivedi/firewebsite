@@ -41,9 +41,9 @@ class Registration < ActiveRecord::Base
 
 	def amount_tutorials
 		if self.occupation == 1 # student
-			tutorials_amount = "500 INR"
+			tutorials_amount = "0 INR"
 		else
-			tutorials_amount = "1000 INR"
+			tutorials_amount = "0 INR"
 		end
 		#if self.tutorials_choice == nil  # attending none of tutorials
 		#	tutorials_amount = "0 INR"
@@ -70,27 +70,27 @@ class Registration < ActiveRecord::Base
 		## calculation
 		if self.nationality != "IN"
 			if self.acm # IS ACM Member
-				return "300 USD"
+				return "0 USD"
 			else
-				return "325 USD"
+				return "0 USD"
 			end
 		end
 
 		if self.acm # IS ACM Member
 			if self.occupation == 1 # Student
-				return "5000 INR"
+				return "0 INR"
 			elsif self.occupation == 2 # Industry
-				return "15000 INR"
+				return "0 INR"
 			elsif self.occupation == 3 # Academia
-				return "7500 INR"
+				return "0 INR"
 			end
 		else # IS Not ACM Member
 			if self.occupation == 1 # Student
-				return "6000 INR"
+				return "0 INR"
 			elsif self.occupation == 2 # Industry
-				return "17000 INR"
+				return "0 INR"
 			elsif self.occupation == 3 # Academia
-				return "9000 INR"
+				return "0 INR"
 			end
 		end
 
@@ -107,28 +107,28 @@ class Registration < ActiveRecord::Base
 		## calculation 
 		if self.nationality != "IN"
 			if self.acm # IS ACM Member
-				return "325 USD"
+				return "0 USD"
 			else
-				return "350 USD"
+				return "0 USD"
 			end
 		end
 
 		if self.acm # IS ACM Member
 			if self.occupation == 1 # Student
-				return "6000 INR"
+				return "0 INR"
 			elsif self.occupation == 2 # Industry
-				return "16000 INR"
+				return "0 INR"
 			elsif self.occupation == 3 # Academia
-				return "8500 INR"
+				return "0 INR"
 
 			end				
 		else # IS Not ACM Member
 			if self.occupation == 1 # Student
-				return "7000 INR"
+				return "0 INR"
 			elsif self.occupation == 2 # Industry
-				return "18000 INR"
+				return "0 INR"
 			elsif self.occupation == 3 # Academia
-				return "10000 INR"
+				return "0 INR"
 			end				
 		end
 

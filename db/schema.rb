@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20161114175049) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "active_admin_comments", force: true do |t|
+  create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
     t.text     "body"
     t.string   "resource_id",   null: false
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20161114175049) do
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
 
-  create_table "admin_users", force: true do |t|
+  create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20161114175049) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "home_links", force: true do |t|
+  create_table "home_links", force: :cascade do |t|
     t.string   "name"
     t.string   "path"
     t.integer  "year_id"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20161114175049) do
 
   add_index "home_links", ["year_id"], name: "index_home_links_on_year_id", using: :btree
 
-  create_table "publishers", force: true do |t|
+  create_table "publishers", force: :cascade do |t|
     t.string   "name"
     t.string   "external_link"
     t.string   "image_name"
@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 20161114175049) do
 
   add_index "publishers", ["year_id"], name: "index_publishers_on_year_id", using: :btree
 
-  create_table "registrations", force: true do |t|
+  create_table "registrations", force: :cascade do |t|
     t.string   "name",                   default: "",    null: false
     t.string   "affiliation"
     t.string   "nationality",            default: "",    null: false
@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(version: 20161114175049) do
     t.boolean  "accomodation",           default: false
   end
 
-  create_table "sponsors", force: true do |t|
+  create_table "sponsors", force: :cascade do |t|
     t.string   "name"
     t.string   "external_link"
     t.string   "image_name"
@@ -117,7 +117,7 @@ ActiveRecord::Schema.define(version: 20161114175049) do
 
   add_index "sponsors", ["year_id"], name: "index_sponsors_on_year_id", using: :btree
 
-  create_table "tabs", force: true do |t|
+  create_table "tabs", force: :cascade do |t|
     t.text     "content"
     t.string   "name"
     t.integer  "home_link_id"
@@ -132,7 +132,7 @@ ActiveRecord::Schema.define(version: 20161114175049) do
 
   add_index "tabs", ["home_link_id"], name: "index_tabs_on_home_link_id", using: :btree
 
-  create_table "years", force: true do |t|
+  create_table "years", force: :cascade do |t|
     t.string   "value"
     t.string   "venue"
     t.datetime "created_at"

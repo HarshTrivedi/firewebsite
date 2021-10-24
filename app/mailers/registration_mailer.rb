@@ -1,9 +1,9 @@
 class RegistrationMailer < ActionMailer::Base
-  default from: "irlab.daiict@fire.irsi.res.in"
+  default from: "irlab.daiict@gmail.com"
 
   def send_confirmation_mail( registration )
   	@registration = registration
-    mail(to: registration.email , subject: "Registration Details for FIRE 2018")
+    mail(to: registration.email , subject: "Registration Details for FIRE 2020")
   end
 
   def new_registration_notification_mail( registration )
@@ -12,3 +12,7 @@ class RegistrationMailer < ActionMailer::Base
   end
 
 end
+
+
+
+
