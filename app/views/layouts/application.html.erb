@@ -233,8 +233,9 @@
                 <% number_of_sponsors = current_year.sponsors.visible.size %>
                 <% for sponsor in current_year.sponsors.visible %>
                   <% year = current_year.value %>
+                <a href="<%= sponsor.external_link %>">
+
                   <img src="/assets/sponsors/<%=year%>/<%= sponsor.image_name %>" height="<%=sponsor.image_height%>" width="<%=sponsor.image_width%>" ><br/>
-                  <a href="<%= sponsor.external_link %>">
                     <i> <%= sponsor.name %> </i><br/>
                   </a>
                   <hr/>

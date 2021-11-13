@@ -231,7 +231,7 @@
                             </fieldset>
                         </div> -->
 
-                        <div class="form-group" data-topic="registration_type" >
+                        <div class="form-group" data-topic="registration_type" style="display: none;">
                             <label class="col-md-3 control-label">Payment Option:</label>
 
                             <div class="col-md-6">
@@ -469,9 +469,9 @@ $(document).ready(function() {
             $container = $('[data-topic="' + topic + '"]');
             $container.show();
             $('#registrationForm').bootstrapValidator('enableFieldValidators', 'transid', true);
-            var topic      = 'registration_type';
-            $container = $('[data-topic="' + topic + '"]');
-            $container.show();
+            // var topic      = 'registration_type';
+            // $container = $('[data-topic="' + topic + '"]');
+            // $container.show();
             $('#registrationForm').bootstrapValidator('enableFieldValidators', 'registration_type', true);
         }
     });
