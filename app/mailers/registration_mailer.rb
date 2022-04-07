@@ -3,7 +3,7 @@ class RegistrationMailer < ActionMailer::Base
 
   def send_confirmation_mail( registration )
   	@registration = registration
-    mail(to: registration.email , subject: "Registration Details for FIRE 2020")
+    mail(to: registration.email , subject: "Registration Details for FIRE 2021")
   end
 
   def new_registration_notification_mail( registration )

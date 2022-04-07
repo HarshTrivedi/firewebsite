@@ -36,7 +36,16 @@
               <div class="col-sm-2 hidden-xs header-logo-1">
                    <div class="text-center" style="position: relative; left: 3vw;">
 
+                <%if current_year.value == "2021"%>
+                <a href="https://www.tcgcrest.org/">
+
+                <img src="/assets/title_logos/title_left-<%=current_year.value%>.png" height="100px" width="170px"></img>
+            </a>
+               <%end%>
+
+                <%if current_year.value != "2021"%>
                    <img src="/assets/title_logos/title_left-<%=current_year.value%>.png" height="100px" width="180px"></img>
+                <%end%>
                    </div>
               </div>
 

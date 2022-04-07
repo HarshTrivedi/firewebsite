@@ -81,6 +81,14 @@ For any queries, write to us at clia@isical.ac.in.
 			<%end %>
 		</td>
 		<td colspan="1">
+			<b>Payment Type:</b>
+		</td>
+		<td colspan="1">
+			<%= @registration.registration_type %>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="1">
 			<b>ACM Membership:</b>
 		</td>
 		<td colspan="1">
@@ -89,6 +97,12 @@ For any queries, write to us at clia@isical.ac.in.
 			<%else%>
 				-
 			<%end%>
+		</td>
+		<td colspan="1">
+			<b>Amount:</b>
+		</td>
+		<td colspan="1">
+			<%= @registration.dbamount %>
 		</td>
 	</tr>
 	

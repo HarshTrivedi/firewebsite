@@ -95,7 +95,7 @@ Rails.application.configure do
     :port           => '587',
     :authentication => :plain,
     :user_name      => 'apikey',
-    :password       => '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',
+    :password       => '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',
     :domain         => 'fire2015.herokuapp.com',
     :enable_starttls_auto => true
   }
