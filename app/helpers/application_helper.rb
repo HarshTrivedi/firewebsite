@@ -35,6 +35,9 @@ module ApplicationHelper
 			return "0.6"
 		elsif current_year().value == "2015"
 			return "0.7"
+		elsif current_year().value == "2022"
+			return "0.7"
+		
 		else
 			return "0.0"
 		end
