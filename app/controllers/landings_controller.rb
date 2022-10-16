@@ -43,6 +43,8 @@ class LandingsController < ApplicationController
   def new_register
   end
 
+
+
   def register_submit
 
     name = params[:name] || ""

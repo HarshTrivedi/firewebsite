@@ -90,15 +90,6 @@ Rails.application.configure do
   #->Prelang
   GA.tracker = ""
 
-  ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.sendgrid.net',
-    :port           => '587',
-    :authentication => :plain,
-    :user_name      => 'apikey',
-    :password       => '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',
-    :domain         => 'fire2015.herokuapp.com',
-    :enable_starttls_auto => true
-  }
 
 end
 

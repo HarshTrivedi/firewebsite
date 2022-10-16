@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
 
   get   'fire/register'  => 'landings#new_register', as: :new_register #, constraints: {subdomain: /fire/ }
+
   post   'fire/register/submit'  => 'landings#register_submit', as: :register_submit #, constraints: {subdomain: /fire/ }
   get   'fire/download/:filename'  => 'landings#download'         , as: :fire_download #, constraints: {subdomain: /fire/ }
   #get   'fire/send'  => 'landings#send', as: :send #, constraints: {subdomain: /fire/ }
