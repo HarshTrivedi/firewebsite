@@ -67,9 +67,22 @@ ActiveAdmin.register Registration do
 			elsif registration.participation == 2
 				"Participating in a track"
 			elsif registration.participation == 3
-				"Attending"
+				"Participating in only Doctoral Consortium"
 			elsif registration.participation == 4
+				"Participating in Industry Track"
+			elsif registration.participation == 5
+				"Presenting Tuturial"
+			elsif registration.participation == 6
+				"Participating in olny ACM India PhD Clinic"
+			elsif registration.participation == 7
+				"Participating ACM India PhD Clinic and Doctoral Consortium"
+
+			elsif registration.participation == 8
+				"Attending"
+			elsif registration.participation == 9
 				"I am a speaker / I am from organizing committee"
+			elsif registration.participation == 10
+				"Affiliated with Goa University"	
 			end
 		end
 

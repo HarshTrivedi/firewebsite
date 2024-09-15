@@ -59,17 +59,17 @@
                             </div>
                         </div>
 
-                        <div class="form-group" style="display: none;">
+                        <div class="form-group " style="display: none;" >
                             <label class="col-md-3 control-label">Planning to attend:</label>
                             <div class="col-md-6">
                                 <div class="radio">
-                                    <label><input type="radio" name="attendance-choice" value="1" checked/> Main Conference</label>
+                                    <label><input type="radio" name="attendance-choice" value="1"  /> Main Conference</label>
                                 </div>
                                 <div class="radio">
                                     <label><input type="radio" name="attendance-choice" value="2" /> Tutorial</label>
                                 </div>
                                 <div class="radio">
-                                    <label><input type="radio" name="attendance-choice" value="3" /> Both</label>
+                                    <label><input type="radio" name="attendance-choice" value="3" checked/> Both</label>
                                 </div>
                             </div>
                         </div>
@@ -78,10 +78,10 @@
                             <label class="col-md-3 control-label">I plan to attend the following tutorials:</label>
                             <div class="col-md-6">
                                 <div class="radio">
-                                    <label><input type="radio" name="tutorials-choice" value="1" /> Author Profiling: age, gender, personality, native language identification </label>
+                                    <label><input type="radio" name="tutorials-choice" value="1" /> Explainable AI (XAI) </label>
                                 </div>
                                 <div class="radio">
-                                    <label><input type="radio" name="tutorials-choice" value="2" /> Deep Learning</label>
+                                    <label><input type="radio" name="tutorials-choice" value="2" /> Data Centric AI for Information retrieval and Text processing</label>
                                 </div>
                                 <div class="radio">
                                     <label><input type="radio" name="tutorials-choice" value="3" /> Both</label>
@@ -89,33 +89,29 @@
                             </div>
                         </div>
 
-                        <div class="form-group" data-topic="conference-date-choice">
-                            <label class="col-md-3 control-label">I plan to attend the main conference on following dates:</label>
+                        <div class="form-group"  data-topic="conference-date-choice">
+                            <label class="col-md-3 control-label">I plan to attend the conference on following dates:</label>
                             <div class="col-md-6">
                                 <div class="checkbox">
-                                    <label><input type="checkbox" name="conference-date-choice[13th]" value="true" /> 13th December </label>
+                                    <label><input type="checkbox" name="conference-date-choice[15th]" value="true" /> 15th December </label>
                                 </div>
                                 <div class="checkbox">
-                                    <label><input type="checkbox" name="conference-date-choice[14th]" value="true" /> 14th December</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" name="conference-date-choice[15th]" value="true" /> 15th December</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" name="conference-date-choice[16th]" value="true" /> 16th December</label>
+                                    <label><input type="checkbox" name="conference-date-choice[16th]" value="true" /> 16th December </label>
                                 </div>
                                 <div class="checkbox">
                                     <label><input type="checkbox" name="conference-date-choice[17th]" value="true" /> 17th December</label>
                                 </div>
-
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="conference-date-choice[18th]" value="true" /> 18th December</label>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="form-group" style="display: none;">
+                        <div class="form-group">
                             <label class="col-md-3 control-label">Food Preference</label>
                             <div class="col-md-6">
                                 <div class="radio">
-                                    <label><input type="radio" name="food" value="veg" checked /> Vegetarian</label>
+                                    <label><input type="radio" name="food" value="veg" /> Vegetarian</label>
                                 </div>
                                 <div class="radio">
                                     <label><input type="radio" name="food" value="nonveg" /> Non-Vegetarian</label>
@@ -133,14 +129,38 @@
                                     <label><input type="radio" name="participation" value=2 />Participating in a track</label>
                                 </div>
                                 <div class="radio">
-                                    <label><input type="radio" name="participation" value=3 />
-                                    Attending</label>
+                                    <label><input type="radio" name="participation" value=3 />Participating only in Doctoral Consortium</label>
                                 </div>
                                 <div class="radio">
-                                    <label><input type="radio" name="participation" value=4 />I am a speaker / I am from organizing committee</label>
+                                    <label><input type="radio" name="participation" value=4 />Participating in Industry Track</label>
                                 </div>
+                                <div class="radio">
+                                    <label><input type="radio" name="participation" value=5 />Presenting Tuturial</label>
+                                </div>
+
+                                <div class="radio">
+                                    <label><input type="radio" name="participation" value=6 />Participating only in ACM India PhD Clinic</label>
+                                </div>
+
+                                <div class="radio">
+                                    <label><input type="radio" name="participation" value=7 />Participating ACM India PhD Clinic and Doctoral Consortium</label>
+                                </div>
+
+                                <div class="radio">
+                                    <label><input type="radio" name="participation" value=8 />
+                                    Attending</label>
+                                </div>
+
+                                <div class="radio">
+                                    <label><input type="radio" name="participation" value=9 />I am a speaker / I am from organizing committee</label>
                             </div>
+
+                                <div class="radio">
+                                    <label><input type="radio" name="participation" value=10 />Affiliated with Goa University</label>
+
+                                </div>
                         </div>
+                    </div>
 
                         <div class="form-group">
                             <label class="col-md-3 control-label">Occupation</label>
@@ -169,17 +189,6 @@
                             </div>
                         </div>
 
-<!--                         <div class="form-group" style="display: none;">
-                            <label class="col-md-3 control-label">Want T-Shirt?</label>
-                            <div class="col-md-6">
-                                <div class="radio">
-                                    <label><input type="radio" name="t-shirt" value=false /> No</label>
-                                </div>
-                                <div class="radio">
-                                    <label><input type="radio" name="t-shirt" value=true checked="">Yes</label>
-                                </div>
-                            </div>
-                        </div> -->
 
                         <div style="display: none;" data-topic="acm">
                             <fieldset>
@@ -192,7 +201,19 @@
                             </fieldset>
                         </div>
 
-                        <div class="form-group" style="display: none;" >
+                        <div  style="display: none;" class="form-group">
+                            <label class="col-md-3 control-label">Attending Physically</label>
+                            <div class="col-md-6">
+                                <div class="radio">
+                                    <label><input type="radio" name="attendance-physically" value=true checked=""/>Yes</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input type="radio" name="attendance-physically" value=false >No</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group" >
                             <label class="col-md-3 control-label">Require Accomodation?</label>
 
                             <div class="col-md-6">
@@ -231,12 +252,12 @@
                             </fieldset>
                         </div> -->
 
-                        <div class="form-group" data-topic="registration_type" style="display: none;">
+                        <div class="form-group" data-topic="registration_type" >
                             <label class="col-md-3 control-label">Payment Option:</label>
 
                             <div class="col-md-6">
                                 <div class="radio">
-                                    <label><input type="radio" name="registration_type" value=NEFT checked=""/> I have already paid by NEFT Bank Tranfer. </label>
+                                    <label><input type="radio" name="registration_type" value=NEFT checked=""/> I have already paid. </label>
                                 </div>
                                 <div class="radio">
                                     <label><input type="radio" name="registration_type" value=ONSPOT >  I will pay On-Spot. </label>
@@ -406,6 +427,12 @@ $(document).ready(function() {
             alert("Please note that checking 'yes' for accommodation does not guarantee that you will be provided with it.We will be notifying you in case we are able to arrange something.")
         }
     })
+
+    .on('change', '[name="attendance-physically"]' ,function(e) {
+        if($('input[name=attendance-physically]:checked', '#registrationForm').val() == "false"){
+            alert("Please note that checking Physical Attendance is mandatory for a person presenting a paper for a conference or Track. Only a person outside India can present a paper online for a conference or Track. ")
+        }
+    })
     .on('change', '[name="registration_type"]' ,function(e) {
         if($('input[name=registration_type]:checked', '#registrationForm').val() == "NEFT"){            
             var topic      = 'transaction_id'; 
@@ -424,8 +451,8 @@ $(document).ready(function() {
 
         if($('input[name=attendance-choice]:checked', '#registrationForm').val() == "2" ){
             var topic      = 'conference-date-choice'; $container = $('[data-topic="' + topic + '"]') ; $container.hide();
-            //var topic      = 'tutorials-choice'      ; $container = $('[data-topic="' + topic + '"]') ; $container.show();            
-            //$('#registrationForm').bootstrapValidator('enableFieldValidators', 'tutorials-choice', true);
+            var topic      = 'tutorials-choice'      ; $container = $('[data-topic="' + topic + '"]') ; $container.show();            
+            $('#registrationForm').bootstrapValidator('enableFieldValidators', 'tutorials-choice', true);
             $('#registrationForm').bootstrapValidator('enableFieldValidators', 'conference-date-choice', false);
             $container.show();
         }
@@ -455,7 +482,7 @@ $(document).ready(function() {
     //     }
     // })
     .on('change', '[name="participation"]' ,function(e) {
-        if($('input[name=participation]:checked', '#registrationForm').val() == "4"){
+        if($('input[name=participation]:checked', '#registrationForm').val() == "9" || $('input[name=participation]:checked', '#registrationForm').val() == "6"|| $('input[name=participation]:checked', '#registrationForm').val() == "10" ){
             var topic      = 'transaction_id';
             $container = $('[data-topic="' + topic + '"]');
             $('#registrationForm').bootstrapValidator('enableFieldValidators', 'transid', false);
@@ -469,9 +496,9 @@ $(document).ready(function() {
             $container = $('[data-topic="' + topic + '"]');
             $container.show();
             $('#registrationForm').bootstrapValidator('enableFieldValidators', 'transid', true);
-            // var topic      = 'registration_type';
-            // $container = $('[data-topic="' + topic + '"]');
-            // $container.show();
+            var topic      = 'registration_type';
+            $container = $('[data-topic="' + topic + '"]');
+            $container.show();
             $('#registrationForm').bootstrapValidator('enableFieldValidators', 'registration_type', true);
         }
     });

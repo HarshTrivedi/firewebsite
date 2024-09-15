@@ -17,7 +17,7 @@ class Registration < ActiveRecord::Base
 
 	def amount
 
-		if self.participation == 4
+		if self.participation == 8 || self.participation == 6 
 			return "Free"
 		end
 

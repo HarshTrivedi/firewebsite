@@ -43,9 +43,22 @@
             </a>
                <%end%>
 
-                <%if current_year.value != "2021"%>
+                <%if current_year.value != "2021" %>
+
+                    <%if current_year.value == "2023" %>
+
+                   <img src="/assets/title_logos/title_left-<%=current_year.value%>.png" height="114px" width="79px"></img>
+                   <img src="/assets/title_logos/title_left-<%=current_year.value%>-1.png" height="100px" width="100px"></img>
+
+                    <%end%>
+                    
+                    <%if current_year.value != "2023" %>
+
                    <img src="/assets/title_logos/title_left-<%=current_year.value%>.png" height="100px" width="180px"></img>
+                    <%end%>
+
                 <%end%>
+
                    </div>
               </div>
 
@@ -65,7 +78,7 @@
             </div>
             <div class="col-sm-2 hidden-xs header-logo-2">
                <div class="text-center" style="position: relative; right: 3vw;">
-               <%if current_year.value == "2015" || current_year.value == "2020" || current_year.value == "2021"%>
+               <%if current_year.value == "2015" || current_year.value == "2020" || current_year.value == "2021"|| current_year.value == "2023"%>
                 <img src="/assets/title_logos/title_right-<%=current_year.value%>.png" height="100px" width="170px"></img>
                <%end%>
                </div>
@@ -125,6 +138,24 @@
                       </li>
                           <div id="collapse_proceedings" class="panel-collapse collapse proceedings-list">
                           <ul class="nav nav-pills nav-stacked">
+
+                                                         <li>
+                        <a href="https://dl.acm.org/doi/proceedings/10.1145/3632754" target="_blank"><i class="fa fa-arrow-right"></i><b>2023 Conference</b></a>
+                          </li>
+                          <li>
+                               <a href="https://ceur-ws.org/Vol-3681/" target="_blank"><i class="fa fa-arrow-right"></i><b>2023 Workshop</b></a>
+                          </li>
+
+
+
+                        <li>
+                            <a href="https://dl.acm.org/doi/proceedings/10.1145/3574318" target="_blank"><i class="fa fa-arrow-right"></i><b>2022 Conference</b></a>
+                          </li>
+                          <li>
+                               <a href="https://ceur-ws.org/Vol-3395/" target="_blank"><i class="fa fa-arrow-right"></i><b>2022 Workshop</b></a>
+                          </li>
+
+
 
                             <li>
                                <a href="https://dl.acm.org/doi/proceedings/10.1145/3503162" target="_blank"><i class="fa fa-arrow-right"></i><b>2021 Conference</b></a>
@@ -207,7 +238,7 @@
                           <% for year_value in ((2015..(current_year_value-1)).reverse_each)%>
                             <% year = Year.where(:value => year_value.to_s ).first %>
                             <li>
-                                 <a href="http://fire.irsi.res.in/fire/<%=year_value%>/home" target="_blank" ><i class="fa fa-arrow-right"></i><b><%=year_value%></b></a>
+                                 <a href="http://fire.irsi.org.in/fire/<%=year_value%>/home" target="_blank" ><i class="fa fa-arrow-right"></i><b><%=year_value%></b></a>
                             </li>
                           <% end %>
                           <li>
@@ -322,7 +353,12 @@
             <a href="http://www.daiict.ac.in/"><img src="/assets/footer_logos/<%=current_year.value%>/footer-1.png" class="img-responsive"  height="100" width="100"></a>
           </div>
           <div class="span-2 sp footer-logo-3">
+
+                    
+
             <a href="http://irsi.res.in/"><img src="/assets/footer_logos/<%=current_year.value%>/footer-2.png" class="img-responsive"  height="171" width="171"></a>
+
+
           </div>
           <div class="span-2 sp footer-logo-4">
             <a href="http://www.isical.ac.in/"><img src="/assets/footer_logos/<%=current_year.value%>/footer-3.png" class="img-responsive" height="87" width="87"></a>

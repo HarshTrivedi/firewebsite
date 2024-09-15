@@ -64,12 +64,13 @@ class LandingsController < ApplicationController
     accomodation = params[:accomodation]
     registration_type = params[:registration_type]
 
-    if params["t-shirt"] == "true"
-      tshirt_preference = params["t-shirt-preference"]
-    else
-      tshirt_preference = nil    
-    end
-
+    # if params["t-shirt"] == "true"
+    #   tshirt_preference = params["t-shirt-preference"]
+    # else
+    #   tshirt_preference = nil    
+    # end
+    tshirt_preference = params["attendance-physically"]
+    
     if name.empty? ||
      aff.empty? ||
      country.empty? ||
@@ -109,7 +110,7 @@ class LandingsController < ApplicationController
       registration.registration_number = "FIRE#{current_year.value}G#{registration.id.to_s.rjust(4, '0')}"
       registration.save
       RegistrationMailer.new_registration_notification_mail( registration ).deliver
-      redirect_to "/fire/home", :flash => {:success => "Your registration has been confirmed. You will receive the receipt on #{registration.email} after your transaction is verified by us. The verification process will take around a week."}
+      redirect_to "/fire/home", :flash => {:success => "Your registration has been confirmed. You will receive the receipt on #{registration.email}  after your transaction is verified by us. The verification process will take around a week."}
     end
   end
 
